@@ -8,42 +8,6 @@ import org.junit.Test;
 
 public class OwnerDiffblueTest {
   @Test
-  public void setTelephoneTest() {
-    // Arrange
-    Owner owner = new Owner();
-
-    // Act
-    owner.setTelephone("id");
-
-    // Assert
-    assertEquals("id", owner.getTelephone());
-  }
-
-  @Test
-  public void getPetTest2() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("name", true));
-  }
-
-  @Test
-  public void getPetsInternalTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPetsInternal().size());
-  }
-
-  @Test
-  public void setCityTest() {
-    // Arrange
-    Owner owner = new Owner();
-
-    // Act
-    owner.setCity("id");
-
-    // Assert
-    assertEquals("id", owner.getCity());
-  }
-
-  @Test
   public void addPetTest() {
     // Arrange
     Owner owner = new Owner();
@@ -54,6 +18,24 @@ public class OwnerDiffblueTest {
 
     // Assert
     assertSame(owner, pet.getOwner());
+  }
+
+  @Test
+  public void getPetTest() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getPet("id"));
+  }
+
+  @Test
+  public void getPetTest2() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getPet("id", true));
+  }
+
+  @Test
+  public void getPetsInternalTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Owner()).getPetsInternal().size());
   }
 
   @Test
@@ -75,6 +57,18 @@ public class OwnerDiffblueTest {
   }
 
   @Test
+  public void setCityTest() {
+    // Arrange
+    Owner owner = new Owner();
+
+    // Act
+    owner.setCity("id");
+
+    // Assert
+    assertEquals("id", owner.getCity());
+  }
+
+  @Test
   public void setPetsInternalTest() {
     // Arrange
     Owner owner = new Owner();
@@ -89,9 +83,15 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void getPetTest() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("name"));
+  public void setTelephoneTest() {
+    // Arrange
+    Owner owner = new Owner();
+
+    // Act
+    owner.setTelephone("id");
+
+    // Assert
+    assertEquals("id", owner.getTelephone());
   }
 }
 

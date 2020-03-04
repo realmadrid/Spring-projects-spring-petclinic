@@ -18,18 +18,18 @@ public class PetTypeFormatterDiffblueTest {
   @Autowired
   private PetTypeFormatter petTypeFormatter;
   @Test
+  public void parseTest() throws ParseException {
+    // Arrange, Act and Assert
+    thrown.expect(ParseException.class);
+    this.petTypeFormatter.parse("text", Locale.getDefault());
+  }
+  @Test
   public void printTest() {
     // Arrange
     PetType petType = new PetType();
 
     // Act and Assert
     assertNull(this.petTypeFormatter.print(petType, Locale.getDefault()));
-  }
-  @Test
-  public void parseTest() throws ParseException {
-    // Arrange, Act and Assert
-    thrown.expect(ParseException.class);
-    this.petTypeFormatter.parse("foo", Locale.getDefault());
   }
 }
 
