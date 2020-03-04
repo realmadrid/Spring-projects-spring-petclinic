@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-7a9015f
+INFO Diffblue Cover dev-SNAPSHOT-956ff2a
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
 INFO Expanded user code or user provided classpath: /Users/peterschrammel/Documents/peter/work/diffblue-benchmarks/Spring-projects-spring-petclinic/target/classes
@@ -7,6 +7,7 @@ INFO Test output directory: src/test/java
 INFO No verification command provided. Use -x or --verification-command to specify one.
 INFO Since no verification command was provided, some created tests may fail to compile or run.
 INFO Indexing...
+INFO Index ready.
 INFO Indexing apple.applescript
 INFO Indexing apple.laf
 INFO Indexing apple.launcher
@@ -5083,8 +5084,6 @@ INFO Found 95 callable methods in 20 classes
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
 INFO  [2/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
@@ -5172,15 +5171,11 @@ INFO [60/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [61/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
 INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
 INFO [62/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO [63/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
 INFO [64/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
 INFO [64/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO [65/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
 INFO [66/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO [67/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
 INFO [68/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
 INFO [69/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
@@ -5195,11 +5190,8 @@ INFO [73/95] Created 0 tests for method org.springframework.samples.petclinic.sy
 INFO [73/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
 INFO [74/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO [75/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
-ERROR buildExtendedByAssertSection: Executor.executeSteps() returned false => replay of 'arrange & act' sections has FAILED!
 INFO [77/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
 INFO [78/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initCreationForm
 INFO [79/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initFindForm
