@@ -50,10 +50,10 @@ public class OwnerDiffblueTest {
     Owner owner = new Owner();
 
     // Act
-    owner.setAddress("id");
+    owner.setAddress("42 Station Road");
 
     // Assert
-    assertEquals("id", owner.getAddress());
+    assertEquals("42 Station Road", owner.getAddress());
   }
 
   @Test
@@ -62,10 +62,10 @@ public class OwnerDiffblueTest {
     Owner owner = new Owner();
 
     // Act
-    owner.setCity("id");
+    owner.setCity("London");
 
     // Assert
-    assertEquals("id", owner.getCity());
+    assertEquals("London", owner.getCity());
   }
 
   @Test
@@ -88,10 +88,10 @@ public class OwnerDiffblueTest {
     Owner owner = new Owner();
 
     // Act
-    owner.setTelephone("id");
+    owner.setTelephone("01234556677");
 
     // Assert
-    assertEquals("id", owner.getTelephone());
+    assertEquals("01234556677", owner.getTelephone());
   }
 }
 
