@@ -24,6 +24,39 @@ public class PetDiffblueTest {
   }
 
   @Test
+  public void setVisitsInternalTest() {
+    // Arrange
+    Pet pet = new Pet();
+    HashSet<Visit> visitSet = new HashSet<Visit>();
+    visitSet.add(new Visit());
+
+    // Act
+    pet.setVisitsInternal(visitSet);
+
+    // Assert
+    assertSame(visitSet, pet.getVisitsInternal());
+  }
+
+  @Test
+  public void getVisitsInternalTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Pet()).getVisitsInternal().size());
+  }
+
+  @Test
+  public void setTypeTest() {
+    // Arrange
+    Pet pet = new Pet();
+    PetType petType = new PetType();
+
+    // Act
+    pet.setType(petType);
+
+    // Assert
+    assertSame(petType, pet.getType());
+  }
+
+  @Test
   public void constructorTest() {
     // Arrange and Act
     Pet actualPet = new Pet();
@@ -48,18 +81,6 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void getVisitsInternalTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisitsInternal().size());
-  }
-
-  @Test
-  public void getVisitsTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisits().size());
-  }
-
-  @Test
   public void setOwnerTest() {
     // Arrange
     Pet pet = new Pet();
@@ -73,30 +94,9 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void setTypeTest() {
-    // Arrange
-    Pet pet = new Pet();
-    PetType petType = new PetType();
-
-    // Act
-    pet.setType(petType);
-
-    // Assert
-    assertSame(petType, pet.getType());
-  }
-
-  @Test
-  public void setVisitsInternalTest() {
-    // Arrange
-    Pet pet = new Pet();
-    HashSet<Visit> visitSet = new HashSet<Visit>();
-    visitSet.add(new Visit());
-
-    // Act
-    pet.setVisitsInternal(visitSet);
-
-    // Assert
-    assertSame(visitSet, pet.getVisitsInternal());
+  public void getVisitsTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Pet()).getVisits().size());
   }
 }
 
