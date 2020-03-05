@@ -28,7 +28,7 @@ public class BaseEntityDiffblueTest {
     BaseEntity baseEntity = new BaseEntity();
 
     // Act
-    baseEntity.setId(Integer.valueOf(1));
+    baseEntity.setId(1);
 
     // Assert
     assertFalse(baseEntity.isNew());

@@ -36,7 +36,7 @@ public class VisitDiffblueTest {
     Visit visit = new Visit();
 
     // Act
-    visit.setPetId(Integer.valueOf(123));
+    visit.setPetId(123);
 
     // Assert
     assertEquals(Integer.valueOf(123), visit.getPetId());
