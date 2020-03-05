@@ -7,18 +7,6 @@ import org.junit.Test;
 
 public class VisitDiffblueTest {
   @Test
-  public void setDescriptionTest() {
-    // Arrange
-    Visit visit = new Visit();
-
-    // Act
-    visit.setDescription("description");
-
-    // Assert
-    assertEquals("description", visit.getDescription());
-  }
-
-  @Test
   public void constructorTest() {
     // Arrange and Act
     Visit actualVisit = new Visit();
@@ -31,12 +19,24 @@ public class VisitDiffblueTest {
   }
 
   @Test
+  public void setDescriptionTest() {
+    // Arrange
+    Visit visit = new Visit();
+
+    // Act
+    visit.setDescription("description");
+
+    // Assert
+    assertEquals("description", visit.getDescription());
+  }
+
+  @Test
   public void setPetIdTest() {
     // Arrange
     Visit visit = new Visit();
 
     // Act
-    visit.setPetId(Integer.valueOf(123));
+    visit.setPetId(123);
 
     // Assert
     assertEquals(Integer.valueOf(123), visit.getPetId());
