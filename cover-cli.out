@@ -1,12 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-de5f90a
+INFO Diffblue Cover dev-SNAPSHOT-40b80b6
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
-INFO Expanded user code or user provided classpath: /codebuild/output/src160337203/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Expanded user code or user provided classpath: /codebuild/output/src226957017/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Test output directory: src/test/java
 INFO No verification command provided. Use -x or --verification-command to specify one.
 INFO Since no verification command was provided, some created tests may fail to compile or run.
 INFO Indexing...
+INFO Index ready.
 INFO Indexing com.oracle.net
 INFO Indexing com.oracle.webservices.internal.api
 INFO Indexing com.oracle.webservices.internal.api.databinding
