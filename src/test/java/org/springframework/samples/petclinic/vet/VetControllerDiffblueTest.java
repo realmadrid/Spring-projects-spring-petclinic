@@ -52,18 +52,5 @@ public class VetControllerDiffblueTest {
         + "\"specialties\":[],\"nrOfSpecialties\":0,\"new\":false}]" + "}");
     resultActions1.andExpect(MockMvcResultMatchers.content().string(matcher));
   }
-  @Test
-  public void showVetListTest() throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets.html");
-
-    // Act
-    ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
-
-    // Assert
-    ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
-    ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
-    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("vets"));
-  }
 }
 
