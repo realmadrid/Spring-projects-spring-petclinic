@@ -39,7 +39,7 @@ public class VisitDiffblueTest {
     visit.setPetId(123);
 
     // Assert
-    assertEquals(Integer.valueOf(123), visit.getPetId());
+    assertEquals(123, visit.getPetId().intValue());
   }
 }
 
