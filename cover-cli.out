@@ -1,10 +1,10 @@
-INFO Diffblue Cover dev-SNAPSHOT-103f48d
+INFO Diffblue Cover dev-SNAPSHOT-7820314
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
 INFO Auto detected Optional[junit-4.12] test framework
-INFO Expanded user code or user provided classpath: /codebuild/output/src246877057/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Expanded user code or user provided classpath: /codebuild/output/src918614538/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
-INFO Test output directory: /codebuild/output/src246877057/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src918614538/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO No verification command provided. Use -x or --verification-command to specify one.
 INFO Since no verification command was provided, some created tests may fail to compile or run.
 INFO Indexing...
@@ -6231,6 +6231,8 @@ INFO Found 95 callable methods in 20 classes
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
+INFO Initializing Spring TestDispatcherServlet ''
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
 INFO  [2/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
@@ -6266,6 +6268,7 @@ INFO [13/95] Created 1 test for method org.springframework.samples.petclinic.own
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
 ERROR Attempt to load the Spring Boot application has failed.
 org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [HikariDataSource (HikariPool-2)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException: com.zaxxer.hikari:name=dataSource,type=HikariDataSource
 	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:625)
@@ -6281,8 +6284,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:102)
-	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:138)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:128)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:164)
 	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:96)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:101)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootApplicationClass(SpringConstructionProxy.java:52)
@@ -6400,6 +6403,7 @@ INFO [20/95]   Method considered not worth testing due to T001: Trivial getters 
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
 ERROR Attempt to load the Spring Boot application has failed.
 org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [HikariDataSource (HikariPool-3)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException: com.zaxxer.hikari:name=dataSource,type=HikariDataSource
 	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:625)
@@ -6415,8 +6419,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:102)
-	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:138)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:128)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:164)
 	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:96)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:101)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootApplicationClass(SpringConstructionProxy.java:52)
@@ -6528,6 +6532,7 @@ INFO [24/95] Created 1 test for method org.springframework.samples.petclinic.mod
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
 ERROR Attempt to load the Spring Boot application has failed.
 org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [HikariDataSource (HikariPool-4)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException: com.zaxxer.hikari:name=dataSource,type=HikariDataSource
 	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:625)
@@ -6543,8 +6548,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:102)
-	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:138)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:128)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:164)
 	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:96)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:101)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootApplicationClass(SpringConstructionProxy.java:52)
@@ -6654,6 +6659,7 @@ INFO [26/95]   No essential tests due to E002: Nothing to assert: the constructe
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
 ERROR Attempt to load the Spring Boot application has failed.
 org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [HikariDataSource (HikariPool-5)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException: com.zaxxer.hikari:name=dataSource,type=HikariDataSource
 	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:625)
@@ -6669,8 +6675,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:102)
-	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:138)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:128)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:164)
 	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:96)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:101)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootApplicationClass(SpringConstructionProxy.java:52)
@@ -6781,6 +6787,7 @@ INFO [28/95]   No essential tests due to E002: Nothing to assert: the constructe
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
 ERROR Attempt to load the Spring Boot application has failed.
 org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to register MBean [HikariDataSource (HikariPool-6)] with key 'dataSource'; nested exception is javax.management.InstanceAlreadyExistsException: com.zaxxer.hikari:name=dataSource,type=HikariDataSource
 	at org.springframework.jmx.export.MBeanExporter.registerBeanNameOrInstance(MBeanExporter.java:625)
@@ -6796,8 +6803,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:102)
-	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:138)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:128)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:164)
 	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:96)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:101)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootApplicationClass(SpringConstructionProxy.java:52)
@@ -6938,6 +6945,7 @@ INFO [61/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [62/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
 INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
 INFO [63/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO Initializing Spring TestDispatcherServlet ''
 INFO [64/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
 INFO [65/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
 INFO [66/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
@@ -6958,6 +6966,7 @@ INFO [77/95] Created 0 tests for method org.springframework.samples.petclinic.sy
 INFO [77/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
 INFO [78/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO Initializing Spring TestDispatcherServlet ''
 INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
 INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [80/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
