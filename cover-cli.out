@@ -1,10 +1,10 @@
-INFO Diffblue Cover dev-SNAPSHOT-a18fb30
+INFO Diffblue Cover dev-SNAPSHOT-a5a124a
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
 INFO Auto detected Optional[junit-4.12] test framework
-INFO Expanded user code or user provided classpath: /codebuild/output/src110214693/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Expanded user code or user provided classpath: /codebuild/output/src430786816/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
-INFO Test output directory: /codebuild/output/src110214693/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src430786816/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO No verification command provided. Use -x or --verification-command to specify one.
 INFO Since no verification command was provided, some created tests may fail to compile or run.
 INFO Indexing...
@@ -6356,8 +6356,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at io.reactivex.internal.operators.observable.ObservableToListSingle.subscribeActual(ObservableToListSingle.java:58)
 	at io.reactivex.Single.subscribe(Single.java:3666)
 	at io.reactivex.Single.blockingGet(Single.java:2869)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:579)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:62)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:581)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:64)
 	at picocli.CommandLine.executeUserObject(CommandLine.java:1743)
 	at picocli.CommandLine.access$900(CommandLine.java:145)
 	at picocli.CommandLine$RunLast.handle(CommandLine.java:2101)
@@ -6491,8 +6491,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at io.reactivex.internal.operators.observable.ObservableToListSingle.subscribeActual(ObservableToListSingle.java:58)
 	at io.reactivex.Single.subscribe(Single.java:3666)
 	at io.reactivex.Single.blockingGet(Single.java:2869)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:579)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:62)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:581)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:64)
 	at picocli.CommandLine.executeUserObject(CommandLine.java:1743)
 	at picocli.CommandLine.access$900(CommandLine.java:145)
 	at picocli.CommandLine$RunLast.handle(CommandLine.java:2101)
@@ -6620,8 +6620,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at io.reactivex.internal.operators.observable.ObservableToListSingle.subscribeActual(ObservableToListSingle.java:58)
 	at io.reactivex.Single.subscribe(Single.java:3666)
 	at io.reactivex.Single.blockingGet(Single.java:2869)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:579)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:62)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:581)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:64)
 	at picocli.CommandLine.executeUserObject(CommandLine.java:1743)
 	at picocli.CommandLine.access$900(CommandLine.java:145)
 	at picocli.CommandLine$RunLast.handle(CommandLine.java:2101)
@@ -6747,8 +6747,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at io.reactivex.internal.operators.observable.ObservableToListSingle.subscribeActual(ObservableToListSingle.java:58)
 	at io.reactivex.Single.subscribe(Single.java:3666)
 	at io.reactivex.Single.blockingGet(Single.java:2869)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:579)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:62)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:581)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:64)
 	at picocli.CommandLine.executeUserObject(CommandLine.java:1743)
 	at picocli.CommandLine.access$900(CommandLine.java:145)
 	at picocli.CommandLine$RunLast.handle(CommandLine.java:2101)
@@ -6875,8 +6875,8 @@ org.springframework.jmx.export.UnableToRegisterMBeanException: Unable to registe
 	at io.reactivex.internal.operators.observable.ObservableToListSingle.subscribeActual(ObservableToListSingle.java:58)
 	at io.reactivex.Single.subscribe(Single.java:3666)
 	at io.reactivex.Single.blockingGet(Single.java:2869)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:579)
-	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:62)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:581)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:64)
 	at picocli.CommandLine.executeUserObject(CommandLine.java:1743)
 	at picocli.CommandLine.access$900(CommandLine.java:145)
 	at picocli.CommandLine$RunLast.handle(CommandLine.java:2101)
