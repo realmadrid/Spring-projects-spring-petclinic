@@ -1,10 +1,10 @@
-INFO Diffblue Cover dev-SNAPSHOT-a5a124a
+INFO Diffblue Cover dev-SNAPSHOT-8d61642
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
 INFO Auto detected Optional[junit-4.12] test framework
-INFO Expanded user code or user provided classpath: /codebuild/output/src430786816/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Expanded user code or user provided classpath: /codebuild/output/src955906932/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
-INFO Test output directory: /codebuild/output/src430786816/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src955906932/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO No verification command provided. Use -x or --verification-command to specify one.
 INFO Since no verification command was provided, some created tests may fail to compile or run.
 INFO Indexing...
