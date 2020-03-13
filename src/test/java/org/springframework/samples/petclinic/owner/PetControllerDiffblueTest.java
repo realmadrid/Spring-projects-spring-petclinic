@@ -26,9 +26,9 @@ public class PetControllerDiffblueTest {
   @Autowired
   private PetController petController;
   @MockBean
-  private PetRepository petRepository;
-  @MockBean
   private OwnerRepository ownerRepository;
+  @MockBean
+  private PetRepository petRepository;
   @Autowired
   private MockMvc mockMvc;
   @Test

@@ -20,9 +20,9 @@ import org.springframework.web.bind.WebDataBinder;
 @SpringBootTest
 public class VisitControllerDiffblueTest {
   @MockBean
-  private PetRepository petRepository;
-  @MockBean
   private VisitRepository visitRepository;
+  @MockBean
+  private PetRepository petRepository;
   @Autowired
   private MockMvc mockMvc;
   @Autowired
