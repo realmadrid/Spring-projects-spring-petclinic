@@ -26,9 +26,9 @@ public class PetControllerDiffblueTest {
   @Autowired
   private PetController petController;
   @MockBean
-  private OwnerRepository ownerRepository;
-  @MockBean
   private PetRepository petRepository;
+  @MockBean
+  private OwnerRepository ownerRepository;
   @Autowired
   private MockMvc mockMvc;
   @Test
@@ -78,7 +78,7 @@ public class PetControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
-    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
+    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
   }
   @Test
   public void populatePetTypesTest() {
