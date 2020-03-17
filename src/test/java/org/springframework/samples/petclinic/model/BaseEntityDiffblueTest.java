@@ -18,6 +18,16 @@ public class BaseEntityDiffblueTest {
 
   @Test
   public void isNewTest() {
+    // Arrange
+    BaseEntity baseEntity = new BaseEntity();
+    baseEntity.setId(1);
+
+    // Act and Assert
+    assertFalse(baseEntity.isNew());
+  }
+
+  @Test
+  public void isNewTest2() {
     // Arrange, Act and Assert
     assertTrue((new BaseEntity()).isNew());
   }
