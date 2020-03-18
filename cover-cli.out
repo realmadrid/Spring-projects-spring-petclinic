@@ -1,9 +1,9 @@
-INFO Diffblue Cover dev-SNAPSHOT-f652d65
+INFO Diffblue Cover dev-SNAPSHOT-1c646e2
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src196345699/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src258306989/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected junit-4.12 test framework
-INFO Expanded user code or user provided classpath: /codebuild/output/src196345699/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Expanded user code or user provided classpath: /codebuild/output/src258306989/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6367,6 +6367,6 @@ INFO    1 E004: Unable to find any meaningful assertion.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" to verify created tests.
-09:15:37.903 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-09:15:55.904 [35mINFO[0m .....
+12:07:57.674 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+12:08:15.675 [35mINFO[0m ....
 INFO All 67 generated tests were successfully verified
