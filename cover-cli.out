@@ -1,9 +1,9 @@
-INFO Diffblue Cover dev-SNAPSHOT-2a1c7ed
+INFO Diffblue Cover 2020.03.b-59f1c8b
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src855010743/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src173028031/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected junit-4.12 test framework
-INFO Expanded user code or user provided classpath: /codebuild/output/src855010743/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Expanded user code or user provided classpath: /codebuild/output/src173028031/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6261,7 +6261,7 @@ INFO [20/95]   Method considered not worth testing due to T001: Trivial getters 
 INFO [21/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
 INFO [21/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [22/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDescription
-INFO [23/95] Created 2 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
+INFO [23/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.isNew
 INFO [24/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
 INFO [24/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [25/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
@@ -6297,7 +6297,7 @@ INFO [44/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [44/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [45/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setAddress
 INFO [46/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPets
-INFO [47/95] Created 2 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
+INFO [47/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.addPet
 INFO [48/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setCity
 INFO [49/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
 INFO [49/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
@@ -6365,8 +6365,8 @@ INFO    2 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E004: Unable to find any meaningful assertion.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
+INFO 65 tests created for 65 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" to verify created tests.
-18:09:12.091 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-18:09:30.092 [35mINFO[0m .........
-INFO All 67 generated tests were successfully verified
+19:00:03.758 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+19:00:21.758 [35mINFO[0m ...
+INFO All 65 generated tests were successfully verified
