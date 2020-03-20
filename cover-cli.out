@@ -1,11 +1,11 @@
-INFO Diffblue Cover dev-SNAPSHOT-3af1363
+INFO Diffblue Cover dev-SNAPSHOT-280c1ff
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src500071762/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src762084334/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected junit-4.12 test framework
-INFO Verification command directory not set - using /codebuild/output/src500071762/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src500071762/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Expanded user code or user provided classpath: /codebuild/output/src500071762/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command directory not set - using /codebuild/output/src762084334/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src762084334/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Expanded user code or user provided classpath: /codebuild/output/src762084334/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6234,144 +6234,185 @@ INFO Found 95 callable methods in 20 classes
 INFO Initializing Spring embedded WebApplicationContext
 INFO Initializing Spring TestDispatcherServlet ''
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
-INFO  [2/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.initNewVisitForm
-INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
-INFO  [3/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
-INFO  [4/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.<init>
-INFO  [4/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO  [5/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setBirthDate
-INFO  [6/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisits
-INFO  [7/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setOwner
-INFO  [8/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.<init>
-INFO  [9/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getOwner
+INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
+INFO  [2/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
+INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.<init>
+INFO  [3/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO  [4/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setBirthDate
+INFO  [5/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisits
+INFO  [6/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setOwner
+INFO  [7/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.<init>
+INFO  [8/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getOwner
+INFO  [8/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO  [9/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getType
 INFO  [9/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [10/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getType
+INFO [10/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getBirthDate
 INFO [10/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [11/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getBirthDate
-INFO [11/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [12/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setType
-INFO [13/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisitsInternal
-INFO [14/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setVisitsInternal
-INFO [15/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.addVisit
-INFO [16/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDate
-INFO [17/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getPetId
-INFO [17/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [18/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setPetId
-INFO [19/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.<init>
-INFO [20/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDate
+INFO [11/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setType
+INFO [12/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisitsInternal
+INFO [13/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setVisitsInternal
+INFO [14/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.addVisit
+INFO [15/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDate
+INFO [16/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getPetId
+INFO [16/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [17/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setPetId
+INFO [18/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.<init>
+INFO [19/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDate
+INFO [19/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [20/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
 INFO [20/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [21/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
-INFO [21/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [22/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDescription
-INFO [23/95] Created 2 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
-INFO [24/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
-INFO [24/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [25/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
-INFO [26/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.setId
-INFO [27/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
-INFO [27/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
-INFO [28/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+INFO [21/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDescription
+INFO [22/95] Created 2 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
+INFO [23/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
+INFO [23/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [24/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
+INFO [25/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.setId
+INFO [26/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
+INFO [26/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [27/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
+INFO [27/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO Initializing Spring TestDispatcherServlet ''
-INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
-INFO [29/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [30/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.getVetList
-INFO [31/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.<init>
-INFO [32/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.getName
-INFO [32/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [33/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.toString
-INFO [34/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.<init>
-INFO [35/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.setName
+ERROR replayArrangeAndActSectionAndDecodeResults: the replay of arrange and act section yield an exception.
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.RuntimeException: Expected: controller used to showcase what happens when an exception is thrown
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:890)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:875)
+	at org.springframework.test.web.servlet.TestDispatcherServlet.service(TestDispatcherServlet.java:71)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.springframework.mock.web.MockFilterChain$ServletFilterProxy.doFilter(MockFilterChain.java:166)
+	at org.springframework.mock.web.MockFilterChain.doFilter(MockFilterChain.java:133)
+	at org.springframework.test.web.servlet.MockMvc.perform(MockMvc.java:182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.lambda$null$0(ReflectiveBackend.java:387)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.withWriteRecording(ReflectiveBackend.java:452)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.lambda$null$1(ReflectiveBackend.java:385)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.withStdioDisabled(ReflectiveBackend.java:439)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.lambda$null$2(ReflectiveBackend.java:384)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.withConstantValueRecording(ReflectiveBackend.java:430)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.lambda$invokeMethod$3(ReflectiveBackend.java:383)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.withCoverageMonitoring(ReflectiveBackend.java:405)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveBackend.invokeMethod(ReflectiveBackend.java:382)
+	at com.diffblue.fuzztest.harness.spring.SpringReflectiveBackend.invokeMethod(SpringReflectiveBackend.java:77)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveTIRBackend.invokeMethod(ReflectiveTIRBackend.java:453)
+	at com.diffblue.fuzztest.harness.backend.ReflectiveTIRBackend.invokeMethod(ReflectiveTIRBackend.java:29)
+	at com.diffblue.fuzztest.tir.Executor$Visitor.visit(Executor.java:551)
+	at com.diffblue.fuzztest.tir.Executor$Visitor.visit(Executor.java:228)
+	at com.diffblue.tir.step.InvokeInstanceMethodExpr.accept(InvokeInstanceMethodExpr.java:37)
+	at com.diffblue.fuzztest.tir.Executor.lambda$executeSteps$0(Executor.java:188)
+	at com.diffblue.fuzztest.tir.TimedCallableExecutor$CallableFuture.executeTask(TimedCallableExecutor.java:26)
+	at com.diffblue.fuzztest.tir.TimedExecutor$WorkerThread.run(TimedExecutor.java:128)
+Caused by: java.lang.RuntimeException: Expected: controller used to showcase what happens when an exception is thrown
+	at org.springframework.samples.petclinic.system.CrashController.triggerException(CrashController.java:33)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:215)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:142)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:998)
+	... 30 common frames omitted
+INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
+INFO [28/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [29/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.getVetList
+INFO [30/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.<init>
+INFO [31/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.getName
+INFO [31/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [32/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.toString
+INFO [33/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.<init>
+INFO [34/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.setName
 INFO Initializing Spring TestDispatcherServlet ''
-INFO [36/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
-INFO [36/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [37/95] Created 1 test for method org.springframework.samples.petclinic.system.WelcomeController.welcome
-INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
-INFO [39/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
-INFO [39/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
-INFO [40/95]   No essential tests due to E009: Unrecoverable runtime error.
-INFO [41/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
-INFO [42/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
-INFO [42/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [43/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setPetsInternal
-INFO [44/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getAddress
-INFO [44/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [45/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setAddress
-INFO [46/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPets
-INFO [47/95] Created 2 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
-INFO [48/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setCity
-INFO [49/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
-INFO [49/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [50/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPetsInternal
-INFO [51/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
-INFO [52/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setTelephone
-INFO [53/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetType.<init>
-INFO [54/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getLastName
-INFO [54/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [55/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setLastName
-INFO [56/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getFirstName
-INFO [56/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [57/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.<init>
-INFO [58/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setFirstName
+INFO [35/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
+INFO [35/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [36/95] Created 1 test for method org.springframework.samples.petclinic.system.WelcomeController.welcome
+INFO [37/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
+INFO [38/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
+INFO [38/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [39/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
+INFO [39/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [40/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
+INFO [41/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
+INFO [41/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [42/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setPetsInternal
+INFO [43/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getAddress
+INFO [43/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [44/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setAddress
+INFO [45/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPets
+INFO [46/95] Created 2 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
+INFO [47/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setCity
+INFO [48/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
+INFO [48/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [49/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPetsInternal
+INFO [50/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
+INFO [51/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setTelephone
+INFO [52/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetType.<init>
+INFO [53/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getLastName
+INFO [53/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [54/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setLastName
+INFO [55/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getFirstName
+INFO [55/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+INFO [56/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.<init>
+INFO [57/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setFirstName
 INFO Initializing Spring TestDispatcherServlet ''
-INFO [59/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.<init>
-INFO [59/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [60/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showVetList
-INFO [61/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
-INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
-INFO [62/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
-INFO [63/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [58/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.<init>
+INFO [58/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [59/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.showVetList
+INFO [59/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [60/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
+INFO [60/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [61/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
+INFO [61/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
+INFO [62/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
-INFO [64/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
-INFO [65/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
-INFO [66/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
-INFO [66/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [67/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
-INFO [67/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [68/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
-INFO [69/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
-INFO [70/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
-INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
-INFO [72/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
-INFO [73/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
-INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
-INFO [74/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
-INFO [75/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
-INFO [77/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
-INFO [77/95]   No essential tests due to E009: Unrecoverable runtime error.
-INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
-INFO [78/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [63/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
+INFO [64/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
+INFO [64/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [65/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
+INFO [65/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [66/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
+INFO [67/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
+INFO [68/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
+INFO [69/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
+INFO [69/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [70/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
+INFO [70/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
+INFO [72/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
+INFO [72/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [73/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
+INFO [73/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
-INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
-INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [80/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
-INFO [81/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm
-INFO [82/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
-INFO [83/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm
-INFO [84/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
-INFO [85/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.showOwner
-INFO [86/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initCreationForm
-INFO [87/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initFindForm
-INFO [88/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialtiesInternal
-INFO [89/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialties
-INFO [90/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.addSpecialty
-INFO [91/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.<init>
-INFO [92/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.setSpecialtiesInternal
-INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
+INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
+INFO [74/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+INFO [75/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
+INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialtiesInternal
+INFO [77/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialties
+INFO [78/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.addSpecialty
+INFO [79/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.<init>
+INFO [80/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.setSpecialtiesInternal
+INFO [81/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 18 methods due to:
+INFO No essential tests created for 20 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO    4 E004: Unable to find any meaningful assertion.
-INFO    2 E009: Unrecoverable runtime error.
+INFO    4 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 64 tests created for 62 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src500071762/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
-14:10:40.782 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-14:10:58.783 [35mINFO[0m ....
-INFO All 64 generated tests were successfully verified
+INFO 50 tests created for 48 out of 95 methods in 16 out of 20 classes
+INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src762084334/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
+15:30:52.385 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+15:31:10.386 [35mINFO[0m ....
+15:31:13.531 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+15:31:31.531 [35mINFO[0m ..
+INFO Test verification was able to verify 47 out of 50 tests, the remainder were discarded
