@@ -1,11 +1,11 @@
-INFO Diffblue Cover dev-SNAPSHOT-4bd0707
+INFO Diffblue Cover dev-SNAPSHOT-37d9ab5
 INFO Detecting classpath...
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src800246207/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src338427914/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected junit-4.12 test framework
-INFO Verification command directory not set - using /codebuild/output/src800246207/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src800246207/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Expanded user code or user provided classpath: /codebuild/output/src800246207/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command directory not set - using /codebuild/output/src338427914/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src338427914/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Expanded user code or user provided classpath: /codebuild/output/src338427914/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6368,7 +6368,7 @@ INFO    1 E003: Nothing to assert: neither the return value type of the method u
 INFO    1 E004: Unable to find any meaningful assertion.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src800246207/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
-10:26:39.506 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-10:26:57.507 [35mINFO[0m ....
+INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src338427914/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
+11:25:44.941 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+11:26:02.942 [35mINFO[0m .....
 INFO All 67 generated tests were successfully verified
