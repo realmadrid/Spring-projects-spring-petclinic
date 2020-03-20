@@ -20,13 +20,13 @@ public class PetTypeFormatterDiffblueTest {
   @Autowired
   private PetTypeFormatter petTypeFormatter;
   @Test
-  public void parseTest() throws ParseException {
+  public void testParse() throws ParseException {
     // Arrange, Act and Assert
     thrown.expect(ParseException.class);
     this.petTypeFormatter.parse("text", Locale.getDefault());
   }
   @Test
-  public void printTest() {
+  public void testPrint() {
     // Arrange
     PetType petType = new PetType();
 
