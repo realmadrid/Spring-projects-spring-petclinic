@@ -73,7 +73,7 @@ public class PetControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
-    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
+    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
   }
   @Test
   public void populatePetTypesTest() {
