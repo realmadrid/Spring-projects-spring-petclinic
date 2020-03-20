@@ -2,7 +2,9 @@ package org.springframework.samples.petclinic.owner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,6 +20,8 @@ import org.springframework.web.bind.WebDataBinder;
 @AutoConfigureMockMvc
 @SpringBootTest
 public class PetControllerDiffblueTest {
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
   @Autowired
   private PetController petController;
   @Autowired
@@ -50,6 +54,12 @@ public class PetControllerDiffblueTest {
 
     // Assert
     assertEquals(1, webDataBinder.getDisallowedFields().length);
+  }
+  @Test
+  public void initPetBinderTest() {
+    // Arrange, Act and Assert
+    thrown.expect(IllegalStateException.class);
+    this.petController.initPetBinder(new WebDataBinder("!"));
   }
   @Test
   public void initUpdateFormTest() throws Exception {
