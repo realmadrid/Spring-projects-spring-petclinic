@@ -3,23 +3,10 @@ package org.springframework.samples.petclinic.vet;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import java.util.HashSet;
 import java.util.Set;
 import org.junit.Test;
 
 public class VetDiffblueTest {
-  @Test
-  public void addSpecialtyTest() {
-    // Arrange
-    Vet vet = new Vet();
-
-    // Act
-    vet.addSpecialty(new Specialty());
-
-    // Assert
-    assertEquals(1, vet.getNrOfSpecialties());
-  }
-
   @Test
   public void constructorTest() {
     // Arrange and Act
@@ -38,46 +25,20 @@ public class VetDiffblueTest {
 
   @Test
   public void getNrOfSpecialtiesTest() {
-    // Arrange
-    Vet vet = new Vet();
-
-    // Act and Assert
-    assertEquals(0, vet.getNrOfSpecialties());
-    assertEquals(0, vet.getNrOfSpecialties());
+    // Arrange, Act and Assert
+    assertEquals(0, (new Vet()).getNrOfSpecialties());
   }
 
   @Test
   public void getSpecialtiesInternalTest() {
-    // Arrange
-    Vet vet = new Vet();
-
-    // Act and Assert
-    assertEquals(0, vet.getSpecialtiesInternal().size());
-    assertEquals(0, vet.getNrOfSpecialties());
+    // Arrange, Act and Assert
+    assertEquals(0, (new Vet()).getSpecialtiesInternal().size());
   }
 
   @Test
   public void getSpecialtiesTest() {
-    // Arrange
-    Vet vet = new Vet();
-
-    // Act and Assert
-    assertEquals(0, vet.getSpecialties().size());
-    assertEquals(0, vet.getNrOfSpecialties());
-  }
-
-  @Test
-  public void setSpecialtiesInternalTest() {
-    // Arrange
-    Vet vet = new Vet();
-    HashSet<Specialty> specialtySet = new HashSet<Specialty>();
-    specialtySet.add(new Specialty());
-
-    // Act
-    vet.setSpecialtiesInternal(specialtySet);
-
-    // Assert
-    assertEquals(1, vet.getNrOfSpecialties());
+    // Arrange, Act and Assert
+    assertEquals(0, (new Vet()).getSpecialties().size());
   }
 }
 

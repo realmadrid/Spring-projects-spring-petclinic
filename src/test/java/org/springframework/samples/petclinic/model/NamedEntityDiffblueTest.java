@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.model;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -16,18 +15,6 @@ public class NamedEntityDiffblueTest {
     assertNull(actualNamedEntity.getId());
     assertTrue(actualNamedEntity.isNew());
     assertNull(actualNamedEntity.toString());
-  }
-
-  @Test
-  public void setNameTest() {
-    // Arrange
-    NamedEntity namedEntity = new NamedEntity();
-
-    // Act
-    namedEntity.setName("name");
-
-    // Assert
-    assertEquals("name", namedEntity.getName());
   }
 
   @Test
