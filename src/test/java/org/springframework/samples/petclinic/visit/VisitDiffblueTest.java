@@ -31,18 +31,6 @@ public class VisitDiffblueTest {
   }
 
   @Test
-  public void setDescriptionTest() {
-    // Arrange
-    Visit visit = new Visit();
-
-    // Act
-    visit.setDescription("description");
-
-    // Assert
-    assertEquals("description", visit.getDescription());
-  }
-
-  @Test
   public void setPetIdTest() {
     // Arrange
     Visit visit = new Visit();
