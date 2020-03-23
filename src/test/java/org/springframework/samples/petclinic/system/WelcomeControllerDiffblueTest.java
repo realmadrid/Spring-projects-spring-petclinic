@@ -18,7 +18,7 @@ public class WelcomeControllerDiffblueTest {
   @Autowired
   private MockMvc mockMvc;
   @Test
-  public void welcomeTest() throws Exception {
+  public void testWelcome() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/");
 
