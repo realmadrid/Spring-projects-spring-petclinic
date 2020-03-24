@@ -27,7 +27,7 @@ public class NamedEntityDiffblueTest {
     namedEntity.setName("name");
 
     // Assert
-    assertEquals("name", namedEntity.toString());
+    assertEquals("name", namedEntity.getName());
   }
 
   @Test
