@@ -1,14 +1,14 @@
-INFO Diffblue Cover dev-SNAPSHOT-8c04d6f
+INFO Diffblue Cover dev-SNAPSHOT-8772abf
 INFO Detecting classpath...
-21:34:59.342 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-21:35:00.344 [35mINFO[0m ....
+00:51:16.190 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+00:51:17.192 [35mINFO[0m .....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src407196697/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src365805478/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command directory not set - using /codebuild/output/src407196697/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src407196697/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Expanded user code or user provided classpath: /codebuild/output/src407196697/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command directory not set - using /codebuild/output/src365805478/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src365805478/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Expanded user code or user provided classpath: /codebuild/output/src365805478/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6236,10 +6236,11 @@ INFO Found 95 callable methods in 20 classes
 
 INFO Initializing Spring embedded WebApplicationContext
 INFO Initializing Spring TestDispatcherServlet ''
-INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
+INFO  [1/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
+INFO  [1/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO  [2/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.initNewVisitForm
 INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
-INFO  [3/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
+INFO  [3/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO  [4/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.<init>
 INFO  [4/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO  [5/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setBirthDate
@@ -6274,7 +6275,7 @@ INFO [26/95] Created 1 test for method org.springframework.samples.petclinic.mod
 INFO [27/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
 INFO [27/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
-INFO [28/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+INFO [28/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO Initializing Spring TestDispatcherServlet ''
 INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
 INFO [29/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
@@ -6323,27 +6324,31 @@ INFO [59/95]   No essential tests due to E002: Nothing to assert: the constructe
 INFO [60/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showVetList
 INFO [61/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
 INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
-INFO [62/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [62/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
 INFO [63/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
-INFO [64/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
+INFO [64/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
+INFO [64/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [65/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
 INFO [66/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
 INFO [66/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [67/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
-INFO [67/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [67/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [68/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
-INFO [69/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
+INFO [69/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
+INFO [69/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [70/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
 INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
 INFO [72/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
-INFO [73/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
+INFO [73/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.findOwner
+INFO [73/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
 INFO [74/95]   No essential tests due to E004: Unable to find any meaningful assertion.
 INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
 INFO [75/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
+INFO [76/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.supports
+INFO [76/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [77/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
 INFO [77/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
@@ -6353,7 +6358,8 @@ INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [80/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
 INFO [81/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm
-INFO [82/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
+INFO [82/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
+INFO [82/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [83/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm
 INFO [84/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
 INFO [85/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.showOwner
@@ -6367,14 +6373,12 @@ INFO [92/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 18 methods due to:
+INFO No essential tests created for 24 methods due to:
+INFO   12 E009: Unrecoverable runtime error.
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
-INFO    4 E004: Unable to find any meaningful assertion.
-INFO    2 E009: Unrecoverable runtime error.
-INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
-INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 64 tests created for 62 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src407196697/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
-21:36:31.443 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-21:36:49.443 [35mINFO[0m ...
-INFO All 64 generated tests were successfully verified
+INFO    2 E004: Unable to find any meaningful assertion.
+INFO 58 tests created for 56 out of 95 methods in 15 out of 20 classes
+INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src365805478/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
+00:53:08.613 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+00:53:26.613 [35mINFO[0m ..........
+INFO All 58 generated tests were successfully verified
