@@ -11,19 +11,6 @@ import org.springframework.samples.petclinic.visit.Visit;
 
 public class PetDiffblueTest {
   @Test
-  public void addVisitTest() {
-    // Arrange
-    Pet pet = new Pet();
-    Visit visit = new Visit();
-
-    // Act
-    pet.addVisit(visit);
-
-    // Assert
-    assertNull(visit.getPetId());
-  }
-
-  @Test
   public void constructorTest() {
     // Arrange and Act
     Pet actualPet = new Pet();
@@ -42,18 +29,6 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void getVisitsInternalTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisitsInternal().size());
-  }
-
-  @Test
-  public void getVisitsTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisits().size());
-  }
-
-  @Test
   public void setBirthDateTest() {
     // Arrange
     Pet pet = new Pet();
@@ -63,19 +38,6 @@ public class PetDiffblueTest {
 
     // Assert
     assertNull(pet.getBirthDate());
-  }
-
-  @Test
-  public void setOwnerTest() {
-    // Arrange
-    Pet pet = new Pet();
-    Owner owner = new Owner();
-
-    // Act
-    pet.setOwner(owner);
-
-    // Assert
-    assertSame(owner, pet.getOwner());
   }
 
   @Test
@@ -92,6 +54,25 @@ public class PetDiffblueTest {
   }
 
   @Test
+  public void setOwnerTest() {
+    // Arrange
+    Pet pet = new Pet();
+    Owner owner = new Owner();
+
+    // Act
+    pet.setOwner(owner);
+
+    // Assert
+    assertSame(owner, pet.getOwner());
+  }
+
+  @Test
+  public void getVisitsInternalTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Pet()).getVisitsInternal().size());
+  }
+
+  @Test
   public void setVisitsInternalTest() {
     // Arrange
     Pet pet = new Pet();
@@ -103,6 +84,25 @@ public class PetDiffblueTest {
 
     // Assert
     assertSame(visitSet, pet.getVisitsInternal());
+  }
+
+  @Test
+  public void getVisitsTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Pet()).getVisits().size());
+  }
+
+  @Test
+  public void addVisitTest() {
+    // Arrange
+    Pet pet = new Pet();
+    Visit visit = new Visit();
+
+    // Act
+    pet.addVisit(visit);
+
+    // Assert
+    assertNull(visit.getPetId());
   }
 }
 
