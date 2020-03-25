@@ -1,0 +1,26 @@
+     org.springframework.samples.petclinic.PetClinicApplication      0/0      
+         org.springframework.samples.petclinic.model.BaseEntity      4/4  100%
+        org.springframework.samples.petclinic.model.NamedEntity      3/4   75%
+             org.springframework.samples.petclinic.model.Person      6/6  100%
+              org.springframework.samples.petclinic.owner.Owner    25/36 69.4%
+    org.springframework.samples.petclinic.owner.OwnerController    29/36 80.6%
+    org.springframework.samples.petclinic.owner.OwnerRepository      0/0      
+                org.springframework.samples.petclinic.owner.Pet    21/22 95.5%
+      org.springframework.samples.petclinic.owner.PetController    31/32 96.9%
+      org.springframework.samples.petclinic.owner.PetRepository      0/0      
+            org.springframework.samples.petclinic.owner.PetType      0/0      
+   org.springframework.samples.petclinic.owner.PetTypeFormatter      4/6 66.7%
+       org.springframework.samples.petclinic.owner.PetValidator      0/0      
+    org.springframework.samples.petclinic.owner.VisitController    14/16 87.5%
+org.springframework.samples.petclinic.system.CacheConfiguration      0/0      
+   org.springframework.samples.petclinic.system.CrashController      0/0      
+ org.springframework.samples.petclinic.system.WelcomeController      1/1  100%
+            org.springframework.samples.petclinic.vet.Specialty      0/0      
+                  org.springframework.samples.petclinic.vet.Vet    11/11  100%
+        org.springframework.samples.petclinic.vet.VetController    10/10  100%
+        org.springframework.samples.petclinic.vet.VetRepository      0/0      
+                 org.springframework.samples.petclinic.vet.Vets      3/3  100%
+              org.springframework.samples.petclinic.visit.Visit    12/12  100%
+    org.springframework.samples.petclinic.visit.VisitRepository      0/0      
+
+                                                          Total  174/199 87.4%
