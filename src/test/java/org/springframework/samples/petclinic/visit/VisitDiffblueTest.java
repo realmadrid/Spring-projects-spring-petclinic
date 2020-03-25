@@ -19,6 +19,18 @@ public class VisitDiffblueTest {
   }
 
   @Test
+  public void getDescriptionTest() {
+    // Arrange, Act and Assert
+    assertNull((new Visit()).getDescription());
+  }
+
+  @Test
+  public void getPetIdTest() {
+    // Arrange, Act and Assert
+    assertNull((new Visit()).getPetId());
+  }
+
+  @Test
   public void setDateTest() {
     // Arrange
     Visit visit = new Visit();

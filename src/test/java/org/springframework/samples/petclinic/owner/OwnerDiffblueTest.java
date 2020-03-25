@@ -35,6 +35,12 @@ public class OwnerDiffblueTest {
   }
 
   @Test
+  public void getCityTest() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getCity());
+  }
+
+  @Test
   public void getPetTest() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id"));
@@ -56,6 +62,12 @@ public class OwnerDiffblueTest {
   public void getPetsTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Owner()).getPets().size());
+  }
+
+  @Test
+  public void getTelephoneTest() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getTelephone());
   }
 
   @Test

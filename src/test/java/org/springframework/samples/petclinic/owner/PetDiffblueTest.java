@@ -42,6 +42,18 @@ public class PetDiffblueTest {
   }
 
   @Test
+  public void getOwnerTest() {
+    // Arrange, Act and Assert
+    assertNull((new Pet()).getOwner());
+  }
+
+  @Test
+  public void getTypeTest() {
+    // Arrange, Act and Assert
+    assertNull((new Pet()).getType());
+  }
+
+  @Test
   public void getVisitsInternalTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Pet()).getVisitsInternal().size());
