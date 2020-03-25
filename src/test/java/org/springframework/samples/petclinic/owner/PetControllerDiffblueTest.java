@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -40,12 +41,19 @@ public class PetControllerDiffblueTest {
 
     @Test
     public void initCreationForm() throws Exception {
+        Owner owner = new Owner();
+        owner.setAddress("280 Broadway");
+        owner.setCity("New York");
+        owner.setTelephone("12345");
+        owner.setFirstName("Anna");
+        owner.setLastName("Smith");
+        owner.setId(1);
         when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(new Owner());
+            .thenReturn(owner);
         when(pets.findPetTypes())
             .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/new", Integer.toString(1)))
+            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/new", Integer.toString(0)))
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
             .andExpect(view().name("pets/createOrUpdatePetForm"));
@@ -53,88 +61,93 @@ public class PetControllerDiffblueTest {
 
     @Test
     public void initUpdateForm() throws Exception {
+        Owner owner = new Owner();
+        owner.setAddress("280 Broadway");
+        owner.setCity("New York");
+        owner.setTelephone("12345");
+        owner.setFirstName("Anna");
+        owner.setLastName("Smith");
+        owner.setId(1);
         when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(new Owner());
+            .thenReturn(owner);
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
         when(pets.findById(Mockito.<Integer>any()))
-            .thenReturn(new Pet());
+            .thenReturn(pet);
         when(pets.findPetTypes())
             .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(0), Integer.toString(1)))
+            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(1), Integer.toString(1)))
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
             .andExpect(view().name("pets/createOrUpdatePetForm"));
     }
 
     @Test
-    public void processCreationForm1() throws Exception {
+    public void processCreationForm() throws Exception {
+        Owner owner = new Owner();
+        owner.setAddress("280 Broadway");
+        owner.setCity("New York");
+        owner.setTelephone("12345");
+        owner.setFirstName("Anna");
+        owner.setLastName("Smith");
+        owner.setId(1);
         when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(new Owner());
+            .thenReturn(owner);
         when(pets.findPetTypes())
             .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/new", Integer.toString(0))
-                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
-                .param("type.name", "int")
+            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/new", Integer.toString(1))
+                .param("birthDate", LocalDate.of(2_000, 1, 1).toString())
+                .param("type.name", "dog")
                 .param("type.id", Integer.valueOf(1).toString())
-                .param("name", "")
-                .param("id", Integer.valueOf(1).toString()))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
-            .andExpect(view().name("pets/createOrUpdatePetForm"));
-    }
-
-    @Test
-    public void processCreationForm2() throws Exception {
-        when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(new Owner());
-        when(pets.findPetTypes())
-            .thenReturn(new ArrayList<PetType>());
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/new", Integer.toString(0))
-                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
-                .param("type.name", "int")
-                .param("type.id", Integer.valueOf(1).toString())
-                .param("name", "bar")
+                .param("name", "/bin/bash")
                 .param("id", Integer.valueOf(1).toString()))
             .andExpect(status().is(302))
-            .andExpect(redirectedUrl("/owners/0"))
+            .andExpect(redirectedUrl("/owners/1"))
             .andExpect(view().name("redirect:/owners/{ownerId}"));
     }
 
     @Test
     public void processUpdateForm1() throws Exception {
+        Owner owner = new Owner();
+        owner.setAddress("280 Broadway");
+        owner.setCity("New York");
+        owner.setTelephone("12345");
+        owner.setFirstName("Anna");
+        owner.setLastName("Smith");
+        owner.setId(1);
         when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(new Owner());
+            .thenReturn(owner);
         when(pets.findPetTypes())
             .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(0), "Bella")
-                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
-                .param("type.name", "int")
+            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(1), "Bella")
+                .param("birthDate", LocalDate.of(2_000, 1, 1).toString())
+                .param("type.name", "dog")
                 .param("type.id", Integer.valueOf(1).toString())
-                .param("name", "")
+                .param("name", "/bin/bash")
                 .param("id", Integer.valueOf(1).toString()))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
-            .andExpect(view().name("pets/createOrUpdatePetForm"));
+            .andExpect(status().is(302))
+            .andExpect(redirectedUrl("/owners/1"))
+            .andExpect(view().name("redirect:/owners/{ownerId}"));
     }
 
     @Test
     public void processUpdateForm2() throws Exception {
-        when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(new Owner());
-        when(pets.findPetTypes())
-            .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(0), "Bella")
-                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
-                .param("type.name", "int")
+            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(0), "")
+                .param("birthDate", LocalDate.of(2_000, 1, 1).toString())
+                .param("type.name", "dog")
                 .param("type.id", Integer.valueOf(1).toString())
-                .param("name", "bar")
+                .param("name", "/bin/bash")
                 .param("id", Integer.valueOf(1).toString()))
-            .andExpect(status().is(302))
-            .andExpect(redirectedUrl("/owners/0"))
-            .andExpect(view().name("redirect:/owners/{ownerId}"));
+            .andExpect(status().is(404));
     }
 }

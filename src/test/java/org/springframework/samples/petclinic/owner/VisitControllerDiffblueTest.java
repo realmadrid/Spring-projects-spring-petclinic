@@ -6,6 +6,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import java.time.LocalDate;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -37,20 +39,24 @@ public class VisitControllerDiffblueTest {
     private VisitController controller;
 
     @Test
-    public void initNewVisitForm() throws org.springframework.dao.DataAccessException, Exception {
-        when(pets.findById(Mockito.<Integer>any()))
-            .thenReturn(new Pet());
+    public void processNewVisitForm1() throws org.springframework.dao.DataAccessException, Exception {
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/*/pets/{petId}/visits/new", Integer.toString(1)))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("pets/createOrUpdateVisitForm"))
-            .andExpect(view().name("pets/createOrUpdateVisitForm"));
+            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/visits/new", "", Integer.toString(1)))
+            .andExpect(status().is(404));
     }
 
     @Test
-    public void processNewVisitForm() throws org.springframework.dao.DataAccessException, Exception {
+    public void processNewVisitForm2() throws org.springframework.dao.DataAccessException, Exception {
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(0);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
         when(pets.findById(Mockito.<Integer>any()))
-            .thenReturn(new Pet());
+            .thenReturn(pet);
         MockMvcBuilders.standaloneSetup(controller).build().perform(
             MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/visits/new", "root", Integer.toString(1)))
             .andExpect(status().isOk())

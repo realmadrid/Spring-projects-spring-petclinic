@@ -18,21 +18,40 @@ public class VetDiffblueTest {
 
     @Test
     public void addSpecialty() {
-        new Vet().addSpecialty(new Specialty());
+        Vet vet = new Vet();
+        vet.setFirstName("Anna");
+        vet.setLastName("Smith");
+        vet.setId(1);
+        Specialty specialty = new Specialty();
+        specialty.setName("bar");
+        specialty.setId(1);
+        vet.addSpecialty(specialty);
     }
 
     @Test
     public void getNrOfSpecialtiesReturnsZero() {
-        assertThat(new Vet().getNrOfSpecialties(), is(0));
+        Vet vet = new Vet();
+        vet.setFirstName("Anna");
+        vet.setLastName("Smith");
+        vet.setId(1);
+        assertThat(vet.getNrOfSpecialties(), is(0));
     }
 
     @Test
     public void getSpecialtiesReturnsEmpty() {
-        assertThat(new Vet().getSpecialties(), empty());
+        Vet vet = new Vet();
+        vet.setFirstName("Anna");
+        vet.setLastName("Smith");
+        vet.setId(1);
+        assertThat(vet.getSpecialties(), empty());
     }
 
     @Test
     public void setSpecialtiesInternalSpecialtiesIsEmpty() {
-        new Vet().setSpecialtiesInternal(new HashSet<Specialty>());
+        Vet vet = new Vet();
+        vet.setFirstName("Anna");
+        vet.setLastName("Smith");
+        vet.setId(1);
+        vet.setSpecialtiesInternal(new HashSet<Specialty>());
     }
 }

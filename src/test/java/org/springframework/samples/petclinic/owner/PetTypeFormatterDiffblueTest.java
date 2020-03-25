@@ -1,9 +1,11 @@
 package org.springframework.samples.petclinic.owner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
+import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import org.junit.Test;
@@ -30,7 +32,25 @@ public class PetTypeFormatterDiffblueTest {
     private PetTypeFormatter service;
 
     @Test
-    public void printReturnsNull() {
-        assertThat(service.print(new PetType(), new Locale("en")), is(nullValue()));
+    public void parseTextIsBar() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        PetType result = service.parse("bar", new Locale("en"));
+        assertThat(result.getName(), is("bar"));
+        assertThat(result.getId(), is(1));
+        assertThat(result.isNew(), is(false));
+    }
+
+    @Test
+    public void printReturnsDog() {
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        assertThat(service.print(petType, new Locale("en")), is("dog"));
     }
 }

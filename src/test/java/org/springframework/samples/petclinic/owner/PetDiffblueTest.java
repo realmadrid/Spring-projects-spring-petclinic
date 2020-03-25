@@ -22,47 +22,126 @@ public class PetDiffblueTest {
 
     @Test
     public void addVisit() {
-        new Pet().addVisit(new Visit());
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(0);
+        Visit visit = new Visit();
+        visit.setDate(LocalDate.of(2_000, 1, 1));
+        visit.setDescription("some text");
+        visit.setPetId(1);
+        visit.setId(1);
+        pet.addVisit(visit);
+        assertThat(visit.getPetId(), is(0));
     }
 
     @Test
-    public void getters() {
-        assertThat(new Pet().getBirthDate(), is(nullValue()));
-        assertThat(new Pet().getOwner(), is(nullValue()));
-        assertThat(new Pet().getType(), is(nullValue()));
+    public void getBirthDate() {
+        Pet pet = new Pet();
+        LocalDate birthDate = LocalDate.of(2_000, 1, 1);
+        pet.setBirthDate(birthDate);
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
+        assertThat(pet.getBirthDate(), sameInstance(birthDate));
+    }
+
+    @Test
+    public void getOwnerReturnsNull() {
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
+        assertThat(pet.getOwner(), is(nullValue()));
+    }
+
+    @Test
+    public void getType() {
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
+        assertThat(pet.getType(), sameInstance(type));
     }
 
     @Test
     public void getVisitsReturnsEmpty() {
-        assertThat(new Pet().getVisits(), empty());
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(0);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
+        assertThat(pet.getVisits(), empty());
     }
 
     @Test
-    public void setBirthDate() {
+    public void setId() {
         Pet pet = new Pet();
         LocalDate birthDate = LocalDate.of(2_000, 1, 1);
         pet.setBirthDate(birthDate);
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
         assertThat(pet.getBirthDate(), sameInstance(birthDate));
+        assertThat(pet.getOwner(), is(nullValue()));
+        assertThat(pet.getType(), sameInstance(type));
+        assertThat(pet.getName(), is("Bella"));
+        assertThat(pet.getId(), is(1));
+        assertThat(pet.isNew(), is(false));
     }
 
     @Test
     public void setOwner() {
         Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
         Owner owner = new Owner();
+        owner.setAddress("280 Broadway");
+        owner.setCity("New York");
+        owner.setTelephone("12345");
+        owner.setFirstName("Anna");
+        owner.setLastName("Smith");
+        owner.setId(1);
         pet.setOwner(owner);
         assertThat(pet.getOwner(), sameInstance(owner));
     }
 
     @Test
-    public void setType() {
-        Pet pet = new Pet();
-        PetType type = new PetType();
-        pet.setType(type);
-        assertThat(pet.getType(), sameInstance(type));
-    }
-
-    @Test
     public void setVisitsInternalVisitsIsEmpty() {
-        new Pet().setVisitsInternal(new HashSet<Visit>());
+        Pet pet = new Pet();
+        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        pet.setType(type);
+        pet.setName("Bella");
+        pet.setId(1);
+        pet.setVisitsInternal(new HashSet<Visit>());
     }
 }

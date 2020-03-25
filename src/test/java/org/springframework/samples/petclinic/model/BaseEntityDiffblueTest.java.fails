@@ -1,0 +1,72 @@
+package org.springframework.samples.petclinic.model;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+
+import java.time.LocalDate;
+
+import org.junit.Test;
+import org.springframework.samples.petclinic.owner.Pet;
+import org.springframework.samples.petclinic.owner.PetType;
+
+/**
+ * Unit tests for org.springframework.samples.petclinic.model.BaseEntity
+ *
+ * @author Diffblue Cover
+ */
+
+public class BaseEntityDiffblueTest {
+
+    @Test
+    public void getIdReturnsOne() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        baseEntity.setType(type);
+        baseEntity.setName("Bella");
+        baseEntity.setId(1);
+        assertThat(baseEntity.getId(), is(1));
+    }
+
+    @Test
+    public void isNewReturnsFalse() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(0);
+        baseEntity.setType(type);
+        baseEntity.setName("Bella");
+        baseEntity.setId(1);
+        assertThat(baseEntity.isNew(), is(false));
+    }
+
+    @Test
+    public void isNewReturnsTrue() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        baseEntity.setType(type);
+        baseEntity.setName("Bella");
+        baseEntity.setId(null);
+        assertThat(baseEntity.isNew(), is(true));
+    }
+
+    @Test
+    public void setId() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setBirthDate(LocalDate.of(2_000, 1, 1));
+        PetType type = new PetType();
+        type.setName("dog");
+        type.setId(1);
+        baseEntity.setType(type);
+        baseEntity.setName("Bella");
+        baseEntity.setId(1);
+        assertThat(baseEntity.getId(), is(1));
+        assertThat(baseEntity.isNew(), is(false));
+    }
+}

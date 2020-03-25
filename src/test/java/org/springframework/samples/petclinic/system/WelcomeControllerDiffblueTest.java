@@ -28,7 +28,7 @@ public class WelcomeControllerDiffblueTest {
     @Test
     public void welcome() throws Exception {
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/", new Object[] { }))
+            MockMvcRequestBuilders.get("/"))
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("welcome"))
             .andExpect(view().name("welcome"));
