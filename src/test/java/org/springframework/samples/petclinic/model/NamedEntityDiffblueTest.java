@@ -7,18 +7,6 @@ import org.junit.Test;
 
 public class NamedEntityDiffblueTest {
   @Test
-  public void constructorTest() {
-    // Arrange and Act
-    NamedEntity actualNamedEntity = new NamedEntity();
-
-    // Assert
-    assertNull(actualNamedEntity.getName());
-    assertNull(actualNamedEntity.getId());
-    assertTrue(actualNamedEntity.isNew());
-    assertNull(actualNamedEntity.toString());
-  }
-
-  @Test
   public void setNameTest() {
     // Arrange
     NamedEntity namedEntity = new NamedEntity();
@@ -28,6 +16,18 @@ public class NamedEntityDiffblueTest {
 
     // Assert
     assertEquals("name", namedEntity.getName());
+  }
+
+  @Test
+  public void constructorTest() {
+    // Arrange and Act
+    NamedEntity actualNamedEntity = new NamedEntity();
+
+    // Assert
+    assertNull(actualNamedEntity.getName());
+    assertNull(actualNamedEntity.getId());
+    assertTrue(actualNamedEntity.isNew());
+    assertNull(actualNamedEntity.toString());
   }
 
   @Test
