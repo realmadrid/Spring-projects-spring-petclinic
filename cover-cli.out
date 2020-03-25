@@ -1,14 +1,14 @@
-INFO Diffblue Cover dev-SNAPSHOT-a0ea021
+INFO Diffblue Cover dev-SNAPSHOT-f1b687e
 INFO Detecting classpath...
-11:19:20.602 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-11:19:21.603 [35mINFO[0m .....
+12:18:29.436 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+12:18:30.438 [35mINFO[0m ....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src711325094/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src188012164/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command directory not set - using /codebuild/output/src711325094/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src711325094/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Expanded user code or user provided classpath: /codebuild/output/src711325094/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command directory not set - using .
+INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src188012164/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/src188012164/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6374,7 +6374,7 @@ INFO    2 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 64 tests created for 62 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src711325094/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
-11:20:53.039 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-11:21:11.039 [35mINFO[0m ..
+INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src188012164/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
+12:20:02.812 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+12:20:20.812 [35mINFO[0m ...
 INFO All 64 generated tests were successfully verified
