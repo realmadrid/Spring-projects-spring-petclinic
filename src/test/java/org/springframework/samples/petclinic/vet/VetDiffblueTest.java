@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class VetDiffblueTest {
   @Test
-  public void addSpecialtyTest() {
+  public void testAddSpecialty() {
     // Arrange
     Vet vet = new Vet();
 
@@ -21,7 +21,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void constructorTest() {
+  public void testConstructor() {
     // Arrange and Act
     Vet actualVet = new Vet();
 
@@ -37,7 +37,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void getNrOfSpecialtiesTest() {
+  public void testGetNrOfSpecialties() {
     // Arrange
     Vet vet = new Vet();
 
@@ -47,17 +47,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void getSpecialtiesInternalTest() {
-    // Arrange
-    Vet vet = new Vet();
-
-    // Act and Assert
-    assertEquals(0, vet.getSpecialtiesInternal().size());
-    assertEquals(0, vet.getNrOfSpecialties());
-  }
-
-  @Test
-  public void getSpecialtiesTest() {
+  public void testGetSpecialties() {
     // Arrange
     Vet vet = new Vet();
 
@@ -67,7 +57,17 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void setSpecialtiesInternalTest() {
+  public void testGetSpecialtiesInternal() {
+    // Arrange
+    Vet vet = new Vet();
+
+    // Act and Assert
+    assertEquals(0, vet.getSpecialtiesInternal().size());
+    assertEquals(0, vet.getNrOfSpecialties());
+  }
+
+  @Test
+  public void testSetSpecialtiesInternal() {
     // Arrange
     Vet vet = new Vet();
     HashSet<Specialty> specialtySet = new HashSet<Specialty>();
