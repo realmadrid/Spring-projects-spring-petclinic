@@ -3,7 +3,9 @@ package org.springframework.samples.petclinic.owner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
+import java.util.Set;
 import org.junit.Test;
 
 public class OwnerDiffblueTest {
@@ -13,10 +15,10 @@ public class OwnerDiffblueTest {
     Owner owner = new Owner();
 
     // Act
-    owner.setAddress("42 Station Road");
+    owner.setAddress("id");
 
     // Assert
-    assertEquals("42 Station Road", owner.getAddress());
+    assertEquals("id", owner.getAddress());
   }
 
   @Test
@@ -25,10 +27,10 @@ public class OwnerDiffblueTest {
     Owner owner = new Owner();
 
     // Act
-    owner.setCity("London");
+    owner.setCity("id");
 
     // Assert
-    assertEquals("London", owner.getCity());
+    assertEquals("id", owner.getCity());
   }
 
   @Test
@@ -37,10 +39,10 @@ public class OwnerDiffblueTest {
     Owner owner = new Owner();
 
     // Act
-    owner.setTelephone("01234556677");
+    owner.setTelephone("id");
 
     // Assert
-    assertEquals("01234556677", owner.getTelephone());
+    assertEquals("id", owner.getTelephone());
   }
 
   @Test
@@ -61,12 +63,6 @@ public class OwnerDiffblueTest {
 
     // Assert
     assertSame(petSet, owner.getPetsInternal());
-  }
-
-  @Test
-  public void getPetsTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPets().size());
   }
 
   @Test
@@ -97,15 +93,21 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void getPetTest() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("id"));
-  }
+  public void constructorTest() {
+    // Arrange and Act
+    Owner actualOwner = new Owner();
 
-  @Test
-  public void getPetTest2() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("id", true));
+    // Assert
+    assertNull(actualOwner.getLastName());
+    assertNull(actualOwner.getAddress());
+    Set<Pet> petsInternal = actualOwner.getPetsInternal();
+    assertTrue(petsInternal instanceof java.util.HashSet);
+    assertNull(actualOwner.getCity());
+    assertEquals(0, petsInternal.size());
+    assertNull(actualOwner.getTelephone());
+    assertNull(actualOwner.getFirstName());
+    assertNull(actualOwner.getId());
+    assertTrue(actualOwner.isNew());
   }
 }
 
