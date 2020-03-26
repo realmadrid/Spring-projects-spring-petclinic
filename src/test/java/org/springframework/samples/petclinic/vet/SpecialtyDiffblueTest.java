@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class SpecialtyDiffblueTest {
   @Test
-  public void testConstructor() {
+  public void constructorTest() {
     // Arrange and Act
     Specialty actualSpecialty = new Specialty();
 

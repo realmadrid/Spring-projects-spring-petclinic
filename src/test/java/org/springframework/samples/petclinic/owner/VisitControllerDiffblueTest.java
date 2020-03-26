@@ -22,7 +22,7 @@ public class VisitControllerDiffblueTest {
   @Autowired
   private VisitController visitController;
   @Test
-  public void testInitNewVisitForm() throws Exception {
+  public void initNewVisitFormTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/*/pets/{petId}/visits/new", 1);
 
@@ -35,7 +35,7 @@ public class VisitControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("pet", "visit"));
   }
   @Test
-  public void testSetAllowedFields() {
+  public void setAllowedFieldsTest() {
     // Arrange
     WebDataBinder webDataBinder = new WebDataBinder("!");
 
