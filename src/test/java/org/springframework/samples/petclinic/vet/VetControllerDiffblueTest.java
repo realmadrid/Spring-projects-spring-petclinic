@@ -20,7 +20,7 @@ public class VetControllerDiffblueTest {
   @Autowired
   private MockMvc mockMvc;
   @Test
-  public void showResourcesVetListTest() throws Exception {
+  public void testShowResourcesVetList() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets");
 
@@ -50,7 +50,7 @@ public class VetControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.content().string(matcher));
   }
   @Test
-  public void showVetListTest() throws Exception {
+  public void testShowVetList() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets.html");
 
