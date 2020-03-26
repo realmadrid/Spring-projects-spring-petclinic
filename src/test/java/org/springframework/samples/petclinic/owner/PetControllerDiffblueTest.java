@@ -23,6 +23,11 @@ public class PetControllerDiffblueTest {
   @Autowired
   private MockMvc mockMvc;
   @Test
+  public void findOwnerTest() {
+    // Arrange, Act and Assert
+    assertNull(this.petController.findOwner(123));
+  }
+  @Test
   public void initCreationFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
@@ -34,16 +39,6 @@ public class PetControllerDiffblueTest {
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
-  }
-  @Test
-  public void populatePetTypesTest() {
-    // Arrange, Act and Assert
-    assertEquals(6, this.petController.populatePetTypes().size());
-  }
-  @Test
-  public void findOwnerTest() {
-    // Arrange, Act and Assert
-    assertNull(this.petController.findOwner(123));
   }
   @Test
   public void initOwnerBinderTest() {
@@ -69,6 +64,11 @@ public class PetControllerDiffblueTest {
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
+  }
+  @Test
+  public void populatePetTypesTest() {
+    // Arrange, Act and Assert
+    assertEquals(6, this.petController.populatePetTypes().size());
   }
   @Test
   public void processCreationFormTest() throws Exception {
