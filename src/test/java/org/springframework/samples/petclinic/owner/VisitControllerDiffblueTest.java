@@ -3,6 +3,8 @@ package org.springframework.samples.petclinic.owner;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.BeanWrapperImpl;
+import org.springframework.beans.ConfigurablePropertyAccessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +13,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.web.bind.WebDataBinder;
 
 @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
@@ -43,7 +46,10 @@ public class VisitControllerDiffblueTest {
     this.visitController.setAllowedFields(webDataBinder);
 
     // Assert
+    ConfigurablePropertyAccessor propertyAccessor = ((BeanPropertyBindingResult) webDataBinder.getBindingResult())
+        .getPropertyAccessor();
     assertEquals(1, webDataBinder.getDisallowedFields().length);
+    assertEquals(3, ((BeanWrapperImpl) propertyAccessor).getPropertyDescriptors().length);
   }
 }
 
