@@ -8,58 +8,7 @@ import org.junit.Test;
 
 public class OwnerDiffblueTest {
   @Test
-  public void addPetTest() {
-    // Arrange
-    Owner owner = new Owner();
-    Pet pet = new Pet();
-    pet.setId(1);
-
-    // Act
-    owner.addPet(pet);
-
-    // Assert
-    assertSame(owner, pet.getOwner());
-  }
-
-  @Test
-  public void addPetTest2() {
-    // Arrange
-    Owner owner = new Owner();
-    Pet pet = new Pet();
-
-    // Act
-    owner.addPet(pet);
-
-    // Assert
-    assertSame(owner, pet.getOwner());
-  }
-
-  @Test
-  public void getPetTest() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("id"));
-  }
-
-  @Test
-  public void getPetTest2() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("id", true));
-  }
-
-  @Test
-  public void getPetsInternalTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPetsInternal().size());
-  }
-
-  @Test
-  public void getPetsTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPets().size());
-  }
-
-  @Test
-  public void setAddressTest() {
+  public void testSetAddress() {
     // Arrange
     Owner owner = new Owner();
 
@@ -71,7 +20,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void setCityTest() {
+  public void testSetCity() {
     // Arrange
     Owner owner = new Owner();
 
@@ -83,7 +32,25 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void setPetsInternalTest() {
+  public void testSetTelephone() {
+    // Arrange
+    Owner owner = new Owner();
+
+    // Act
+    owner.setTelephone("01234556677");
+
+    // Assert
+    assertEquals("01234556677", owner.getTelephone());
+  }
+
+  @Test
+  public void testGetPetsInternal() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Owner()).getPetsInternal().size());
+  }
+
+  @Test
+  public void testSetPetsInternal() {
     // Arrange
     Owner owner = new Owner();
     HashSet<Pet> petSet = new HashSet<Pet>();
@@ -97,15 +64,48 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void setTelephoneTest() {
+  public void testGetPets() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Owner()).getPets().size());
+  }
+
+  @Test
+  public void testAddPet() {
     // Arrange
     Owner owner = new Owner();
+    Pet pet = new Pet();
+    pet.setId(1);
 
     // Act
-    owner.setTelephone("01234556677");
+    owner.addPet(pet);
 
     // Assert
-    assertEquals("01234556677", owner.getTelephone());
+    assertSame(owner, pet.getOwner());
+  }
+
+  @Test
+  public void testAddPet2() {
+    // Arrange
+    Owner owner = new Owner();
+    Pet pet = new Pet();
+
+    // Act
+    owner.addPet(pet);
+
+    // Assert
+    assertSame(owner, pet.getOwner());
+  }
+
+  @Test
+  public void testGetPet() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getPet("id"));
+  }
+
+  @Test
+  public void testGetPet2() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getPet("id", true));
   }
 }
 

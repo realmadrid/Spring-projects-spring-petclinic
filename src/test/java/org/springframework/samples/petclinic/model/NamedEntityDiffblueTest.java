@@ -7,19 +7,7 @@ import org.junit.Test;
 
 public class NamedEntityDiffblueTest {
   @Test
-  public void constructorTest() {
-    // Arrange and Act
-    NamedEntity actualNamedEntity = new NamedEntity();
-
-    // Assert
-    assertNull(actualNamedEntity.getName());
-    assertNull(actualNamedEntity.getId());
-    assertTrue(actualNamedEntity.isNew());
-    assertNull(actualNamedEntity.toString());
-  }
-
-  @Test
-  public void setNameTest() {
+  public void testSetName() {
     // Arrange
     NamedEntity namedEntity = new NamedEntity();
 
@@ -31,7 +19,19 @@ public class NamedEntityDiffblueTest {
   }
 
   @Test
-  public void toStringTest() {
+  public void testConstructor() {
+    // Arrange and Act
+    NamedEntity actualNamedEntity = new NamedEntity();
+
+    // Assert
+    assertNull(actualNamedEntity.getName());
+    assertNull(actualNamedEntity.getId());
+    assertTrue(actualNamedEntity.isNew());
+    assertNull(actualNamedEntity.toString());
+  }
+
+  @Test
+  public void testToString() {
     // Arrange, Act and Assert
     assertNull((new NamedEntity()).toString());
   }
