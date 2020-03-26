@@ -41,6 +41,12 @@ public class PetDiffblueTest {
   }
 
   @Test
+  public void getTypeTest() {
+    // Arrange, Act and Assert
+    assertNull((new Pet()).getType());
+  }
+
+  @Test
   public void setTypeTest() {
     // Arrange
     Pet pet = new Pet();
@@ -51,6 +57,12 @@ public class PetDiffblueTest {
 
     // Assert
     assertSame(petType, pet.getType());
+  }
+
+  @Test
+  public void getOwnerTest() {
+    // Arrange, Act and Assert
+    assertNull((new Pet()).getOwner());
   }
 
   @Test

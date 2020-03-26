@@ -31,6 +31,12 @@ public class PersonDiffblueTest {
   }
 
   @Test
+  public void getLastNameTest() {
+    // Arrange, Act and Assert
+    assertNull((new Person()).getLastName());
+  }
+
+  @Test
   public void setLastNameTest() {
     // Arrange
     Person person = new Person();

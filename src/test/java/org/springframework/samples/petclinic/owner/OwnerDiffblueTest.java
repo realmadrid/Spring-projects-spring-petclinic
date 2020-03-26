@@ -20,6 +20,12 @@ public class OwnerDiffblueTest {
   }
 
   @Test
+  public void getCityTest() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getCity());
+  }
+
+  @Test
   public void setCityTest() {
     // Arrange
     Owner owner = new Owner();
@@ -29,6 +35,12 @@ public class OwnerDiffblueTest {
 
     // Assert
     assertEquals("London", owner.getCity());
+  }
+
+  @Test
+  public void getTelephoneTest() {
+    // Arrange, Act and Assert
+    assertNull((new Owner()).getTelephone());
   }
 
   @Test

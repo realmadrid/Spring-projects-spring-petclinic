@@ -31,6 +31,12 @@ public class VisitDiffblueTest {
   }
 
   @Test
+  public void getDescriptionTest() {
+    // Arrange, Act and Assert
+    assertNull((new Visit()).getDescription());
+  }
+
+  @Test
   public void setDescriptionTest() {
     // Arrange
     Visit visit = new Visit();
@@ -40,6 +46,12 @@ public class VisitDiffblueTest {
 
     // Assert
     assertEquals("description", visit.getDescription());
+  }
+
+  @Test
+  public void getPetIdTest() {
+    // Arrange, Act and Assert
+    assertNull((new Visit()).getPetId());
   }
 
   @Test
