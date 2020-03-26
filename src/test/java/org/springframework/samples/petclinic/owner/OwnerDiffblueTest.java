@@ -4,11 +4,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import java.util.HashSet;
+import java.util.Set;
 import org.junit.Test;
 
 public class OwnerDiffblueTest {
   @Test
-  public void setAddressTest() {
+  public void testSetAddress() {
     // Arrange
     Owner owner = new Owner();
 
@@ -20,7 +21,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void setCityTest() {
+  public void testSetCity() {
     // Arrange
     Owner owner = new Owner();
 
@@ -32,7 +33,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void setTelephoneTest() {
+  public void testSetTelephone() {
     // Arrange
     Owner owner = new Owner();
 
@@ -44,13 +45,16 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void getPetsInternalTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPetsInternal().size());
+  public void testGetPetsInternal() {
+    // Arrange and Act
+    Set<Pet> actualPetsInternal = (new Owner()).getPetsInternal();
+
+    // Assert
+    assertEquals(0, actualPetsInternal.size());
   }
 
   @Test
-  public void setPetsInternalTest() {
+  public void testSetPetsInternal() {
     // Arrange
     Owner owner = new Owner();
     HashSet<Pet> petSet = new HashSet<Pet>();
@@ -64,13 +68,13 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void getPetsTest() {
+  public void testGetPets() {
     // Arrange, Act and Assert
     assertEquals(0, (new Owner()).getPets().size());
   }
 
   @Test
-  public void addPetTest() {
+  public void testAddPet() {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
@@ -84,7 +88,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void addPetTest2() {
+  public void testAddPet2() {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
@@ -97,13 +101,13 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void getPetTest() {
+  public void testGetPet() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id"));
   }
 
   @Test
-  public void getPetTest2() {
+  public void testGetPet2() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id", true));
   }

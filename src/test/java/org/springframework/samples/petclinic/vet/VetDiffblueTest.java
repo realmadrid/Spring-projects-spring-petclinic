@@ -9,13 +9,13 @@ import org.junit.Test;
 
 public class VetDiffblueTest {
   @Test
-  public void constructorTest() {
+  public void testConstructor() {
     // Arrange and Act
     Vet actualVet = new Vet();
 
     // Assert
     Set<Specialty> specialtiesInternal = actualVet.getSpecialtiesInternal();
-    assertTrue(specialtiesInternal instanceof java.util.HashSet);
+    assertTrue(specialtiesInternal instanceof HashSet);
     assertEquals(0, actualVet.getNrOfSpecialties());
     assertEquals(0, specialtiesInternal.size());
     assertNull(actualVet.getFirstName());
@@ -25,17 +25,20 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void getSpecialtiesInternalTest() {
+  public void testGetSpecialtiesInternal() {
     // Arrange
     Vet vet = new Vet();
 
-    // Act and Assert
-    assertEquals(0, vet.getSpecialtiesInternal().size());
+    // Act
+    Set<Specialty> actualSpecialtiesInternal = vet.getSpecialtiesInternal();
+
+    // Assert
+    assertEquals(0, actualSpecialtiesInternal.size());
     assertEquals(0, vet.getNrOfSpecialties());
   }
 
   @Test
-  public void setSpecialtiesInternalTest() {
+  public void testSetSpecialtiesInternal() {
     // Arrange
     Vet vet = new Vet();
     HashSet<Specialty> specialtySet = new HashSet<Specialty>();
@@ -49,7 +52,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void getSpecialtiesTest() {
+  public void testGetSpecialties() {
     // Arrange
     Vet vet = new Vet();
 
@@ -59,7 +62,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void getNrOfSpecialtiesTest() {
+  public void testGetNrOfSpecialties() {
     // Arrange
     Vet vet = new Vet();
 
@@ -69,7 +72,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void addSpecialtyTest() {
+  public void testAddSpecialty() {
     // Arrange
     Vet vet = new Vet();
 

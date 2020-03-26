@@ -5,20 +5,21 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import org.junit.Test;
 import org.springframework.samples.petclinic.visit.Visit;
 
 public class PetDiffblueTest {
   @Test
-  public void constructorTest() {
+  public void testConstructor() {
     // Arrange and Act
     Pet actualPet = new Pet();
 
     // Assert
     assertNull(actualPet.getName());
     Set<Visit> visitsInternal = actualPet.getVisitsInternal();
-    assertTrue(visitsInternal instanceof java.util.LinkedHashSet);
+    assertTrue(visitsInternal instanceof LinkedHashSet);
     assertNull(actualPet.getBirthDate());
     assertEquals(0, visitsInternal.size());
     assertNull(actualPet.getType());
@@ -29,7 +30,7 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void setBirthDateTest() {
+  public void testSetBirthDate() {
     // Arrange
     Pet pet = new Pet();
 
@@ -41,7 +42,7 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void setTypeTest() {
+  public void testSetType() {
     // Arrange
     Pet pet = new Pet();
     PetType petType = new PetType();
@@ -54,7 +55,7 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void setOwnerTest() {
+  public void testSetOwner() {
     // Arrange
     Pet pet = new Pet();
     Owner owner = new Owner();
@@ -67,13 +68,16 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void getVisitsInternalTest() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisitsInternal().size());
+  public void testGetVisitsInternal() {
+    // Arrange and Act
+    Set<Visit> actualVisitsInternal = (new Pet()).getVisitsInternal();
+
+    // Assert
+    assertEquals(0, actualVisitsInternal.size());
   }
 
   @Test
-  public void setVisitsInternalTest() {
+  public void testSetVisitsInternal() {
     // Arrange
     Pet pet = new Pet();
     HashSet<Visit> visitSet = new HashSet<Visit>();
@@ -87,13 +91,13 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void getVisitsTest() {
+  public void testGetVisits() {
     // Arrange, Act and Assert
     assertEquals(0, (new Pet()).getVisits().size());
   }
 
   @Test
-  public void addVisitTest() {
+  public void testAddVisit() {
     // Arrange
     Pet pet = new Pet();
     Visit visit = new Visit();
