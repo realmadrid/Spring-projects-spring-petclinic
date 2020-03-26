@@ -23,7 +23,7 @@ public class PetControllerDiffblueTest {
   @Autowired
   private MockMvc mockMvc;
   @Test
-  public void testInitCreationForm() throws Exception {
+  public void initCreationFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
         .perform(MockMvcRequestBuilders.get("/owners/{ownerId}/pets/new", 1).param("address", "a value for address")
@@ -36,17 +36,17 @@ public class PetControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
   }
   @Test
-  public void testPopulatePetTypes() {
+  public void populatePetTypesTest() {
     // Arrange, Act and Assert
     assertEquals(6, this.petController.populatePetTypes().size());
   }
   @Test
-  public void testFindOwner() {
+  public void findOwnerTest() {
     // Arrange, Act and Assert
     assertNull(this.petController.findOwner(123));
   }
   @Test
-  public void testInitOwnerBinder() {
+  public void initOwnerBinderTest() {
     // Arrange
     WebDataBinder webDataBinder = new WebDataBinder("!");
 
@@ -57,7 +57,7 @@ public class PetControllerDiffblueTest {
     assertEquals(1, webDataBinder.getDisallowedFields().length);
   }
   @Test
-  public void testInitUpdateForm() throws Exception {
+  public void initUpdateFormTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/{ownerId}/pets/{petId}/edit", 1,
         1);
@@ -71,7 +71,7 @@ public class PetControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
   }
   @Test
-  public void testProcessCreationForm() throws Exception {
+  public void processCreationFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc.perform(MockMvcRequestBuilders
         .post("/owners/{ownerId}/pets/new", 1).param("address", "a value for address").param("city", "a value for city")
@@ -84,7 +84,7 @@ public class PetControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
   }
   @Test
-  public void testProcessUpdateForm() throws Exception {
+  public void processUpdateFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
         .perform(MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", 1, 1)

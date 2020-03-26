@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class OwnerDiffblueTest {
   @Test
-  public void testSetAddress() {
+  public void setAddressTest() {
     // Arrange
     Owner owner = new Owner();
 
@@ -20,7 +20,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testSetCity() {
+  public void setCityTest() {
     // Arrange
     Owner owner = new Owner();
 
@@ -32,7 +32,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testSetTelephone() {
+  public void setTelephoneTest() {
     // Arrange
     Owner owner = new Owner();
 
@@ -44,13 +44,13 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testGetPetsInternal() {
+  public void getPetsInternalTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Owner()).getPetsInternal().size());
   }
 
   @Test
-  public void testSetPetsInternal() {
+  public void setPetsInternalTest() {
     // Arrange
     Owner owner = new Owner();
     HashSet<Pet> petSet = new HashSet<Pet>();
@@ -64,13 +64,13 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testGetPets() {
+  public void getPetsTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Owner()).getPets().size());
   }
 
   @Test
-  public void testAddPet() {
+  public void addPetTest() {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
@@ -84,7 +84,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testAddPet2() {
+  public void addPetTest2() {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
@@ -97,13 +97,13 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testGetPet() {
+  public void getPetTest() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id"));
   }
 
   @Test
-  public void testGetPet2() {
+  public void getPetTest2() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id", true));
   }
