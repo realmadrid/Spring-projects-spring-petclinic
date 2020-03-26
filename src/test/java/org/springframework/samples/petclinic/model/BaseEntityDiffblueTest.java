@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class BaseEntityDiffblueTest {
   @Test
-  public void testSetId() {
+  public void setIdTest() {
     // Arrange
     BaseEntity baseEntity = new BaseEntity();
 
@@ -19,7 +19,7 @@ public class BaseEntityDiffblueTest {
   }
 
   @Test
-  public void testConstructor() {
+  public void constructorTest() {
     // Arrange and Act
     BaseEntity actualBaseEntity = new BaseEntity();
 
@@ -29,7 +29,7 @@ public class BaseEntityDiffblueTest {
   }
 
   @Test
-  public void testIsNew() {
+  public void isNewTest() {
     // Arrange
     BaseEntity baseEntity = new BaseEntity();
     baseEntity.setId(1);
@@ -39,7 +39,7 @@ public class BaseEntityDiffblueTest {
   }
 
   @Test
-  public void testIsNew2() {
+  public void isNewTest2() {
     // Arrange, Act and Assert
     assertTrue((new BaseEntity()).isNew());
   }

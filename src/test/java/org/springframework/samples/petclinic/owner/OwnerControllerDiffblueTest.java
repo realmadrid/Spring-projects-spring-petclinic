@@ -22,7 +22,7 @@ public class OwnerControllerDiffblueTest {
   @Autowired
   private MockMvc mockMvc;
   @Test
-  public void testInitCreationForm() throws Exception {
+  public void initCreationFormTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/new");
 
@@ -35,7 +35,7 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void testInitFindForm() throws Exception {
+  public void initFindFormTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/find");
 
@@ -48,7 +48,7 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void testInitUpdateOwnerForm() throws Exception {
+  public void initUpdateOwnerFormTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/{ownerId}/edit", 1);
 
@@ -61,7 +61,7 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void testProcessCreationForm() throws Exception {
+  public void processCreationFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
         .perform(MockMvcRequestBuilders.post("/owners/new").param("address", "a value for address")
@@ -74,7 +74,7 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void testProcessFindForm() throws Exception {
+  public void processFindFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
         .perform(MockMvcRequestBuilders.get("/owners").param("address", "a value for address")
@@ -87,7 +87,7 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void testSetAllowedFields() {
+  public void setAllowedFieldsTest() {
     // Arrange
     WebDataBinder webDataBinder = new WebDataBinder("!");
 
@@ -98,7 +98,7 @@ public class OwnerControllerDiffblueTest {
     assertEquals(1, webDataBinder.getDisallowedFields().length);
   }
   @Test
-  public void testProcessUpdateOwnerForm() throws Exception {
+  public void processUpdateOwnerFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
         .perform(MockMvcRequestBuilders.post("/owners/{ownerId}/edit", 1).param("address", "a value for address")
@@ -111,7 +111,7 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void testShowOwner() throws Exception {
+  public void showOwnerTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/{ownerId}", 1);
 

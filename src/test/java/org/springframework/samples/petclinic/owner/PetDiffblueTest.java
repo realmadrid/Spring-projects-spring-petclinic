@@ -11,7 +11,7 @@ import org.springframework.samples.petclinic.visit.Visit;
 
 public class PetDiffblueTest {
   @Test
-  public void testConstructor() {
+  public void constructorTest() {
     // Arrange and Act
     Pet actualPet = new Pet();
 
@@ -29,7 +29,7 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void testSetBirthDate() {
+  public void setBirthDateTest() {
     // Arrange
     Pet pet = new Pet();
 
@@ -41,7 +41,7 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void testSetType() {
+  public void setTypeTest() {
     // Arrange
     Pet pet = new Pet();
     PetType petType = new PetType();
@@ -54,7 +54,7 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void testSetOwner() {
+  public void setOwnerTest() {
     // Arrange
     Pet pet = new Pet();
     Owner owner = new Owner();
@@ -67,13 +67,13 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void testGetVisitsInternal() {
+  public void getVisitsInternalTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Pet()).getVisitsInternal().size());
   }
 
   @Test
-  public void testSetVisitsInternal() {
+  public void setVisitsInternalTest() {
     // Arrange
     Pet pet = new Pet();
     HashSet<Visit> visitSet = new HashSet<Visit>();
@@ -87,13 +87,13 @@ public class PetDiffblueTest {
   }
 
   @Test
-  public void testGetVisits() {
+  public void getVisitsTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Pet()).getVisits().size());
   }
 
   @Test
-  public void testAddVisit() {
+  public void addVisitTest() {
     // Arrange
     Pet pet = new Pet();
     Visit visit = new Visit();
