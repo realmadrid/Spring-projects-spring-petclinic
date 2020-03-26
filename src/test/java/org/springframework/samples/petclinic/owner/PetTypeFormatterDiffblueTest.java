@@ -15,7 +15,7 @@ public class PetTypeFormatterDiffblueTest {
   @Autowired
   private PetTypeFormatter petTypeFormatter;
   @Test
-  public void printTest() {
+  public void testPrint() {
     // Arrange
     PetType petType = new PetType();
 
