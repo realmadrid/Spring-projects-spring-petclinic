@@ -44,9 +44,41 @@ public class OwnerControllerDiffblueTest {
     }
 
     @Test
+    public void processCreationForm() throws Exception {
+        MockMvcBuilders.standaloneSetup(controller).build().perform(
+            MockMvcRequestBuilders.post("/owners/new")
+                .param("address", "280 Broadway")
+                .param("city", "New York")
+                .param("telephone", "bar")
+                .param("firstName", "Anna")
+                .param("lastName", "Smith")
+                .param("id", Integer.valueOf(1).toString()))
+            .andExpect(status().isOk())
+            .andExpect(forwardedUrl("owners/createOrUpdateOwnerForm"))
+            .andExpect(view().name("owners/createOrUpdateOwnerForm"));
+    }
+
+    @Test
     public void initFindForm() throws Exception {
         MockMvcBuilders.standaloneSetup(controller).build().perform(
             MockMvcRequestBuilders.get("/owners/find"))
+            .andExpect(status().isOk())
+            .andExpect(forwardedUrl("owners/findOwners"))
+            .andExpect(view().name("owners/findOwners"));
+    }
+
+    @Test
+    public void processFindForm() throws Exception {
+        when(clinicService.findByLastName(Mockito.<String>any()))
+            .thenReturn(new LinkedList<Owner>());
+        MockMvcBuilders.standaloneSetup(controller).build().perform(
+            MockMvcRequestBuilders.get("/owners")
+                .param("address", "280 Broadway")
+                .param("city", "New York")
+                .param("telephone", "415-477-1477")
+                .param("firstName", "Anna")
+                .param("lastName", "Smith")
+                .param("id", Integer.valueOf(1).toString()))
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("owners/findOwners"))
             .andExpect(view().name("owners/findOwners"));
@@ -68,38 +100,6 @@ public class OwnerControllerDiffblueTest {
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("owners/createOrUpdateOwnerForm"))
             .andExpect(view().name("owners/createOrUpdateOwnerForm"));
-    }
-
-    @Test
-    public void processCreationForm() throws Exception {
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.post("/owners/new")
-                .param("address", "280 Broadway")
-                .param("city", "New York")
-                .param("telephone", "bar")
-                .param("firstName", "Anna")
-                .param("lastName", "Smith")
-                .param("id", Integer.valueOf(1).toString()))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("owners/createOrUpdateOwnerForm"))
-            .andExpect(view().name("owners/createOrUpdateOwnerForm"));
-    }
-
-    @Test
-    public void processFindForm() throws Exception {
-        when(clinicService.findByLastName(Mockito.<String>any()))
-            .thenReturn(new LinkedList<Owner>());
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners")
-                .param("address", "280 Broadway")
-                .param("city", "New York")
-                .param("telephone", "415-477-1477")
-                .param("firstName", "Anna")
-                .param("lastName", "Smith")
-                .param("id", Integer.valueOf(1).toString()))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("owners/findOwners"))
-            .andExpect(view().name("owners/findOwners"));
     }
 
     @Test

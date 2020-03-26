@@ -60,6 +60,31 @@ public class PetControllerDiffblueTest {
     }
 
     @Test
+    public void processCreationForm() throws Exception {
+        Owner owner = new Owner();
+        owner.setAddress("280 Broadway");
+        owner.setCity("New York");
+        owner.setTelephone("12345");
+        owner.setFirstName("Anna");
+        owner.setLastName("Smith");
+        owner.setId(1);
+        when(owners.findById(Mockito.<Integer>any()))
+            .thenReturn(owner);
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        MockMvcBuilders.standaloneSetup(controller).build().perform(
+            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/new", Integer.toString(1))
+                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
+                .param("type.name", "dog")
+                .param("type.id", Integer.valueOf(1).toString())
+                .param("name", "/bin/bash")
+                .param("id", Integer.valueOf(1).toString()))
+            .andExpect(status().is(302))
+            .andExpect(redirectedUrl("/owners/1"))
+            .andExpect(view().name("redirect:/owners/{ownerId}"));
+    }
+
+    @Test
     public void initUpdateForm() throws Exception {
         Owner owner = new Owner();
         owner.setAddress("280 Broadway");
@@ -87,31 +112,6 @@ public class PetControllerDiffblueTest {
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
             .andExpect(view().name("pets/createOrUpdatePetForm"));
-    }
-
-    @Test
-    public void processCreationForm() throws Exception {
-        Owner owner = new Owner();
-        owner.setAddress("280 Broadway");
-        owner.setCity("New York");
-        owner.setTelephone("12345");
-        owner.setFirstName("Anna");
-        owner.setLastName("Smith");
-        owner.setId(1);
-        when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(owner);
-        when(pets.findPetTypes())
-            .thenReturn(new ArrayList<PetType>());
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.post("/owners/{ownerId}/pets/new", Integer.toString(1))
-                .param("birthDate", LocalDate.of(2_000, 1, 1).toString())
-                .param("type.name", "dog")
-                .param("type.id", Integer.valueOf(1).toString())
-                .param("name", "/bin/bash")
-                .param("id", Integer.valueOf(1).toString()))
-            .andExpect(status().is(302))
-            .andExpect(redirectedUrl("/owners/1"))
-            .andExpect(view().name("redirect:/owners/{ownerId}"));
     }
 
     @Test

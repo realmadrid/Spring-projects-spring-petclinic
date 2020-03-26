@@ -17,6 +17,21 @@ import org.junit.Test;
 public class VisitDiffblueTest {
 
     @Test
+    public void setId() {
+        Visit visit = new Visit();
+        LocalDate date = LocalDate.of(2_000, 1, 1);
+        visit.setDate(date);
+        visit.setDescription("some text");
+        visit.setPetId(1);
+        visit.setId(1);
+        assertThat(visit.getDate(), sameInstance(date));
+        assertThat(visit.getDescription(), is("some text"));
+        assertThat(visit.getPetId(), is(1));
+        assertThat(visit.getId(), is(1));
+        assertThat(visit.isNew(), is(false));
+    }
+
+    @Test
     public void getDate() {
         Visit visit = new Visit();
         LocalDate date = LocalDate.of(2_000, 1, 1);
@@ -45,20 +60,5 @@ public class VisitDiffblueTest {
         visit.setPetId(1);
         visit.setId(1);
         assertThat(visit.getPetId(), is(1));
-    }
-
-    @Test
-    public void setId() {
-        Visit visit = new Visit();
-        LocalDate date = LocalDate.of(2_000, 1, 1);
-        visit.setDate(date);
-        visit.setDescription("some text");
-        visit.setPetId(1);
-        visit.setId(1);
-        assertThat(visit.getDate(), sameInstance(date));
-        assertThat(visit.getDescription(), is("some text"));
-        assertThat(visit.getPetId(), is(1));
-        assertThat(visit.getId(), is(1));
-        assertThat(visit.isNew(), is(false));
     }
 }

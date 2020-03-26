@@ -17,24 +17,12 @@ import org.junit.Test;
 public class VetDiffblueTest {
 
     @Test
-    public void addSpecialty() {
+    public void setSpecialtiesInternalSpecialtiesIsEmpty() {
         Vet vet = new Vet();
         vet.setFirstName("Anna");
         vet.setLastName("Smith");
         vet.setId(1);
-        Specialty specialty = new Specialty();
-        specialty.setName("bar");
-        specialty.setId(1);
-        vet.addSpecialty(specialty);
-    }
-
-    @Test
-    public void getNrOfSpecialtiesReturnsZero() {
-        Vet vet = new Vet();
-        vet.setFirstName("Anna");
-        vet.setLastName("Smith");
-        vet.setId(1);
-        assertThat(vet.getNrOfSpecialties(), is(0));
+        vet.setSpecialtiesInternal(new HashSet<Specialty>());
     }
 
     @Test
@@ -47,11 +35,23 @@ public class VetDiffblueTest {
     }
 
     @Test
-    public void setSpecialtiesInternalSpecialtiesIsEmpty() {
+    public void getNrOfSpecialtiesReturnsZero() {
         Vet vet = new Vet();
         vet.setFirstName("Anna");
         vet.setLastName("Smith");
         vet.setId(1);
-        vet.setSpecialtiesInternal(new HashSet<Specialty>());
+        assertThat(vet.getNrOfSpecialties(), is(0));
+    }
+
+    @Test
+    public void addSpecialty() {
+        Vet vet = new Vet();
+        vet.setFirstName("Anna");
+        vet.setLastName("Smith");
+        vet.setId(1);
+        Specialty specialty = new Specialty();
+        specialty.setName("bar");
+        specialty.setId(1);
+        vet.addSpecialty(specialty);
     }
 }
