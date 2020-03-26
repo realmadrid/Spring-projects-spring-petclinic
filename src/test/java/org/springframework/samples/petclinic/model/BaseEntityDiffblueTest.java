@@ -7,6 +7,18 @@ import org.junit.Test;
 
 public class BaseEntityDiffblueTest {
   @Test
+  public void setIdTest() {
+    // Arrange
+    BaseEntity baseEntity = new BaseEntity();
+
+    // Act
+    baseEntity.setId(1);
+
+    // Assert
+    assertFalse(baseEntity.isNew());
+  }
+
+  @Test
   public void constructorTest() {
     // Arrange and Act
     BaseEntity actualBaseEntity = new BaseEntity();
@@ -30,18 +42,6 @@ public class BaseEntityDiffblueTest {
   public void isNewTest2() {
     // Arrange, Act and Assert
     assertTrue((new BaseEntity()).isNew());
-  }
-
-  @Test
-  public void setIdTest() {
-    // Arrange
-    BaseEntity baseEntity = new BaseEntity();
-
-    // Act
-    baseEntity.setId(1);
-
-    // Assert
-    assertFalse(baseEntity.isNew());
   }
 }
 
