@@ -5,33 +5,89 @@ Skipping a SpringBootApplication (no logic to be tested)
 [ 12%] org.springframework.samples.petclinic.model.Person
 [ 16%] org.springframework.samples.petclinic.owner.Owner
 [ 20%] org.springframework.samples.petclinic.owner.OwnerController
+SOURCE
+package org.springframework.samples.petclinic.owner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+
+@org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+public class OwnerRepositoryTest {
+  @Autowired org.springframework.samples.petclinic.owner.OwnerRepository repository;
+
+  @Test void method() { }
+}
+
+MANAGER
 [ 24%] org.springframework.samples.petclinic.owner.OwnerRepository
-Spring repos are TBD.
-[ 28%] org.springframework.samples.petclinic.owner.Pet
-[ 32%] org.springframework.samples.petclinic.owner.PetController
-[ 36%] org.springframework.samples.petclinic.owner.PetRepository
-Spring repos are TBD.
-[ 40%] org.springframework.samples.petclinic.owner.PetType
-[ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
-[ 48%] org.springframework.samples.petclinic.owner.PetValidator
-[ 52%] org.springframework.samples.petclinic.owner.VisitController
-[ 56%] org.springframework.samples.petclinic.system.CacheConfiguration
+[ 24%] org.springframework.samples.petclinic.owner.Pet
+[ 28%] org.springframework.samples.petclinic.owner.PetController
+SOURCE
+package org.springframework.samples.petclinic.owner;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+
+@org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+public class PetRepositoryTest {
+  @Autowired org.springframework.samples.petclinic.owner.PetRepository repository;
+
+  @Test void method() { }
+}
+
+MANAGER
+[ 32%] org.springframework.samples.petclinic.owner.PetRepository
+[ 32%] org.springframework.samples.petclinic.owner.PetType
+[ 36%] org.springframework.samples.petclinic.owner.PetTypeFormatter
+[ 40%] org.springframework.samples.petclinic.owner.PetValidator
+[ 44%] org.springframework.samples.petclinic.owner.VisitController
+[ 48%] org.springframework.samples.petclinic.system.CacheConfiguration
 Skipping a Spring Configuration (no logic to be tested)
-[ 60%] org.springframework.samples.petclinic.system.CrashController
-[ 64%] org.springframework.samples.petclinic.system.WelcomeController
-[ 68%] org.springframework.samples.petclinic.vet.Specialty
-[ 72%] org.springframework.samples.petclinic.vet.Vet
-[ 76%] org.springframework.samples.petclinic.vet.VetController
-[ 80%] org.springframework.samples.petclinic.vet.VetRepository
-Spring repos are TBD.
-[ 84%] org.springframework.samples.petclinic.vet.Vets
-[ 88%] org.springframework.samples.petclinic.visit.Visit
-[ 92%] org.springframework.samples.petclinic.visit.VisitRepository
-Spring repos are TBD.
+[ 52%] org.springframework.samples.petclinic.system.CrashController
+[ 56%] org.springframework.samples.petclinic.system.WelcomeController
+[ 60%] org.springframework.samples.petclinic.vet.Specialty
+[ 64%] org.springframework.samples.petclinic.vet.Vet
+[ 68%] org.springframework.samples.petclinic.vet.VetController
+SOURCE
+package org.springframework.samples.petclinic.vet;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+
+@org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+public class VetRepositoryTest {
+  @Autowired org.springframework.samples.petclinic.vet.VetRepository repository;
+
+  @Test void method() { }
+}
+
+MANAGER
+[ 72%] org.springframework.samples.petclinic.vet.VetRepository
+[ 72%] org.springframework.samples.petclinic.vet.Vets
+[ 76%] org.springframework.samples.petclinic.visit.Visit
+SOURCE
+package org.springframework.samples.petclinic.visit;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.Test;
+
+@org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
+public class VisitRepositoryTest {
+  @Autowired org.springframework.samples.petclinic.visit.VisitRepository repository;
+
+  @Test void method() { }
+}
+
+MANAGER
+[ 80%] org.springframework.samples.petclinic.visit.VisitRepository
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
+       Test generation for org.springframework.samples.petclinic.owner.OwnerRepository failed
+       Test generation for org.springframework.samples.petclinic.owner.PetRepository failed
+       Test generation for org.springframework.samples.petclinic.vet.VetRepository failed
+       Test generation for org.springframework.samples.petclinic.visit.VisitRepository failed
 [100%] Done
-Total coverage: 161/199 80.9%
+Total coverage: 164/199 82.4%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
