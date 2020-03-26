@@ -7,18 +7,6 @@ import org.junit.Test;
 
 public class PersonDiffblueTest {
   @Test
-  public void setFirstNameTest() {
-    // Arrange
-    Person person = new Person();
-
-    // Act
-    person.setFirstName("Jane");
-
-    // Assert
-    assertEquals("Jane", person.getFirstName());
-  }
-
-  @Test
   public void constructorTest() {
     // Arrange and Act
     Person actualPerson = new Person();
@@ -28,6 +16,18 @@ public class PersonDiffblueTest {
     assertNull(actualPerson.getFirstName());
     assertNull(actualPerson.getId());
     assertTrue(actualPerson.isNew());
+  }
+
+  @Test
+  public void setFirstNameTest() {
+    // Arrange
+    Person person = new Person();
+
+    // Act
+    person.setFirstName("Jane");
+
+    // Assert
+    assertEquals("Jane", person.getFirstName());
   }
 
   @Test

@@ -87,17 +87,6 @@ public class OwnerControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
   }
   @Test
-  public void setAllowedFieldsTest() {
-    // Arrange
-    WebDataBinder webDataBinder = new WebDataBinder("!");
-
-    // Act
-    this.ownerController.setAllowedFields(webDataBinder);
-
-    // Assert
-    assertEquals(1, webDataBinder.getDisallowedFields().length);
-  }
-  @Test
   public void processUpdateOwnerFormTest() throws Exception {
     // Arrange and Act
     ResultActions actualPerformResult = this.mockMvc
@@ -109,6 +98,17 @@ public class OwnerControllerDiffblueTest {
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+  }
+  @Test
+  public void setAllowedFieldsTest() {
+    // Arrange
+    WebDataBinder webDataBinder = new WebDataBinder("!");
+
+    // Act
+    this.ownerController.setAllowedFields(webDataBinder);
+
+    // Assert
+    assertEquals(1, webDataBinder.getDisallowedFields().length);
   }
   @Test
   public void showOwnerTest() throws Exception {
