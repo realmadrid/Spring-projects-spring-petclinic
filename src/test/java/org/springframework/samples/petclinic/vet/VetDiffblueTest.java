@@ -9,7 +9,19 @@ import org.junit.Test;
 
 public class VetDiffblueTest {
   @Test
-  public void testConstructor() {
+  public void addSpecialtyTest() {
+    // Arrange
+    Vet vet = new Vet();
+
+    // Act
+    vet.addSpecialty(new Specialty());
+
+    // Assert
+    assertEquals(1, vet.getNrOfSpecialties());
+  }
+
+  @Test
+  public void constructorTest() {
     // Arrange and Act
     Vet actualVet = new Vet();
 
@@ -25,7 +37,17 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void testGetSpecialtiesInternal() {
+  public void getNrOfSpecialtiesTest() {
+    // Arrange
+    Vet vet = new Vet();
+
+    // Act and Assert
+    assertEquals(0, vet.getNrOfSpecialties());
+    assertEquals(0, vet.getNrOfSpecialties());
+  }
+
+  @Test
+  public void getSpecialtiesInternalTest() {
     // Arrange
     Vet vet = new Vet();
 
@@ -35,21 +57,7 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void testSetSpecialtiesInternal() {
-    // Arrange
-    Vet vet = new Vet();
-    HashSet<Specialty> specialtySet = new HashSet<Specialty>();
-    specialtySet.add(new Specialty());
-
-    // Act
-    vet.setSpecialtiesInternal(specialtySet);
-
-    // Assert
-    assertEquals(1, vet.getNrOfSpecialties());
-  }
-
-  @Test
-  public void testGetSpecialties() {
+  public void getSpecialtiesTest() {
     // Arrange
     Vet vet = new Vet();
 
@@ -59,22 +67,14 @@ public class VetDiffblueTest {
   }
 
   @Test
-  public void testGetNrOfSpecialties() {
+  public void setSpecialtiesInternalTest() {
     // Arrange
     Vet vet = new Vet();
-
-    // Act and Assert
-    assertEquals(0, vet.getNrOfSpecialties());
-    assertEquals(0, vet.getNrOfSpecialties());
-  }
-
-  @Test
-  public void testAddSpecialty() {
-    // Arrange
-    Vet vet = new Vet();
+    HashSet<Specialty> specialtySet = new HashSet<Specialty>();
+    specialtySet.add(new Specialty());
 
     // Act
-    vet.addSpecialty(new Specialty());
+    vet.setSpecialtiesInternal(specialtySet);
 
     // Assert
     assertEquals(1, vet.getNrOfSpecialties());

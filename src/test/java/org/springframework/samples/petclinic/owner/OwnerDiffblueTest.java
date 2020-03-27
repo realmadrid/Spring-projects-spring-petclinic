@@ -8,69 +8,7 @@ import org.junit.Test;
 
 public class OwnerDiffblueTest {
   @Test
-  public void testSetAddress() {
-    // Arrange
-    Owner owner = new Owner();
-
-    // Act
-    owner.setAddress("42 Station Road");
-
-    // Assert
-    assertEquals("42 Station Road", owner.getAddress());
-  }
-
-  @Test
-  public void testSetCity() {
-    // Arrange
-    Owner owner = new Owner();
-
-    // Act
-    owner.setCity("London");
-
-    // Assert
-    assertEquals("London", owner.getCity());
-  }
-
-  @Test
-  public void testSetTelephone() {
-    // Arrange
-    Owner owner = new Owner();
-
-    // Act
-    owner.setTelephone("01234556677");
-
-    // Assert
-    assertEquals("01234556677", owner.getTelephone());
-  }
-
-  @Test
-  public void testGetPetsInternal() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPetsInternal().size());
-  }
-
-  @Test
-  public void testSetPetsInternal() {
-    // Arrange
-    Owner owner = new Owner();
-    HashSet<Pet> petSet = new HashSet<Pet>();
-    petSet.add(new Pet());
-
-    // Act
-    owner.setPetsInternal(petSet);
-
-    // Assert
-    assertSame(petSet, owner.getPetsInternal());
-  }
-
-  @Test
-  public void testGetPets() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPets().size());
-  }
-
-  @Test
-  public void testAddPet() {
+  public void addPetTest() {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
@@ -84,7 +22,7 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testAddPet2() {
+  public void addPetTest2() {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
@@ -97,15 +35,79 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testGetPet() {
+  public void getPetTest() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id"));
   }
 
   @Test
-  public void testGetPet2() {
+  public void getPetTest2() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id", true));
+  }
+
+  @Test
+  public void getPetsInternalTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Owner()).getPetsInternal().size());
+  }
+
+  @Test
+  public void getPetsTest() {
+    // Arrange, Act and Assert
+    assertEquals(0, (new Owner()).getPets().size());
+  }
+
+  @Test
+  public void setAddressTest() {
+    // Arrange
+    Owner owner = new Owner();
+
+    // Act
+    owner.setAddress("42 Station Road");
+
+    // Assert
+    assertEquals("42 Station Road", owner.getAddress());
+  }
+
+  @Test
+  public void setCityTest() {
+    // Arrange
+    Owner owner = new Owner();
+
+    // Act
+    owner.setCity("London");
+
+    // Assert
+    assertEquals("London", owner.getCity());
+  }
+
+  @Test
+  public void setPetsInternalTest() {
+    // Arrange
+    Owner owner = new Owner();
+    HashSet<Pet> petSet = new HashSet<Pet>();
+    petSet.add(new Pet());
+
+    // Act
+    owner.setPetsInternal(petSet);
+
+    // Assert
+    assertSame(petSet, owner.getPetsInternal());
+  }
+
+  @Test
+  public void setTelephoneTest() {
+    // Arrange
+    Owner owner = new Owner();
+
+    // Act
+    owner.setTelephone(String.join("", "0", System.getProperty("com.zaxxer.hikari.pool_number"), "234556677"));
+
+    // Assert
+    String actualTelephone = owner.getTelephone();
+    assertEquals(String.join("", "0", System.getProperty("com.zaxxer.hikari.pool_number"), "234556677"),
+        actualTelephone);
   }
 }
 

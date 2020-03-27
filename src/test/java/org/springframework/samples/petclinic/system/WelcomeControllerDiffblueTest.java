@@ -7,7 +7,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -18,12 +17,10 @@ public class WelcomeControllerDiffblueTest {
   @Autowired
   private MockMvc mockMvc;
   @Test
-  public void testWelcome() throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/");
-
-    // Act
-    ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+  public void welcomeTest() throws Exception {
+    // Arrange and Act
+    ResultActions actualPerformResult = this.mockMvc
+        .perform(MockMvcRequestBuilders.get(System.getProperty("file.separator")));
 
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
