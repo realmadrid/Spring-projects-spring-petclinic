@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class PetValidatorDiffblueTest {
   @Test
-  public void testSupports() {
+  public void supportsTest() {
     // Arrange
     Class<?> clazz = Object.class;
 
