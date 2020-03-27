@@ -19,6 +19,18 @@ public class NamedEntityDiffblueTest {
   }
 
   @Test
+  public void testSetName2() {
+    // Arrange
+    NamedEntity namedEntity = new NamedEntity();
+
+    // Act
+    namedEntity.setName("");
+
+    // Assert
+    assertEquals("", namedEntity.getName());
+  }
+
+  @Test
   public void testConstructor() {
     // Arrange and Act
     NamedEntity actualNamedEntity = new NamedEntity();
@@ -31,7 +43,25 @@ public class NamedEntityDiffblueTest {
   }
 
   @Test
+  public void testConstructor2() {
+    // Arrange and Act
+    NamedEntity actualNamedEntity = new NamedEntity();
+
+    // Assert
+    assertNull(actualNamedEntity.getName());
+    assertNull(actualNamedEntity.getId());
+    assertTrue(actualNamedEntity.isNew());
+    assertNull(actualNamedEntity.toString());
+  }
+
+  @Test
   public void testToString() {
+    // Arrange, Act and Assert
+    assertNull((new NamedEntity()).toString());
+  }
+
+  @Test
+  public void testToString2() {
     // Arrange, Act and Assert
     assertNull((new NamedEntity()).toString());
   }

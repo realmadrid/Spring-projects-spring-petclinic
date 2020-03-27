@@ -25,6 +25,22 @@ public class VetDiffblueTest {
   }
 
   @Test
+  public void testConstructor2() {
+    // Arrange and Act
+    Vet actualVet = new Vet();
+
+    // Assert
+    Set<Specialty> specialtiesInternal = actualVet.getSpecialtiesInternal();
+    assertTrue(specialtiesInternal instanceof java.util.HashSet);
+    assertEquals(0, actualVet.getNrOfSpecialties());
+    assertEquals(0, specialtiesInternal.size());
+    assertNull(actualVet.getFirstName());
+    assertNull(actualVet.getId());
+    assertTrue(actualVet.isNew());
+    assertNull(actualVet.getLastName());
+  }
+
+  @Test
   public void testGetSpecialtiesInternal() {
     // Arrange
     Vet vet = new Vet();
