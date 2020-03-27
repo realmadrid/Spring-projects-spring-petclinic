@@ -1,13 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-4996a9f
+INFO Diffblue Cover dev-SNAPSHOT-65427aa
 INFO Detecting classpath...
-17:41:46.648 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-17:41:47.650 [35mINFO[0m .....
+09:50:25.853 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+09:50:26.855 [35mINFO[0m .....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src383143543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src060088893/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src383143543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
-INFO Expanded user code or user provided classpath: /codebuild/output/src383143543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src060088893/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Expanded user code or user provided classpath: /codebuild/output/src060088893/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6234,40 +6234,452 @@ INFO Found 95 callable methods in 20 classes
 
 
 INFO Initializing Spring embedded WebApplicationContext
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.web.bind.WebDataBinder;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class VisitControllerTests {
+WARN   @Autowired
+WARN   private VisitController visitController;
+WARN   @Test
+WARN   public void testSetAllowedFields() {
+WARN     // Arrange
+WARN     WebDataBinder webDataBinder = new WebDataBinder("!");
+WARN 
+WARN     // Act
+WARN     this.visitController.setAllowedFields(webDataBinder);
+WARN 
+WARN     // Assert
+WARN     assertEquals(1, webDataBinder.getDisallowedFields().length);
+WARN   }
+WARN }
 INFO Initializing Spring TestDispatcherServlet ''
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class VisitControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testInitNewVisitForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "owners", File.separator, "*", File.separator, "pets", File.separator,
+WARN             "{petId}", File.separator, "visits", File.separator, "new"), 1);
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(2));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("pet", "visit"));
+WARN   }
+WARN }
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.initNewVisitForm
 INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
 INFO  [3/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.time.LocalDate;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testSetBirthDate() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN     LocalDate birthDate = null;
+WARN 
+WARN     // Act
+WARN     pet.setBirthDate(birthDate);
+WARN 
+WARN     // Assert
+WARN     assertNull(pet.getBirthDate());
+WARN   }
+WARN }
 INFO  [4/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.<init>
 INFO  [4/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.List;
+WARN import org.junit.Test;
+WARN import org.springframework.samples.petclinic.visit.Visit;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testGetVisits() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN 
+WARN     // Act
+WARN     List<Visit> actualVisits = pet.getVisits();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualVisits.size());
+WARN   }
+WARN }
 INFO  [5/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setBirthDate
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertSame;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testSetOwner() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN     Owner owner = new Owner();
+WARN 
+WARN     // Act
+WARN     pet.setOwner(owner);
+WARN 
+WARN     // Assert
+WARN     assertSame(owner, pet.getOwner());
+WARN   }
+WARN }
 INFO  [6/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisits
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.time.LocalDate;
+WARN import java.util.Set;
+WARN import org.junit.Test;
+WARN import org.springframework.samples.petclinic.visit.Visit;
+WARN import static org.junit.Assert.assertEquals;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     Pet actualPet = new Pet();
+WARN 
+WARN     // Assert
+WARN     String actualName = actualPet.getName();
+WARN     String actualToStringResult = actualPet.toString();
+WARN     boolean actualIsNewResult = actualPet.isNew();
+WARN     Integer actualId = actualPet.getId();
+WARN     Owner actualOwner = actualPet.getOwner();
+WARN     PetType actualType = actualPet.getType();
+WARN     LocalDate actualBirthDate = actualPet.getBirthDate();
+WARN     Set<Visit> visitsInternal = actualPet.getVisitsInternal();
+WARN     assertNull(actualName);
+WARN     assertTrue(visitsInternal instanceof java.util.LinkedHashSet);
+WARN     assertNull(actualBirthDate);
+WARN     assertEquals(0, visitsInternal.size());
+WARN     assertNull(actualType);
+WARN     assertNull(actualOwner);
+WARN     assertNull(actualId);
+WARN     assertTrue(actualIsNewResult);
+WARN     assertNull(actualToStringResult);
+WARN   }
+WARN }
 INFO  [7/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setOwner
 INFO  [8/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.<init>
 INFO  [9/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getOwner
 INFO  [9/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [10/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getType
 INFO [10/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertSame;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testSetType() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN     PetType petType = new PetType();
+WARN 
+WARN     // Act
+WARN     pet.setType(petType);
+WARN 
+WARN     // Assert
+WARN     assertSame(petType, pet.getType());
+WARN   }
+WARN }
 INFO [11/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getBirthDate
 INFO [11/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.Set;
+WARN import org.junit.Test;
+WARN import org.springframework.samples.petclinic.visit.Visit;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testGetVisitsInternal() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN 
+WARN     // Act
+WARN     Set<Visit> actualVisitsInternal = pet.getVisitsInternal();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualVisitsInternal.size());
+WARN   }
+WARN }
 INFO [12/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setType
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.HashSet;
+WARN import org.junit.Test;
+WARN import org.springframework.samples.petclinic.visit.Visit;
+WARN import static org.junit.Assert.assertSame;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testSetVisitsInternal() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN     HashSet<Visit> visitSet = new HashSet<Visit>();
+WARN     visitSet.add(new Visit());
+WARN 
+WARN     // Act
+WARN     pet.setVisitsInternal(visitSet);
+WARN 
+WARN     // Assert
+WARN     assertSame(visitSet, pet.getVisitsInternal());
+WARN   }
+WARN }
 INFO [13/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisitsInternal
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import org.springframework.samples.petclinic.visit.Visit;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN public class PetTests {
+WARN   @Test
+WARN   public void testAddVisit() {
+WARN     // Arrange
+WARN     Pet pet = new Pet();
+WARN     Visit visit = new Visit();
+WARN 
+WARN     // Act
+WARN     pet.addVisit(visit);
+WARN 
+WARN     // Assert
+WARN     assertNull(visit.getPetId());
+WARN   }
+WARN }
 INFO [14/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setVisitsInternal
+WARN test: 
+WARN package org.springframework.samples.petclinic.visit;
+WARN 
+WARN import java.time.LocalDate;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN public class VisitTests {
+WARN   @Test
+WARN   public void testSetDate() {
+WARN     // Arrange
+WARN     Visit visit = new Visit();
+WARN     LocalDate date = null;
+WARN 
+WARN     // Act
+WARN     visit.setDate(date);
+WARN 
+WARN     // Assert
+WARN     assertNull(visit.getDate());
+WARN   }
+WARN }
 INFO [15/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.addVisit
 INFO [16/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDate
+WARN test: 
+WARN package org.springframework.samples.petclinic.visit;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VisitTests {
+WARN   @Test
+WARN   public void testSetPetId() {
+WARN     // Arrange
+WARN     Visit visit = new Visit();
+WARN     int petId = 123;
+WARN 
+WARN     // Act
+WARN     visit.setPetId(petId);
+WARN 
+WARN     // Assert
+WARN     assertEquals(123, visit.getPetId().intValue());
+WARN   }
+WARN }
 INFO [17/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getPetId
 INFO [17/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.visit;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class VisitTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     Visit actualVisit = new Visit();
+WARN 
+WARN     // Assert
+WARN     Integer actualPetId = actualVisit.getPetId();
+WARN     boolean actualIsNewResult = actualVisit.isNew();
+WARN     Integer actualId = actualVisit.getId();
+WARN     assertNull(actualPetId);
+WARN     assertNull(actualVisit.getDescription());
+WARN     assertNull(actualId);
+WARN     assertTrue(actualIsNewResult);
+WARN   }
+WARN }
 INFO [18/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setPetId
 INFO [19/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.<init>
 INFO [20/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDate
 INFO [20/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.visit;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VisitTests {
+WARN   @Test
+WARN   public void testSetDescription() {
+WARN     // Arrange
+WARN     Visit visit = new Visit();
+WARN     String description = "description";
+WARN 
+WARN     // Act
+WARN     visit.setDescription(description);
+WARN 
+WARN     // Assert
+WARN     assertEquals("description", visit.getDescription());
+WARN   }
+WARN }
 INFO [21/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
 INFO [21/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertFalse;
+WARN 
+WARN public class BaseEntityTests {
+WARN   @Test
+WARN   public void testIsNew() {
+WARN     // Arrange
+WARN     BaseEntity baseEntity = new BaseEntity();
+WARN     baseEntity.setId(1);
+WARN 
+WARN     // Act
+WARN     boolean actualIsNewResult = baseEntity.isNew();
+WARN 
+WARN     // Assert
+WARN     assertFalse(actualIsNewResult);
+WARN   }
+WARN }
 INFO [22/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDescription
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class BaseEntityTests {
+WARN   @Test
+WARN   public void testIsNew() {
+WARN     // Arrange
+WARN     BaseEntity baseEntity = new BaseEntity();
+WARN 
+WARN     // Act
+WARN     boolean actualIsNewResult = baseEntity.isNew();
+WARN 
+WARN     // Assert
+WARN     assertTrue(actualIsNewResult);
+WARN   }
+WARN }
 INFO [23/95] Created 2 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class BaseEntityTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     BaseEntity actualBaseEntity = new BaseEntity();
+WARN 
+WARN     // Assert
+WARN     boolean actualIsNewResult = actualBaseEntity.isNew();
+WARN     assertTrue(actualIsNewResult);
+WARN     assertNull(actualBaseEntity.getId());
+WARN   }
+WARN }
 INFO [24/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
 INFO [24/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertFalse;
+WARN 
+WARN public class BaseEntityTests {
+WARN   @Test
+WARN   public void testSetId() {
+WARN     // Arrange
+WARN     BaseEntity baseEntity = new BaseEntity();
+WARN     int id = 1;
+WARN 
+WARN     // Act
+WARN     baseEntity.setId(id);
+WARN 
+WARN     // Assert
+WARN     assertFalse(baseEntity.isNew());
+WARN   }
+WARN }
 INFO [25/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
 INFO [26/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.setId
 INFO [27/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
@@ -6275,71 +6687,975 @@ INFO [27/95]   No essential tests due to E002: Nothing to assert: the constructe
 INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
 INFO [28/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO Initializing Spring TestDispatcherServlet ''
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.util.List;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VetsTests {
+WARN   @Test
+WARN   public void testGetVetList() {
+WARN     // Arrange
+WARN     Vets vets = new Vets();
+WARN 
+WARN     // Act
+WARN     List<Vet> actualVetList = vets.getVetList();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualVetList.size());
+WARN   }
+WARN }
 INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
 INFO [29/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.util.List;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class VetsTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     Vets actualVets = new Vets();
+WARN 
+WARN     // Assert
+WARN     List<Vet> vetList = actualVets.getVetList();
+WARN     assertTrue(vetList instanceof java.util.ArrayList);
+WARN     assertEquals(0, vetList.size());
+WARN   }
+WARN }
 INFO [30/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.getVetList
 INFO [31/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.<init>
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN public class NamedEntityTests {
+WARN   @Test
+WARN   public void testToString() {
+WARN     // Arrange
+WARN     NamedEntity namedEntity = new NamedEntity();
+WARN 
+WARN     // Act
+WARN     String actualToStringResult = namedEntity.toString();
+WARN 
+WARN     // Assert
+WARN     assertNull(actualToStringResult);
+WARN   }
+WARN }
 INFO [32/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.getName
 INFO [32/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class NamedEntityTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     NamedEntity actualNamedEntity = new NamedEntity();
+WARN 
+WARN     // Assert
+WARN     String actualName = actualNamedEntity.getName();
+WARN     String actualToStringResult = actualNamedEntity.toString();
+WARN     boolean actualIsNewResult = actualNamedEntity.isNew();
+WARN     assertNull(actualName);
+WARN     assertNull(actualNamedEntity.getId());
+WARN     assertTrue(actualIsNewResult);
+WARN     assertNull(actualToStringResult);
+WARN   }
+WARN }
 INFO [33/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.toString
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class NamedEntityTests {
+WARN   @Test
+WARN   public void testSetName() {
+WARN     // Arrange
+WARN     NamedEntity namedEntity = new NamedEntity();
+WARN     String name = "name";
+WARN 
+WARN     // Act
+WARN     namedEntity.setName(name);
+WARN 
+WARN     // Assert
+WARN     assertEquals("name", namedEntity.getName());
+WARN   }
+WARN }
 INFO [34/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.<init>
 INFO [35/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.setName
 INFO Initializing Spring TestDispatcherServlet ''
+WARN test: 
+WARN package org.springframework.samples.petclinic.system;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class WelcomeControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testWelcome() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get(File.separator);
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(0));
+WARN   }
+WARN }
 INFO [36/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
 INFO [36/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class SpecialtyTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     Specialty actualSpecialty = new Specialty();
+WARN 
+WARN     // Assert
+WARN     String actualName = actualSpecialty.getName();
+WARN     String actualToStringResult = actualSpecialty.toString();
+WARN     boolean actualIsNewResult = actualSpecialty.isNew();
+WARN     assertNull(actualName);
+WARN     assertNull(actualSpecialty.getId());
+WARN     assertTrue(actualIsNewResult);
+WARN     assertNull(actualToStringResult);
+WARN   }
+WARN }
 INFO [37/95] Created 1 test for method org.springframework.samples.petclinic.system.WelcomeController.welcome
 INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
 INFO [39/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
 INFO [39/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testGetPet() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     String name = "id";
+WARN 
+WARN     // Act
+WARN     Pet actualPet = owner.getPet(name);
+WARN 
+WARN     // Assert
+WARN     assertNull(actualPet);
+WARN   }
+WARN }
 INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
 INFO [40/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [41/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.HashSet;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertSame;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testSetPetsInternal() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     HashSet<Pet> petSet = new HashSet<Pet>();
+WARN     petSet.add(new Pet());
+WARN 
+WARN     // Act
+WARN     owner.setPetsInternal(petSet);
+WARN 
+WARN     // Assert
+WARN     assertSame(petSet, owner.getPetsInternal());
+WARN   }
+WARN }
 INFO [42/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
 INFO [42/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [43/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setPetsInternal
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testSetAddress() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     String address = "42 Station Road";
+WARN 
+WARN     // Act
+WARN     owner.setAddress(address);
+WARN 
+WARN     // Assert
+WARN     assertEquals("42 Station Road", owner.getAddress());
+WARN   }
+WARN }
 INFO [44/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getAddress
 INFO [44/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.List;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testGetPets() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN 
+WARN     // Act
+WARN     List<Pet> actualPets = owner.getPets();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualPets.size());
+WARN   }
+WARN }
 INFO [45/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setAddress
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertSame;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testAddPet() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     Pet pet = new Pet();
+WARN     pet.setId(1);
+WARN 
+WARN     // Act
+WARN     owner.addPet(pet);
+WARN 
+WARN     // Assert
+WARN     assertSame(owner, pet.getOwner());
+WARN   }
+WARN }
 INFO [46/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPets
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertSame;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testAddPet() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     Pet pet = new Pet();
+WARN 
+WARN     // Act
+WARN     owner.addPet(pet);
+WARN 
+WARN     // Assert
+WARN     assertSame(owner, pet.getOwner());
+WARN   }
+WARN }
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testSetCity() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     String city = "London";
+WARN 
+WARN     // Act
+WARN     owner.setCity(city);
+WARN 
+WARN     // Assert
+WARN     assertEquals("London", owner.getCity());
+WARN   }
+WARN }
 INFO [47/95] Created 2 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
 INFO [48/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setCity
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.Set;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testGetPetsInternal() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN 
+WARN     // Act
+WARN     Set<Pet> actualPetsInternal = owner.getPetsInternal();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualPetsInternal.size());
+WARN   }
+WARN }
 INFO [49/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
 INFO [49/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testGetPet() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     String name = "id";
+WARN     boolean ignoreNew = true;
+WARN 
+WARN     // Act
+WARN     Pet actualPet = owner.getPet(name, ignoreNew);
+WARN 
+WARN     // Assert
+WARN     assertNull(actualPet);
+WARN   }
+WARN }
 INFO [50/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPetsInternal
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class OwnerTests {
+WARN   @Test
+WARN   public void testSetTelephone() {
+WARN     // Arrange
+WARN     Owner owner = new Owner();
+WARN     String telephone = String.join("", "0", System.getProperty("com.zaxxer.hikari.pool_number"), "234556677");
+WARN 
+WARN     // Act
+WARN     owner.setTelephone(telephone);
+WARN 
+WARN     // Assert
+WARN     String actualTelephone = owner.getTelephone();
+WARN     assertEquals(String.join("", "0", System.getProperty("com.zaxxer.hikari.pool_number"), "234556677"),
+WARN         actualTelephone);
+WARN   }
+WARN }
 INFO [51/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class PetTypeTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     PetType actualPetType = new PetType();
+WARN 
+WARN     // Assert
+WARN     String actualName = actualPetType.getName();
+WARN     String actualToStringResult = actualPetType.toString();
+WARN     boolean actualIsNewResult = actualPetType.isNew();
+WARN     assertNull(actualName);
+WARN     assertNull(actualPetType.getId());
+WARN     assertTrue(actualIsNewResult);
+WARN     assertNull(actualToStringResult);
+WARN   }
+WARN }
 INFO [52/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setTelephone
 INFO [53/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetType.<init>
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class PersonTests {
+WARN   @Test
+WARN   public void testSetLastName() {
+WARN     // Arrange
+WARN     Person person = new Person();
+WARN     String lastName = "Doe";
+WARN 
+WARN     // Act
+WARN     person.setLastName(lastName);
+WARN 
+WARN     // Assert
+WARN     assertEquals("Doe", person.getLastName());
+WARN   }
+WARN }
 INFO [54/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getLastName
 INFO [54/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [55/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setLastName
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class PersonTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     Person actualPerson = new Person();
+WARN 
+WARN     // Assert
+WARN     String actualLastName = actualPerson.getLastName();
+WARN     boolean actualIsNewResult = actualPerson.isNew();
+WARN     Integer actualId = actualPerson.getId();
+WARN     assertNull(actualLastName);
+WARN     assertNull(actualPerson.getFirstName());
+WARN     assertNull(actualId);
+WARN     assertTrue(actualIsNewResult);
+WARN   }
+WARN }
 INFO [56/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getFirstName
 INFO [56/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN test: 
+WARN package org.springframework.samples.petclinic.model;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class PersonTests {
+WARN   @Test
+WARN   public void testSetFirstName() {
+WARN     // Arrange
+WARN     Person person = new Person();
+WARN     String firstName = "Jane";
+WARN 
+WARN     // Act
+WARN     person.setFirstName(firstName);
+WARN 
+WARN     // Assert
+WARN     assertEquals("Jane", person.getFirstName());
+WARN   }
+WARN }
 INFO [57/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.<init>
 INFO [58/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setFirstName
 INFO Initializing Spring TestDispatcherServlet ''
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class VetControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testShowVetList() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "vets.html"));
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("vets"));
+WARN   }
+WARN }
 INFO [59/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.<init>
 INFO [59/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.io.File;
+WARN import org.hamcrest.Matchers;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.ContentResultMatchers;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class VetControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testShowResourcesVetList() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get(String.join("", File.separator, "vets"));
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ContentResultMatchers contentResult = MockMvcResultMatchers.content();
+WARN     ResultActions resultActions1 = resultActions
+WARN         .andExpect(contentResult.contentType(String.join("", "application", File.separator, "json;charset=UTF-8")));
+WARN     ContentResultMatchers contentResult1 = MockMvcResultMatchers.content();
+WARN     String property = System.getProperty("classpathSeparator");
+WARN     String property1 = System.getProperty("classpathSeparator");
+WARN     String property2 = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     String property3 = System.getProperty("classpathSeparator");
+WARN     String property4 = System.getProperty("classpathSeparator");
+WARN     String property5 = System.getProperty("classpathSeparator");
+WARN     String property6 = System.getProperty("classpathSeparator");
+WARN     String property7 = System.getProperty("classpathSeparator");
+WARN     String property8 = System.getProperty("classpathSeparator");
+WARN     String property9 = System.getProperty("classpathSeparator");
+WARN     String property10 = System.getProperty("user.language");
+WARN     String property11 = System.getProperty("classpathSeparator");
+WARN     String property12 = System.getProperty("classpathSeparator");
+WARN     String property13 = System.getProperty("classpathSeparator");
+WARN     String property14 = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     String property15 = System.getProperty("classpathSeparator");
+WARN     String property16 = System.getProperty("classpathSeparator");
+WARN     String property17 = System.getProperty("classpathSeparator");
+WARN     String property18 = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     String property19 = System.getProperty("classpathSeparator");
+WARN     String property20 = System.getProperty("classpathSeparator");
+WARN     String property21 = System.getProperty("classpathSeparator");
+WARN     String property22 = System.getProperty("classpathSeparator");
+WARN     String property23 = System.getProperty("classpathSeparator");
+WARN     String property24 = System.getProperty("classpathSeparator");
+WARN     String property25 = System.getProperty("classpathSeparator");
+WARN     String property26 = System.getProperty("user.language");
+WARN     String property27 = System.getProperty("classpathSeparator");
+WARN     String property28 = System.getProperty("classpathSeparator");
+WARN     String property29 = System.getProperty("classpathSeparator");
+WARN     String property30 = System.getProperty("classpathSeparator");
+WARN     String property31 = System.getProperty("classpathSeparator");
+WARN     String property32 = System.getProperty("classpathSeparator");
+WARN     String property33 = System.getProperty("classpathSeparator");
+WARN     String property34 = System.getProperty("classpathSeparator");
+WARN     String property35 = System.getProperty("classpathSeparator");
+WARN     String property36 = System.getProperty("classpathSeparator");
+WARN     String property37 = System.getProperty("classpathSeparator");
+WARN     String property38 = System.getProperty("classpathSeparator");
+WARN     String property39 = System.getProperty("classpathSeparator");
+WARN     String property40 = System.getProperty("classpathSeparator");
+WARN     String property41 = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     String property42 = System.getProperty("classpathSeparator");
+WARN     String property43 = System.getProperty("classpathSeparator");
+WARN     String property44 = System.getProperty("classpathSeparator");
+WARN     String property45 = System.getProperty("user.language");
+WARN     String property46 = System.getProperty("classpathSeparator");
+WARN     String property47 = System.getProperty("user.language");
+WARN     String property48 = System.getProperty("classpathSeparator");
+WARN     String property49 = System.getProperty("classpathSeparator");
+WARN     String property50 = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     String property51 = System.getProperty("classpathSeparator");
+WARN     String property52 = System.getProperty("classpathSeparator");
+WARN     String property53 = System.getProperty("classpathSeparator");
+WARN     String property54 = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     String property55 = System.getProperty("classpathSeparator");
+WARN     String property56 = System.getProperty("classpathSeparator");
+WARN     String property57 = System.getProperty("classpathSeparator");
+WARN     String property58 = System.getProperty("classpathSeparator");
+WARN     String property59 = System.getProperty("user.language");
+WARN     String property60 = System.getProperty("classpathSeparator");
+WARN     String property61 = System.getProperty("classpathSeparator");
+WARN     resultActions1.andExpect(contentResult1.string(Matchers.containsString(String.join("", "{\"vetList\"", property,
+WARN         "[{\"id\"", property1, property2, ",\"firstName\"", property3, "\"James\",\"lastName\"", property4,
+WARN         "\"Carter\",\"specialties\"", property5, "[],\"nrOfSpecialties\"", property6, "0,\"new\"", property7,
+WARN         "false},{\"id\"", property8, "2,\"firstName\"", property9, "\"Hel", property10, "\",\"lastName\"", property11,
+WARN         "\"Leary\",\"specialties\"", property12, "[{\"id\"", property13, property14, ",\"name\"", property15,
+WARN         "\"radiology\",\"new\"", property16, "false}],\"nrOfSpecialties\"", property17, property18, ",\"new\"",
+WARN         property19, "false},{\"id\"", property20, "3,\"firstName\"", property21, "\"Linda\",\"lastName\"", property22,
+WARN         "\"Douglas\",\"specialties\"", property23, "[{\"id\"", property24, "3,\"name\"", property25, "\"d", property26,
+WARN         "tistry\",\"new\"", property27, "false},{\"id\"", property28, "2,\"name\"", property29, "\"surgery\",\"new\"",
+WARN         property30, "false}],\"nrOfSpecialties\"", property31, "2,\"new\"", property32, "false},{\"id\"", property33,
+WARN         "4,\"firstName\"", property34, "\"Rafael\",\"lastName\"", property35, "\"Ortega\",\"specialties\"", property36,
+WARN         "[{\"id\"", property37, "2,\"name\"", property38, "\"surgery\",\"new\"", property39,
+WARN         "false}],\"nrOfSpecialties\"", property40, property41, ",\"new\"", property42, "false},{\"id\"", property43,
+WARN         "5,\"firstName\"", property44, "\"H", property45, "ry\",\"lastName\"", property46, "\"Stev", property47,
+WARN         "s\",\"specialties\"", property48, "[{\"id\"", property49, property50, ",\"name\"", property51,
+WARN         "\"radiology\",\"new\"", property52, "false}],\"nrOfSpecialties\"", property53, property54, ",\"new\"",
+WARN         property55, "false},{\"id\"", property56, "6,\"firstName\"", property57, "\"Sharon\",\"lastName\"", property58,
+WARN         "\"J", property59, "kins\",\"specialties\"", property60, "[],\"nrOfSpecialties\"", property61, "0,\"new\"",
+WARN         System.getProperty("classpathSeparator"), "false}]}"))));
+WARN   }
+WARN }
 INFO [60/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showVetList
 INFO [61/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
 INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
 INFO [62/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.Locale;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetTypeFormatterTests {
+WARN   @Autowired
+WARN   private PetTypeFormatter petTypeFormatter;
+WARN   @Test
+WARN   public void testPrint() {
+WARN     // Arrange
+WARN     PetType petType = new PetType();
+WARN     Locale locale = Locale.getDefault();
+WARN 
+WARN     // Act
+WARN     String actualPrintResult = this.petTypeFormatter.print(petType, locale);
+WARN 
+WARN     // Assert
+WARN     assertNull(actualPrintResult);
+WARN   }
+WARN }
 INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
 INFO [63/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testProcessUpdateForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder postResult = MockMvcRequestBuilders.post(String.join("", File.separator, "owners",
+WARN         File.separator, "{ownerId}", File.separator, "pets", File.separator, "{petId}", File.separator, "edit"), 1, 1);
+WARN     String property = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     MockHttpServletRequestBuilder requestBuilder = postResult
+WARN         .param("birthDate",
+WARN             String.join("", "2000-0", property, "-0", System.getProperty("com.zaxxer.hikari.pool_number")))
+WARN         .param("name", "a value for name").param("address", "a value for address").param("city", "a value for city")
+WARN         .param("telephone", "a value for telephone").param("firstName", "a value for firstName")
+WARN         .param("lastName", "a value for lastName");
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "pet", "owner"));
+WARN   }
+WARN }
 INFO [64/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
 INFO [65/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
 INFO [66/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
 INFO [66/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testInitUpdateForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get(String.join("", File.separator, "owners",
+WARN         File.separator, "{ownerId}", File.separator, "pets", File.separator, "{petId}", File.separator, "edit"), 1, 1);
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
+WARN   }
+WARN }
 INFO [67/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
 INFO [67/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.web.bind.WebDataBinder;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private PetController petController;
+WARN   @Test
+WARN   public void testInitOwnerBinder() {
+WARN     // Arrange
+WARN     WebDataBinder webDataBinder = new WebDataBinder("!");
+WARN 
+WARN     // Act
+WARN     this.petController.initOwnerBinder(webDataBinder);
+WARN 
+WARN     // Assert
+WARN     assertEquals(1, webDataBinder.getDisallowedFields().length);
+WARN   }
+WARN }
 INFO [68/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.util.Collection;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private PetController petController;
+WARN   @Test
+WARN   public void testPopulatePetTypes() {
+WARN     // Arrange and Act
+WARN     Collection<PetType> actualPopulatePetTypesResult = this.petController.populatePetTypes();
+WARN 
+WARN     // Assert
+WARN     assertEquals(6, actualPopulatePetTypesResult.size());
+WARN   }
+WARN }
 INFO [69/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testInitCreationForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "owners", File.separator, "{ownerId}", File.separator, "pets",
+WARN             File.separator, "new"), 1)
+WARN         .param("address", "a value for address").param("city", "a value for city")
+WARN         .param("telephone", "a value for telephone").param("firstName", "a value for firstName")
+WARN         .param("lastName", "a value for lastName");
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
+WARN   }
+WARN }
 INFO [70/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testProcessCreationForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder paramResult = MockMvcRequestBuilders
+WARN         .post(String.join("", File.separator, "owners", File.separator, "{ownerId}", File.separator, "pets",
+WARN             File.separator, "new"), 1)
+WARN         .param("address", "a value for address").param("city", "a value for city")
+WARN         .param("telephone", "a value for telephone").param("firstName", "a value for firstName")
+WARN         .param("lastName", "a value for lastName");
+WARN     String property = System.getProperty("com.zaxxer.hikari.pool_number");
+WARN     MockHttpServletRequestBuilder requestBuilder = paramResult
+WARN         .param("birthDate",
+WARN             String.join("", "2000-0", property, "-0", System.getProperty("com.zaxxer.hikari.pool_number")))
+WARN         .param("name", "a value for name");
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
+WARN   }
+WARN }
 INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import static org.junit.Assert.assertNull;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class PetControllerTests {
+WARN   @Autowired
+WARN   private PetController petController;
+WARN   @Test
+WARN   public void testFindOwner() {
+WARN     // Arrange
+WARN     int ownerId = 123;
+WARN 
+WARN     // Act
+WARN     Owner actualFindOwnerResult = this.petController.findOwner(ownerId);
+WARN 
+WARN     // Assert
+WARN     assertNull(actualFindOwnerResult);
+WARN   }
+WARN }
 INFO [72/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
 INFO [73/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
 INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
 INFO [74/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertFalse;
+WARN 
+WARN public class PetValidatorTests {
+WARN   @Test
+WARN   public void testSupports() {
+WARN     // Arrange
+WARN     PetValidator petValidator = new PetValidator();
+WARN     Class<?> clazz = Object.class;
+WARN 
+WARN     // Act
+WARN     boolean actualSupportsResult = petValidator.supports(clazz);
+WARN 
+WARN     // Assert
+WARN     assertFalse(actualSupportsResult);
+WARN   }
+WARN }
 INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
 INFO [75/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
@@ -6348,20 +7664,442 @@ INFO [77/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
 INFO [78/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testProcessFindForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get(String.join("", File.separator, "owners"))
+WARN         .param("address", "a value for address").param("city", "a value for city")
+WARN         .param("telephone", "a value for telephone").param("firstName", "a value for firstName")
+WARN         .param("lastName", "a value for lastName");
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
 INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testProcessUpdateOwnerForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .post(String.join("", File.separator, "owners", File.separator, "{ownerId}", File.separator, "edit"), 1)
+WARN         .param("address", "a value for address").param("city", "a value for city")
+WARN         .param("telephone", "a value for telephone").param("firstName", "a value for firstName")
+WARN         .param("lastName", "a value for lastName");
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [80/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.web.bind.WebDataBinder;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private OwnerController ownerController;
+WARN   @Test
+WARN   public void testSetAllowedFields() {
+WARN     // Arrange
+WARN     WebDataBinder webDataBinder = new WebDataBinder("!");
+WARN 
+WARN     // Act
+WARN     this.ownerController.setAllowedFields(webDataBinder);
+WARN 
+WARN     // Assert
+WARN     assertEquals(1, webDataBinder.getDisallowedFields().length);
+WARN   }
+WARN }
 INFO [81/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testInitUpdateOwnerForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "owners", File.separator, "{ownerId}", File.separator, "edit"), 1);
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [82/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testProcessCreationForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .post(String.join("", File.separator, "owners", File.separator, "new")).param("address", "a value for address")
+WARN         .param("city", "a value for city").param("telephone", "a value for telephone")
+WARN         .param("firstName", "a value for firstName").param("lastName", "a value for lastName");
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [83/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testShowOwner() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "owners", File.separator, "{ownerId}"), 1);
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [84/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testInitCreationForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "owners", File.separator, "new"));
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [85/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.showOwner
+WARN test: 
+WARN package org.springframework.samples.petclinic.owner;
+WARN 
+WARN import java.io.File;
+WARN import org.junit.Test;
+WARN import org.junit.runner.RunWith;
+WARN import org.springframework.beans.factory.annotation.Autowired;
+WARN import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+WARN import org.springframework.boot.test.context.SpringBootTest;
+WARN import org.springframework.test.web.servlet.MockMvc;
+WARN import org.springframework.test.web.servlet.ResultActions;
+WARN import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+WARN import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+WARN import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+WARN 
+WARN @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+WARN @AutoConfigureMockMvc
+WARN @SpringBootTest
+WARN public class OwnerControllerTests {
+WARN   @Autowired
+WARN   private MockMvc mockMvc;
+WARN   @Test
+WARN   public void testInitFindForm() throws Exception {
+WARN     // Arrange
+WARN     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+WARN         .get(String.join("", File.separator, "owners", File.separator, "find"));
+WARN 
+WARN     // Act
+WARN     ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+WARN 
+WARN     // Assert
+WARN     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
+WARN     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(1));
+WARN     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner"));
+WARN   }
+WARN }
 INFO [86/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initCreationForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.util.Set;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VetTests {
+WARN   @Test
+WARN   public void testGetSpecialtiesInternal() {
+WARN     // Arrange
+WARN     Vet vet = new Vet();
+WARN 
+WARN     // Act
+WARN     Set<Specialty> actualSpecialtiesInternal = vet.getSpecialtiesInternal();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualSpecialtiesInternal.size());
+WARN     assertEquals(0, vet.getNrOfSpecialties());
+WARN   }
+WARN }
 INFO [87/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initFindForm
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.util.List;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VetTests {
+WARN   @Test
+WARN   public void testGetSpecialties() {
+WARN     // Arrange
+WARN     Vet vet = new Vet();
+WARN 
+WARN     // Act
+WARN     List<Specialty> actualSpecialties = vet.getSpecialties();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualSpecialties.size());
+WARN     assertEquals(0, vet.getNrOfSpecialties());
+WARN   }
+WARN }
 INFO [88/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialtiesInternal
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VetTests {
+WARN   @Test
+WARN   public void testAddSpecialty() {
+WARN     // Arrange
+WARN     Vet vet = new Vet();
+WARN     Specialty specialty = new Specialty();
+WARN 
+WARN     // Act
+WARN     vet.addSpecialty(specialty);
+WARN 
+WARN     // Assert
+WARN     assertEquals(1, vet.getNrOfSpecialties());
+WARN   }
+WARN }
 INFO [89/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialties
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.util.Set;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN import static org.junit.Assert.assertNull;
+WARN import static org.junit.Assert.assertTrue;
+WARN 
+WARN public class VetTests {
+WARN   @Test
+WARN   public void testConstructor() {
+WARN     // Arrange and Act
+WARN     Vet actualVet = new Vet();
+WARN 
+WARN     // Assert
+WARN     Set<Specialty> specialtiesInternal = actualVet.getSpecialtiesInternal();
+WARN     String actualLastName = actualVet.getLastName();
+WARN     boolean actualIsNewResult = actualVet.isNew();
+WARN     Integer actualId = actualVet.getId();
+WARN     String actualFirstName = actualVet.getFirstName();
+WARN     assertTrue(specialtiesInternal instanceof java.util.HashSet);
+WARN     assertEquals(0, actualVet.getNrOfSpecialties());
+WARN     assertEquals(0, specialtiesInternal.size());
+WARN     assertNull(actualFirstName);
+WARN     assertNull(actualId);
+WARN     assertTrue(actualIsNewResult);
+WARN     assertNull(actualLastName);
+WARN   }
+WARN }
 INFO [90/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.addSpecialty
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import java.util.HashSet;
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VetTests {
+WARN   @Test
+WARN   public void testSetSpecialtiesInternal() {
+WARN     // Arrange
+WARN     Vet vet = new Vet();
+WARN     HashSet<Specialty> specialtySet = new HashSet<Specialty>();
+WARN     specialtySet.add(new Specialty());
+WARN 
+WARN     // Act
+WARN     vet.setSpecialtiesInternal(specialtySet);
+WARN 
+WARN     // Assert
+WARN     assertEquals(1, vet.getNrOfSpecialties());
+WARN   }
+WARN }
 INFO [91/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.<init>
+WARN test: 
+WARN package org.springframework.samples.petclinic.vet;
+WARN 
+WARN import org.junit.Test;
+WARN import static org.junit.Assert.assertEquals;
+WARN 
+WARN public class VetTests {
+WARN   @Test
+WARN   public void testGetNrOfSpecialties() {
+WARN     // Arrange
+WARN     Vet vet = new Vet();
+WARN 
+WARN     // Act
+WARN     int actualNrOfSpecialties = vet.getNrOfSpecialties();
+WARN 
+WARN     // Assert
+WARN     assertEquals(0, actualNrOfSpecialties);
+WARN     assertEquals(0, vet.getNrOfSpecialties());
+WARN   }
+WARN }
 INFO [92/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.setSpecialtiesInternal
 INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
@@ -6373,7 +8111,9 @@ INFO    2 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 64 tests created for 62 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src383143543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-17:43:23.761 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-17:43:41.761 [35mINFO[0m .....
-INFO All 64 generated tests were successfully verified
+INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src060088893/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
+09:52:21.423 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+09:52:39.423 [35mINFO[0m .........
+09:52:47.519 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+09:53:05.519 [35mINFO[0m .......
+INFO Test verification was able to verify 62 out of 64 tests, the remainder were discarded

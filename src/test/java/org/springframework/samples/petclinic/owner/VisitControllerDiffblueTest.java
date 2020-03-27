@@ -1,6 +1,7 @@
 package org.springframework.samples.petclinic.owner;
 
 import static org.junit.Assert.assertEquals;
+import java.io.File;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.WebDataBinder;
@@ -22,12 +22,11 @@ public class VisitControllerDiffblueTest {
   @Autowired
   private VisitController visitController;
   @Test
-  public void testInitNewVisitForm() throws Exception {
-    // Arrange
-    MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/*/pets/{petId}/visits/new", 1);
-
-    // Act
-    ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+  public void initNewVisitFormTest() throws Exception {
+    // Arrange and Act
+    ResultActions actualPerformResult = this.mockMvc
+        .perform(MockMvcRequestBuilders.get(String.join("", File.separator, "owners", File.separator, "*",
+            File.separator, "pets", File.separator, "{petId}", File.separator, "visits", File.separator, "new"), 1));
 
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
@@ -35,7 +34,7 @@ public class VisitControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("pet", "visit"));
   }
   @Test
-  public void testSetAllowedFields() {
+  public void setAllowedFieldsTest() {
     // Arrange
     WebDataBinder webDataBinder = new WebDataBinder("!");
 
