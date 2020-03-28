@@ -10,7 +10,7 @@ petclinic | org.springframework.samples.petclinic.vet | Specialty | 0 | 3 | 0 | 
 petclinic | org.springframework.samples.petclinic.vet | Vets | 0 | 14 | 0 | 2 | 0 | 4 | 0 | 3 | 0 | 2
 petclinic | org.springframework.samples.petclinic.visit | Visit | 0 | 27 | 0 | 0 | 0 | 12 | 0 | 7 | 0 | 7
 petclinic | org.springframework.samples.petclinic.owner | VisitController | 11 | 40 | 2 | 0 | 4 | 12 | 2 | 4 | 1 | 4
-petclinic | org.springframework.samples.petclinic.owner | Owner | 2 | 139 | 3 | 9 | 1 | 36 | 3 | 17 | 0 | 14
+petclinic | org.springframework.samples.petclinic.owner | Owner | 2 | 139 | 4 | 8 | 1 | 36 | 4 | 16 | 0 | 14
 petclinic | org.springframework.samples.petclinic.owner | OwnerController | 53 | 91 | 6 | 4 | 11 | 25 | 5 | 9 | 0 | 9
 petclinic | org.springframework.samples.petclinic.owner | PetType | 0 | 3 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
 petclinic | org.springframework.samples.petclinic.owner | PetTypeFormatter | 13 | 31 | 1 | 3 | 1 | 9 | 1 | 4 | 0 | 3

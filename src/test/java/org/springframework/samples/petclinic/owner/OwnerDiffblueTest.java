@@ -74,20 +74,6 @@ public class OwnerDiffblueTest {
     // Arrange
     Owner owner = new Owner();
     Pet pet = new Pet();
-    pet.setId(1);
-
-    // Act
-    owner.addPet(pet);
-
-    // Assert
-    assertSame(owner, pet.getOwner());
-  }
-
-  @Test
-  public void testAddPet2() {
-    // Arrange
-    Owner owner = new Owner();
-    Pet pet = new Pet();
 
     // Act
     owner.addPet(pet);
