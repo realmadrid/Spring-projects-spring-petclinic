@@ -1,7 +1,6 @@
 package org.springframework.samples.petclinic.owner;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.WebDataBinder;
 
 @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @AutoConfigureMockMvc
@@ -41,22 +39,6 @@ public class PetControllerDiffblueTest {
     assertEquals(6, this.petController.populatePetTypes().size());
   }
   @Test
-  public void testFindOwner() {
-    // Arrange, Act and Assert
-    assertNull(this.petController.findOwner(123));
-  }
-  @Test
-  public void testInitOwnerBinder() {
-    // Arrange
-    WebDataBinder webDataBinder = new WebDataBinder("!");
-
-    // Act
-    this.petController.initOwnerBinder(webDataBinder);
-
-    // Assert
-    assertEquals(1, webDataBinder.getDisallowedFields().length);
-  }
-  @Test
   public void testInitUpdateForm() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/{ownerId}/pets/{petId}/edit", 1,
@@ -68,7 +50,7 @@ public class PetControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
-    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
+    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
   }
   @Test
   public void testProcessCreationForm() throws Exception {
