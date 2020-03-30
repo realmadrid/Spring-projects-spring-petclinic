@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class VetsDiffblueTest {
   @Test
-  public void testConstructor() {
+  public void constructorTest() {
     // Arrange, Act and Assert
     List<Vet> vetList = (new Vets()).getVetList();
     assertTrue(vetList instanceof java.util.ArrayList);
@@ -15,7 +15,7 @@ public class VetsDiffblueTest {
   }
 
   @Test
-  public void testGetVetList() {
+  public void getVetListTest() {
     // Arrange, Act and Assert
     assertEquals(0, (new Vets()).getVetList().size());
   }
