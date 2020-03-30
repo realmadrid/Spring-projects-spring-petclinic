@@ -1,13 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-da0bc70
+INFO Diffblue Cover dev-SNAPSHOT-8778620
 INFO Detecting classpath...
-16:39:25.152 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-16:39:26.154 [35mINFO[0m ....
+17:08:36.386 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+17:08:37.388 [35mINFO[0m ....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src454271032/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src457208827/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src454271032/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
-INFO Expanded user code or user provided classpath: /codebuild/output/src454271032/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command "mvn clean test -Dtest='*DiffblueTest'" will be run in /codebuild/output/src457208827/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/src457208827/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6217,163 +6217,282 @@ INFO Indexing org.springframework.boot.autoconfigure.couchbase
 INFO Index ready.
 INFO Prefixes for filtering classes/methods detected [org.springframework.samples.petclinic, org.springframework.samples.petclinic.model, org.springframework.samples.petclinic.owner, org.springframework.samples.petclinic.system, org.springframework.samples.petclinic.vet, org.springframework.samples.petcl... [truncated]
 INFO Found 95 callable methods in 20 classes
-
-
-              |\      _,,,--,,_
-             /,`.-'`'   ._  \-;;,_
-  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
- |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
- |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
- |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
- |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
- |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
- |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
- ==================================================================/_/_/_/
-
-:: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
-
-
-INFO Initializing Spring embedded WebApplicationContext
-INFO Initializing Spring TestDispatcherServlet ''
-INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
-INFO  [2/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.initNewVisitForm
-INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
-INFO  [3/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
-INFO  [4/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.<init>
-INFO  [4/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO  [5/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setBirthDate
-INFO  [6/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisits
-INFO  [7/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setOwner
-INFO  [8/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.<init>
-INFO  [9/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getOwner
-INFO  [9/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [10/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getType
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [1/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
+INFO  [1/95]   No essential tests due to E005: Unable to load class.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
+INFO  [2/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.initNewVisitForm
+INFO  [3/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [4/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
+INFO  [4/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [5/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.<init>
+INFO  [5/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [6/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.setBirthDate
+INFO  [6/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [7/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getVisits
+INFO  [7/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO  [8/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.setOwner
+INFO  [8/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO  [9/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.<init>
+INFO  [9/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+INFO [10/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getOwner
 INFO [10/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [11/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getBirthDate
+INFO [11/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getType
 INFO [11/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [12/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setType
-INFO [13/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisitsInternal
-INFO [14/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setVisitsInternal
-INFO [15/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.addVisit
-INFO [16/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDate
-INFO [17/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getPetId
-INFO [17/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [18/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setPetId
-INFO [19/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.<init>
-INFO [20/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDate
-INFO [20/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [21/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [12/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getBirthDate
+INFO [12/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [13/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.setType
+INFO [13/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [14/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.getVisitsInternal
+INFO [14/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [15/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.setVisitsInternal
+INFO [15/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [16/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.addVisit
+INFO [16/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [17/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.setDate
+INFO [17/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [18/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getPetId
+INFO [18/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [19/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.setPetId
+INFO [19/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [20/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.<init>
+INFO [20/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+INFO [21/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDate
 INFO [21/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [22/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDescription
-INFO [23/95] Created 2 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
-INFO [24/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
-INFO [24/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [25/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
-INFO [26/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.setId
-INFO [27/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
-INFO [27/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
-INFO [28/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
-INFO Initializing Spring TestDispatcherServlet ''
-INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
-INFO [29/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [30/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.getVetList
-INFO [31/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vets.<init>
-INFO [32/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.getName
-INFO [32/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [33/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.toString
-INFO [34/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.<init>
-INFO [35/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.setName
-INFO Initializing Spring TestDispatcherServlet ''
-INFO [36/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
-INFO [36/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [37/95] Created 1 test for method org.springframework.samples.petclinic.system.WelcomeController.welcome
-INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
-INFO [39/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
-INFO [39/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
-INFO [40/95]   No essential tests due to E009: Unrecoverable runtime error.
-INFO [41/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
-INFO [42/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
-INFO [42/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [43/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setPetsInternal
-INFO [44/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getAddress
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [22/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
+INFO [22/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [23/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.setDescription
+INFO [23/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [24/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
+INFO [24/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [25/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
+INFO [25/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [26/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.<init>
+INFO [26/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [27/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.setId
+INFO [27/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
+INFO [28/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
+INFO [29/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [30/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
+INFO [30/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [31/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.triggerException
+INFO [31/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [32/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vets.getVetList
+INFO [32/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [33/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vets.<init>
+INFO [33/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [34/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.getName
+INFO [34/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [35/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.toString
+INFO [35/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [36/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.<init>
+INFO [36/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [37/95] Created 0 tests for method org.springframework.samples.petclinic.model.NamedEntity.setName
+INFO [37/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [38/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
+INFO [38/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [39/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.welcome
+INFO [39/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Specialty.<init>
+INFO [40/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [41/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
+INFO [41/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [42/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
+INFO [42/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+INFO [43/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getPet
+INFO [43/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [44/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
 INFO [44/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [45/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setAddress
-INFO [46/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPets
-INFO [47/95] Created 2 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
-INFO [48/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setCity
-INFO [49/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
-INFO [49/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [50/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPetsInternal
-INFO [51/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
-INFO [52/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setTelephone
-INFO [53/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetType.<init>
-INFO [54/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getLastName
-INFO [54/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [55/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setLastName
-INFO [56/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getFirstName
+INFO [45/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.setPetsInternal
+INFO [45/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [46/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getAddress
+INFO [46/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [47/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.setAddress
+INFO [47/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [48/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getPets
+INFO [48/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [49/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
+INFO [49/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [50/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.setCity
+INFO [50/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [51/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
+INFO [51/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [52/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getPetsInternal
+INFO [52/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [53/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getPet
+INFO [53/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [54/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.setTelephone
+INFO [54/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [55/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetType.<init>
+INFO [55/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [56/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getLastName
 INFO [56/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [57/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.<init>
-INFO [58/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setFirstName
-INFO Initializing Spring TestDispatcherServlet ''
-INFO [59/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.<init>
-INFO [59/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [60/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showVetList
-INFO [61/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
-INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
-INFO [62/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
-INFO [63/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO Initializing Spring TestDispatcherServlet ''
-INFO [64/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
-INFO [65/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
-INFO [66/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
-INFO [66/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [67/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
-INFO [67/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [68/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
-INFO [69/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
-INFO [70/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
-INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
-INFO [72/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
-INFO [73/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
-INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
-INFO [74/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
-INFO [75/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
-INFO [77/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
-INFO [77/95]   No essential tests due to E009: Unrecoverable runtime error.
-INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
-INFO [78/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO Initializing Spring TestDispatcherServlet ''
-INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
-INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [80/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
-INFO [81/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm
-INFO [82/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
-INFO [83/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm
-INFO [84/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
-INFO [85/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.showOwner
-INFO [86/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initCreationForm
-INFO [87/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.initFindForm
-INFO [88/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialtiesInternal
-INFO [89/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getSpecialties
-INFO [90/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.addSpecialty
-INFO [91/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.<init>
-INFO [92/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.setSpecialtiesInternal
-INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
+INFO [57/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.setLastName
+INFO [57/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [58/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getFirstName
+INFO [58/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [59/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.<init>
+INFO [59/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [60/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.setFirstName
+INFO [60/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [61/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.<init>
+INFO [61/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.showVetList
+INFO [62/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
+INFO [63/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [64/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
+INFO [64/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [65/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
+INFO [65/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [66/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
+INFO [66/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [67/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
+INFO [67/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [68/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
+INFO [68/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [69/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
+INFO [69/95]   No essential tests due to E005: Unable to load class.
+INFO [70/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
+INFO [70/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [71/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
+INFO [71/95]   No essential tests due to E005: Unable to load class.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [72/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
+INFO [72/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [73/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
+INFO [73/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
+INFO [74/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.findOwner
+INFO [75/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [76/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
+INFO [76/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [77/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
+INFO [77/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.supports
+INFO [78/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
+INFO [79/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [80/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
+INFO [80/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [81/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
+INFO [81/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [82/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
+INFO [82/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [83/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm
+INFO [83/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [84/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
+INFO [84/95]   No essential tests due to E005: Unable to load class.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [85/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm
+INFO [85/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [86/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
+INFO [86/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [87/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.showOwner
+INFO [87/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [88/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.initCreationForm
+INFO [88/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [89/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.initFindForm
+INFO [89/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [90/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vet.getSpecialtiesInternal
+INFO [90/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [91/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vet.getSpecialties
+INFO [91/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [92/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vet.addSpecialty
+INFO [92/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [93/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vet.<init>
+INFO [93/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+WARN We detected spring on the classpath but were missing critical classes to load our own context from: Failed to construct com.diffblue.spring.isolation.ObjectConstructor. It's likely that your class doesn't exist in the class loader or have a no-args constructor.
+INFO [94/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vet.setSpecialtiesInternal
+INFO [94/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
+INFO [95/95] Created 0 tests for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
+INFO [95/95]   No essential tests due to E008: Unable to instantiate class containing the method under test.
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 18 methods due to:
-INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
-INFO    4 E004: Unable to find any meaningful assertion.
-INFO    2 E009: Unrecoverable runtime error.
-INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
-INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 64 tests created for 62 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src454271032/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-16:40:55.742 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-16:41:13.742 [35mINFO[0m ..
-INFO All 64 generated tests were successfully verified
+INFO No essential tests created for 82 methods due to:
+INFO   57 E008: Unable to instantiate class containing the method under test.
+INFO   21 E010: Timeout while generating the arrange/act section of your test.
+INFO    4 E005: Unable to load class.
+INFO 0 tests created for 0 out of 95 methods in 0 out of 20 classes
+INFO Executing external command "mvn clean test -Dtest='*DiffblueTest'" in /codebuild/output/src457208827/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
+17:11:03.223 [35mINFO[0m Running verification command, this can take a couple of minutes.......
+INFO Tests failed verification, no tests were created.
+INFO All 0 generated tests were successfully verified
