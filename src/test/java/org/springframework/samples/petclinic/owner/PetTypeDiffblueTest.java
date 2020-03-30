@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class PetTypeDiffblueTest {
   @Test
-  public void testConstructor() {
+  public void constructorTest() {
     // Arrange and Act
     PetType actualPetType = new PetType();
 
