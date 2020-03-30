@@ -16,5 +16,17 @@ public class SpecialtyDiffblueTest {
     assertTrue(actualSpecialty.isNew());
     assertNull(actualSpecialty.toString());
   }
+
+  @Test
+  public void testConstructor2() {
+    // Arrange and Act
+    Specialty actualSpecialty = new Specialty();
+
+    // Assert
+    assertNull(actualSpecialty.getName());
+    assertNull(actualSpecialty.getId());
+    assertTrue(actualSpecialty.isNew());
+    assertNull(actualSpecialty.toString());
+  }
 }
 

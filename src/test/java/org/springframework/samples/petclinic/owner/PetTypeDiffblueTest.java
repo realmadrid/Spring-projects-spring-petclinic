@@ -16,5 +16,17 @@ public class PetTypeDiffblueTest {
     assertTrue(actualPetType.isNew());
     assertNull(actualPetType.toString());
   }
+
+  @Test
+  public void testConstructor2() {
+    // Arrange and Act
+    PetType actualPetType = new PetType();
+
+    // Assert
+    assertNull(actualPetType.getName());
+    assertNull(actualPetType.getId());
+    assertTrue(actualPetType.isNew());
+    assertNull(actualPetType.toString());
+  }
 }
 

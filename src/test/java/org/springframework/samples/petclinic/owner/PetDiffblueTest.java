@@ -29,6 +29,24 @@ public class PetDiffblueTest {
   }
 
   @Test
+  public void testConstructor2() {
+    // Arrange and Act
+    Pet actualPet = new Pet();
+
+    // Assert
+    assertNull(actualPet.getName());
+    Set<Visit> visitsInternal = actualPet.getVisitsInternal();
+    assertTrue(visitsInternal instanceof java.util.LinkedHashSet);
+    assertNull(actualPet.getBirthDate());
+    assertEquals(0, visitsInternal.size());
+    assertNull(actualPet.getType());
+    assertNull(actualPet.getOwner());
+    assertNull(actualPet.getId());
+    assertTrue(actualPet.isNew());
+    assertNull(actualPet.toString());
+  }
+
+  @Test
   public void testSetBirthDate() {
     // Arrange
     Pet pet = new Pet();
