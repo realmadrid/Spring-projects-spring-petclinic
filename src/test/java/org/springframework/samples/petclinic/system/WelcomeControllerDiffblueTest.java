@@ -1,5 +1,9 @@
 package org.springframework.samples.petclinic.system;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,4 +24,13 @@ public class WelcomeControllerDiffblueTest {
 
     @Autowired
     private WelcomeController controller;
+
+    @Test
+    public void welcome() throws Exception {
+        MockMvcBuilders.standaloneSetup(controller).build().perform(
+            MockMvcRequestBuilders.get("/"))
+            .andExpect(status().isOk())
+            .andExpect(forwardedUrl("welcome"))
+            .andExpect(view().name("welcome"));
+    }
 }
