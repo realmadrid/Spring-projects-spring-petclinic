@@ -9,15 +9,15 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 /**
- * Unit tests for org.springframework.samples.petclinic.system.WelcomeController
+ * Unit tests for org.springframework.samples.petclinic.system.CrashController
  *
  * @author Diffblue Cover
  */
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = WelcomeController.class)
-public class WelcomeControllerDiffblueTest {
+@ContextConfiguration(classes = CrashController.class)
+public class CrashControllerDiffblueTest {
 
     @Autowired
-    private WelcomeController controller;
+    private CrashController controller;
 }

@@ -40,7 +40,7 @@ Spring repos are TBD.
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 165/209 78.9%
+Total coverage: 163/208 78.4%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
@@ -49,4 +49,4 @@ org.springframework.samples.petclinic.model.NamedEntityDiffblueTest fails to com
 org.springframework.samples.petclinic.model.PersonDiffblueTest fails to compile
 Compiling the tests, iteration 2
 Running the tests, iteration 1
-org.springframework.samples.petclinic.system.CrashControllerDiffblueTest fails
+All JCOVER tests compile & pass
