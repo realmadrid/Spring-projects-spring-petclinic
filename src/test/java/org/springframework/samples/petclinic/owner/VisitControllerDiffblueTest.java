@@ -6,6 +6,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.samples.petclinic.visit.VisitRepository;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -13,16 +15,20 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.WebDataBinder;
 
-@RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @AutoConfigureMockMvc
+@RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @SpringBootTest
 public class VisitControllerDiffblueTest {
+  @MockBean
+  private PetRepository petRepository;
+  @MockBean
+  private VisitRepository visitRepository;
   @Autowired
   private MockMvc mockMvc;
   @Autowired
   private VisitController visitController;
   @Test
-  public void testInitNewVisitForm() throws Exception {
+  public void initNewVisitFormTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/owners/*/pets/{petId}/visits/new", 1);
 
@@ -35,7 +41,7 @@ public class VisitControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("pet", "visit"));
   }
   @Test
-  public void testSetAllowedFields() {
+  public void setAllowedFieldsTest() {
     // Arrange
     WebDataBinder webDataBinder = new WebDataBinder("!");
 

@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
@@ -17,10 +18,12 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 @SpringBootTest
 public class VetControllerDiffblueTest {
+  @MockBean
+  private VetRepository vetRepository;
   @Autowired
   private MockMvc mockMvc;
   @Test
-  public void testShowResourcesVetList() throws Exception {
+  public void showResourcesVetListTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets");
 
@@ -50,7 +53,7 @@ public class VetControllerDiffblueTest {
     resultActions1.andExpect(MockMvcResultMatchers.content().string(matcher));
   }
   @Test
-  public void testShowVetList() throws Exception {
+  public void showVetListTest() throws Exception {
     // Arrange
     MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets.html");
 

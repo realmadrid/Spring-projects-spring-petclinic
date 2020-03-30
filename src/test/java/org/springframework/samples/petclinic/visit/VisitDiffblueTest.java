@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class VisitDiffblueTest {
   @Test
-  public void testConstructor() {
+  public void constructorTest() {
     // Arrange and Act
     Visit actualVisit = new Visit();
 
@@ -19,7 +19,7 @@ public class VisitDiffblueTest {
   }
 
   @Test
-  public void testSetDate() {
+  public void setDateTest() {
     // Arrange
     Visit visit = new Visit();
 
@@ -31,7 +31,7 @@ public class VisitDiffblueTest {
   }
 
   @Test
-  public void testSetDescription() {
+  public void setDescriptionTest() {
     // Arrange
     Visit visit = new Visit();
 
@@ -43,7 +43,7 @@ public class VisitDiffblueTest {
   }
 
   @Test
-  public void testSetPetId() {
+  public void setPetIdTest() {
     // Arrange
     Visit visit = new Visit();
 
