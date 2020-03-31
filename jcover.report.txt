@@ -10,7 +10,7 @@
       org.springframework.samples.petclinic.owner.PetRepository      0/0      
             org.springframework.samples.petclinic.owner.PetType      0/0      
    org.springframework.samples.petclinic.owner.PetTypeFormatter      4/6 66.7%
-       org.springframework.samples.petclinic.owner.PetValidator     1/10   10%
+       org.springframework.samples.petclinic.owner.PetValidator    10/10  100%
     org.springframework.samples.petclinic.owner.VisitController    14/16 87.5%
 org.springframework.samples.petclinic.system.CacheConfiguration      0/0      
    org.springframework.samples.petclinic.system.CrashController      0/0      
@@ -23,4 +23,4 @@ org.springframework.samples.petclinic.system.CacheConfiguration      0/0
               org.springframework.samples.petclinic.visit.Visit    12/12  100%
     org.springframework.samples.petclinic.visit.VisitRepository      0/0      
 
-                                                          Total  165/209 78.9%
+                                                          Total  174/209 83.3%
