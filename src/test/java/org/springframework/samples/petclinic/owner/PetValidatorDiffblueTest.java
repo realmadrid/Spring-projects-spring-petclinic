@@ -14,7 +14,8 @@ import org.junit.Test;
 public class PetValidatorDiffblueTest {
 
     @Test
-    public void supportsClazzIsPetClinicApplicationReturnsFalse() {
-        assertThat(new PetValidator().supports(org.springframework.samples.petclinic.PetClinicApplication.class), is(false));
+    public void supports() {
+        assertThat(new PetValidator().supports(Pet.class), is(true));
+        assertThat(new PetValidator().supports(String.class), is(false));
     }
 }
