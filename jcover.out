@@ -49,4 +49,4 @@ org.springframework.samples.petclinic.model.NamedEntityDiffblueTest fails to com
 org.springframework.samples.petclinic.model.PersonDiffblueTest fails to compile
 Compiling the tests, iteration 2
 Running the tests, iteration 1
-org.springframework.samples.petclinic.system.CrashControllerDiffblueTest fails
+All JCOVER tests compile & pass
