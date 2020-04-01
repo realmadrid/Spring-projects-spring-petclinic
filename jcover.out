@@ -18,14 +18,17 @@ METHOD: findPetTypes
 METHOD: save
 Spring repos are TBD.
 [ 40%] org.springframework.samples.petclinic.owner.PetType
+No tests generated
 [ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
 [ 48%] org.springframework.samples.petclinic.owner.PetValidator
 [ 52%] org.springframework.samples.petclinic.owner.VisitController
 [ 56%] org.springframework.samples.petclinic.system.CacheConfiguration
 Skipping a Spring Configuration (no logic to be tested)
 [ 60%] org.springframework.samples.petclinic.system.CrashController
+No tests generated
 [ 64%] org.springframework.samples.petclinic.system.WelcomeController
 [ 68%] org.springframework.samples.petclinic.vet.Specialty
+No tests generated
 [ 72%] org.springframework.samples.petclinic.vet.Vet
 [ 76%] org.springframework.samples.petclinic.vet.VetController
 [ 80%] org.springframework.samples.petclinic.vet.VetRepository
@@ -40,7 +43,7 @@ Spring repos are TBD.
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 173/209 82.8%
+Total coverage: 174/209 83.3%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
