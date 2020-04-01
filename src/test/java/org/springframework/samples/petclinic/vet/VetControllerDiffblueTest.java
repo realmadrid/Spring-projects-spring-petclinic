@@ -1,5 +1,7 @@
 package org.springframework.samples.petclinic.vet;
 
+import java.util.Collection;
+import java.util.Collections;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -7,9 +9,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
@@ -17,45 +19,32 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 @SpringBootTest
 public class VetControllerDiffblueTest {
+  @MockBean
+  private VetRepository vetRepository;
   @Autowired
   private MockMvc mockMvc;
   @Test
   public void testShowResourcesVetList() throws Exception {
     // Arrange
-    MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets");
+    org.mockito.Mockito.<Collection<Vet>>when(this.vetRepository.findAll()).thenReturn(Collections.<Vet>emptyList());
 
     // Act
-    ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+    ResultActions actualPerformResult = this.mockMvc.perform(MockMvcRequestBuilders.get("/vets"));
 
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions
         .andExpect(MockMvcResultMatchers.content().contentType("application/json;charset=UTF-8"));
-    Matcher<String> matcher = Matchers.containsString("{\"vetList\":[{\"id\":1,\"firstName\":\"James\",\"lastName\""
-        + ":\"Carter\",\"specialties\":[],\"nrOfSpecialties\":0,\"new"
-        + "\":false},{\"id\":2,\"firstName\":\"Helen\",\"lastName\":"
-        + "\"Leary\",\"specialties\":[{\"id\":1,\"name\":\"radiology\","
-        + "\"new\":false}],\"nrOfSpecialties\":1,\"new\":false},{\"id"
-        + "\":3,\"firstName\":\"Linda\",\"lastName\":\"Douglas\","
-        + "\"specialties\":[{\"id\":3,\"name\":\"dentistry\",\"new\":false"
-        + "},{\"id\":2,\"name\":\"surgery\",\"new\":false}],\"nrOfSpecialties"
-        + "\":2,\"new\":false},{\"id\":4,\"firstName\":\"Rafael\","
-        + "\"lastName\":\"Ortega\",\"specialties\":[{\"id\":2,\"name\":"
-        + "\"surgery\",\"new\":false}],\"nrOfSpecialties\":1,\"new\""
-        + ":false},{\"id\":5,\"firstName\":\"Henry\",\"lastName\":"
-        + "\"Stevens\",\"specialties\":[{\"id\":1,\"name\":\"radiology"
-        + "\",\"new\":false}],\"nrOfSpecialties\":1,\"new\":false},{"
-        + "\"id\":6,\"firstName\":\"Sharon\",\"lastName\":\"Jenkins\","
-        + "\"specialties\":[],\"nrOfSpecialties\":0,\"new\":false}]" + "}");
+    Matcher<String> matcher = Matchers.containsString("{\"vetList\":[]}");
     resultActions1.andExpect(MockMvcResultMatchers.content().string(matcher));
   }
   @Test
   public void testShowVetList() throws Exception {
     // Arrange
-    MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/vets.html");
+    org.mockito.Mockito.<Collection<Vet>>when(this.vetRepository.findAll()).thenReturn(Collections.<Vet>emptyList());
 
     // Act
-    ResultActions actualPerformResult = this.mockMvc.perform(requestBuilder);
+    ResultActions actualPerformResult = this.mockMvc.perform(MockMvcRequestBuilders.get("/vets.html"));
 
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
