@@ -1,5 +1,6 @@
 package org.springframework.samples.petclinic.system;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,11 @@ public class WelcomeControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(0));
+  }
+  @Test
+  public void testWelcome2() {
+    // Arrange, Act and Assert
+    assertEquals("welcome", (new WelcomeController()).welcome());
   }
 }
 
