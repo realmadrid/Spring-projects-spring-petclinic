@@ -6,7 +6,8 @@ import java.util.Collections;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -14,8 +15,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.WebDataBinder;
 
-@WebMvcTest(value = {org.springframework.samples.petclinic.owner.OwnerController.class})
 @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+@AutoConfigureMockMvc
+@SpringBootTest
 public class OwnerControllerDiffblueTest {
   @Autowired
   private OwnerController ownerController;
