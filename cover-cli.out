@@ -1,13 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-d07c34e
+INFO Diffblue Cover dev-SNAPSHOT-bdb1546
 INFO Detecting classpath...
-16:41:30.203 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-16:41:31.205 [35mINFO[0m .....
+16:46:58.160 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+16:46:59.162 [35mINFO[0m ....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src882961326/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src136065377/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test" will be run in /codebuild/output/src882961326/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
-INFO Expanded user code or user provided classpath: /codebuild/output/src882961326/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command "mvn clean test" will be run in /codebuild/output/src136065377/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/src136065377/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6374,7 +6374,7 @@ INFO    2 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 65 tests created for 63 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test" in /codebuild/output/src882961326/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-16:43:13.622 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-16:43:31.622 [35mINFO[0m ..............
+INFO Executing external command "mvn clean test" in /codebuild/output/src136065377/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
+16:48:21.274 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+16:48:39.275 [35mINFO[0m .......
 INFO All 65 generated tests were successfully verified
