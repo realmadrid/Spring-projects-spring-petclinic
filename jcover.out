@@ -9,14 +9,14 @@ Skipping a SpringBootApplication (no logic to be tested)
 METHOD: findById
 METHOD: findByLastName
 METHOD: save
-Spring repos are TBD.
+No harness
 [ 28%] org.springframework.samples.petclinic.owner.Pet
 [ 32%] org.springframework.samples.petclinic.owner.PetController
 [ 36%] org.springframework.samples.petclinic.owner.PetRepository
 METHOD: findById
 METHOD: findPetTypes
 METHOD: save
-Spring repos are TBD.
+No harness
 [ 40%] org.springframework.samples.petclinic.owner.PetType
 No tests generated
 [ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
@@ -33,17 +33,17 @@ No tests generated
 [ 76%] org.springframework.samples.petclinic.vet.VetController
 [ 80%] org.springframework.samples.petclinic.vet.VetRepository
 METHOD: findAll
-Spring repos are TBD.
+No harness
 [ 84%] org.springframework.samples.petclinic.vet.Vets
 [ 88%] org.springframework.samples.petclinic.visit.Visit
 [ 92%] org.springframework.samples.petclinic.visit.VisitRepository
 METHOD: findByPetId
 METHOD: save
-Spring repos are TBD.
+No harness
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 167/209 79.9%
+Total coverage: 174/209 83.3%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
