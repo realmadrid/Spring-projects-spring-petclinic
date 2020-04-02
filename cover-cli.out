@@ -1,13 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-fad718b
+INFO Diffblue Cover dev-SNAPSHOT-b9a6fce
 INFO Detecting classpath...
-11:55:38.900 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-11:55:39.902 [35mINFO[0m .....
+14:11:22.061 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+14:11:23.063 [35mINFO[0m ....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src330126519/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src925517793/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test -Dspring.cache.type=NONE" will be run in /codebuild/output/src330126519/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
-INFO Expanded user code or user provided classpath: /codebuild/output/src330126519/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command "mvn clean test -Dspring.cache.type=NONE" will be run in /codebuild/output/src925517793/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/src925517793/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6288,12 +6288,13 @@ INFO [36/95] Created 1 test for method org.springframework.samples.petclinic.mod
 INFO Initializing Spring TestDispatcherServlet ''
 INFO [37/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
 INFO [37/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.system.WelcomeController.welcome
+INFO [38/95] Created 2 tests for method org.springframework.samples.petclinic.system.WelcomeController.welcome
 INFO [39/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
 INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
 INFO [40/95]   No essential tests due to E004: Unable to find any meaningful assertion.
 INFO [41/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
 INFO [41/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [41/95]   1 generated test was found to be invalid and were discarded
 INFO [42/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
 INFO [43/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
 INFO [43/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
@@ -6373,8 +6374,8 @@ INFO    4 E004: Unable to find any meaningful assertion.
 INFO    2 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 65 tests created for 63 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test -Dspring.cache.type=NONE" in /codebuild/output/src330126519/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-11:57:22.499 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-11:57:40.500 [35mINFO[0m .........................
-INFO All 65 generated tests were successfully verified
+INFO 66 tests created for 63 out of 95 methods in 17 out of 20 classes
+INFO Executing external command "mvn clean test -Dspring.cache.type=NONE" in /codebuild/output/src925517793/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
+14:14:02.308 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+14:14:20.308 [35mINFO[0m ..............
+INFO All 66 generated tests were successfully verified
