@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.owner;
 
-import static org.junit.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
@@ -15,31 +14,28 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.WebDataBinder;
 
 @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @AutoConfigureMockMvc
 @SpringBootTest
 public class VisitControllerDiffblueTest {
   @MockBean
-  private PetRepository petRepository;
-  @MockBean
   private VisitRepository visitRepository;
+  @MockBean
+  private PetRepository petRepository;
   @Autowired
   private MockMvc mockMvc;
-  @Autowired
-  private VisitController visitController;
   @Test
   public void testInitNewVisitForm() throws Exception {
     // Arrange
-    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
-        .thenReturn(Collections.<Visit>emptyList());
     Pet pet = new Pet();
     pet.setBirthDate(null);
     pet.setName("a value for name");
     org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
     org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
         .thenReturn(Collections.<PetType>emptyList());
+    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
+        .thenReturn(Collections.<Visit>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
@@ -53,14 +49,14 @@ public class VisitControllerDiffblueTest {
   @Test
   public void testProcessNewVisitForm() throws Exception {
     // Arrange
-    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
-        .thenReturn(Collections.<Visit>emptyList());
     Pet pet = new Pet();
     pet.setBirthDate(null);
     pet.setName("a value for name");
     org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
     org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
         .thenReturn(Collections.<PetType>emptyList());
+    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
+        .thenReturn(Collections.<Visit>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
@@ -70,17 +66,6 @@ public class VisitControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isFound());
     resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(0));
-  }
-  @Test
-  public void testSetAllowedFields() {
-    // Arrange
-    WebDataBinder webDataBinder = new WebDataBinder("!");
-
-    // Act
-    this.visitController.setAllowedFields(webDataBinder);
-
-    // Assert
-    assertEquals(1, webDataBinder.getDisallowedFields().length);
   }
 }
 

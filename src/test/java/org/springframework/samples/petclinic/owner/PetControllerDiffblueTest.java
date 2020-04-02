@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.WebDataBinder;
 
 @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @AutoConfigureMockMvc
@@ -70,17 +69,6 @@ public class PetControllerDiffblueTest {
     assertNull(this.petController.findOwner(123));
   }
   @Test
-  public void testInitOwnerBinder() {
-    // Arrange
-    WebDataBinder webDataBinder = new WebDataBinder("!");
-
-    // Act
-    this.petController.initOwnerBinder(webDataBinder);
-
-    // Assert
-    assertEquals(1, webDataBinder.getDisallowedFields().length);
-  }
-  @Test
   public void testInitUpdateForm() throws Exception {
     // Arrange
     org.mockito.Mockito.<Collection<Owner>>when(this.ownerRepository.findByLastName("value"))
@@ -106,7 +94,7 @@ public class PetControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
     ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(3));
-    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("types", "owner", "pet"));
+    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("owner", "types", "pet"));
   }
   @Test
   public void testProcessCreationForm() throws Exception {
