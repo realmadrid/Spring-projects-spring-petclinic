@@ -22,9 +22,9 @@ import org.springframework.web.bind.WebDataBinder;
 @SpringBootTest
 public class VisitControllerDiffblueTest {
   @MockBean
-  private PetRepository petRepository;
-  @MockBean
   private VisitRepository visitRepository;
+  @MockBean
+  private PetRepository petRepository;
   @Autowired
   private MockMvc mockMvc;
   @Autowired
@@ -32,14 +32,14 @@ public class VisitControllerDiffblueTest {
   @Test
   public void testInitNewVisitForm() throws Exception {
     // Arrange
-    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
-        .thenReturn(Collections.<Visit>emptyList());
     Pet pet = new Pet();
     pet.setBirthDate(null);
     pet.setName("a value for name");
     org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
     org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
         .thenReturn(Collections.<PetType>emptyList());
+    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
+        .thenReturn(Collections.<Visit>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
@@ -53,14 +53,14 @@ public class VisitControllerDiffblueTest {
   @Test
   public void testProcessNewVisitForm() throws Exception {
     // Arrange
-    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
-        .thenReturn(Collections.<Visit>emptyList());
     Pet pet = new Pet();
     pet.setBirthDate(null);
     pet.setName("a value for name");
     org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
     org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
         .thenReturn(Collections.<PetType>emptyList());
+    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
+        .thenReturn(Collections.<Visit>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
