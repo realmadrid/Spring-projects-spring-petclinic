@@ -37,9 +37,9 @@ public class VetDiffblueTest {
   @Test
   public void testSetSpecialtiesInternal() {
     // Arrange
-    Vet vet = new Vet();
     HashSet<Specialty> specialtySet = new HashSet<Specialty>();
     specialtySet.add(new Specialty());
+    Vet vet = new Vet();
 
     // Act
     vet.setSpecialtiesInternal(specialtySet);

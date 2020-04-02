@@ -75,9 +75,9 @@ public class PetDiffblueTest {
   @Test
   public void testSetVisitsInternal() {
     // Arrange
-    Pet pet = new Pet();
     HashSet<Visit> visitSet = new HashSet<Visit>();
     visitSet.add(new Visit());
+    Pet pet = new Pet();
 
     // Act
     pet.setVisitsInternal(visitSet);
