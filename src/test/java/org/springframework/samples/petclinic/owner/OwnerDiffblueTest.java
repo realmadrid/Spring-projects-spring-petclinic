@@ -52,9 +52,9 @@ public class OwnerDiffblueTest {
   @Test
   public void testSetPetsInternal() {
     // Arrange
-    Owner owner = new Owner();
     HashSet<Pet> petSet = new HashSet<Pet>();
     petSet.add(new Pet());
+    Owner owner = new Owner();
 
     // Act
     owner.setPetsInternal(petSet);
@@ -72,9 +72,9 @@ public class OwnerDiffblueTest {
   @Test
   public void testAddPet() {
     // Arrange
-    Owner owner = new Owner();
     Pet pet = new Pet();
     pet.setId(1);
+    Owner owner = new Owner();
 
     // Act
     owner.addPet(pet);
