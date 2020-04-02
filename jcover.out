@@ -43,7 +43,7 @@ Spring repos are TBD.
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 174/209 83.3%
+Total coverage: 168/209 80.4%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
