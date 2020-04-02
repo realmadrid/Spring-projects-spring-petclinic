@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.owner;
 
-import static org.junit.Assert.assertEquals;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
@@ -14,10 +13,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.web.bind.WebDataBinder;
 
-@RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @WebMvcTest(value = {org.springframework.samples.petclinic.owner.VisitController.class})
+@RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 public class VisitControllerDiffblueTest {
   @MockBean
   private PetRepository petRepository;
@@ -25,8 +23,6 @@ public class VisitControllerDiffblueTest {
   private VisitRepository visitRepository;
   @Autowired
   private MockMvc mockMvc;
-  @Autowired
-  private VisitController visitController;
   @Test
   public void testInitNewVisitForm() throws Exception {
     // Arrange
@@ -68,17 +64,6 @@ public class VisitControllerDiffblueTest {
     // Assert
     ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isFound());
     resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(0));
-  }
-  @Test
-  public void testSetAllowedFields() {
-    // Arrange
-    WebDataBinder webDataBinder = new WebDataBinder("!");
-
-    // Act
-    this.visitController.setAllowedFields(webDataBinder);
-
-    // Assert
-    assertEquals(1, webDataBinder.getDisallowedFields().length);
   }
 }
 
