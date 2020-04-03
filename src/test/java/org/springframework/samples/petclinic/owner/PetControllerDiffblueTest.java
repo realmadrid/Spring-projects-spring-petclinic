@@ -8,7 +8,8 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
@@ -16,26 +17,21 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.WebDataBinder;
 
-@WebMvcTest(value = {org.springframework.samples.petclinic.owner.PetController.class})
 @RunWith(org.springframework.test.context.junit4.SpringRunner.class)
+@AutoConfigureMockMvc
+@SpringBootTest
 public class PetControllerDiffblueTest {
   @Autowired
   private PetController petController;
   @MockBean
-  private OwnerRepository ownerRepository;
-  @MockBean
   private PetRepository petRepository;
+  @MockBean
+  private OwnerRepository ownerRepository;
   @Autowired
   private MockMvc mockMvc;
   @Test
   public void testInitCreationForm() throws Exception {
     // Arrange
-    Pet pet = new Pet();
-    pet.setBirthDate(null);
-    pet.setName("a value for name");
-    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
-    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
-        .thenReturn(Collections.<PetType>emptyList());
     org.mockito.Mockito.<Collection<Owner>>when(this.ownerRepository.findByLastName("value"))
         .thenReturn(Collections.<Owner>emptyList());
     Owner owner = new Owner();
@@ -45,6 +41,12 @@ public class PetControllerDiffblueTest {
     owner.setFirstName("a value for firstName");
     owner.setLastName("a value for lastName");
     org.mockito.Mockito.<Owner>when(this.ownerRepository.findById(123456789)).thenReturn(owner);
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setName("a value for name");
+    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
+    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
+        .thenReturn(Collections.<PetType>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc.perform(
@@ -81,12 +83,6 @@ public class PetControllerDiffblueTest {
   @Test
   public void testInitUpdateForm() throws Exception {
     // Arrange
-    Pet pet = new Pet();
-    pet.setBirthDate(null);
-    pet.setName("a value for name");
-    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
-    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
-        .thenReturn(Collections.<PetType>emptyList());
     org.mockito.Mockito.<Collection<Owner>>when(this.ownerRepository.findByLastName("value"))
         .thenReturn(Collections.<Owner>emptyList());
     Owner owner = new Owner();
@@ -96,6 +92,12 @@ public class PetControllerDiffblueTest {
     owner.setFirstName("a value for firstName");
     owner.setLastName("a value for lastName");
     org.mockito.Mockito.<Owner>when(this.ownerRepository.findById(123456789)).thenReturn(owner);
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setName("a value for name");
+    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
+    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
+        .thenReturn(Collections.<PetType>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
@@ -109,12 +111,6 @@ public class PetControllerDiffblueTest {
   @Test
   public void testProcessCreationForm() throws Exception {
     // Arrange
-    Pet pet = new Pet();
-    pet.setBirthDate(null);
-    pet.setName("a value for name");
-    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
-    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
-        .thenReturn(Collections.<PetType>emptyList());
     org.mockito.Mockito.<Collection<Owner>>when(this.ownerRepository.findByLastName("value"))
         .thenReturn(Collections.<Owner>emptyList());
     Owner owner = new Owner();
@@ -124,6 +120,12 @@ public class PetControllerDiffblueTest {
     owner.setFirstName("a value for firstName");
     owner.setLastName("a value for lastName");
     org.mockito.Mockito.<Owner>when(this.ownerRepository.findById(123456789)).thenReturn(owner);
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setName("a value for name");
+    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
+    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
+        .thenReturn(Collections.<PetType>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc.perform(
@@ -140,12 +142,6 @@ public class PetControllerDiffblueTest {
   @Test
   public void testProcessUpdateForm() throws Exception {
     // Arrange
-    Pet pet = new Pet();
-    pet.setBirthDate(null);
-    pet.setName("a value for name");
-    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
-    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
-        .thenReturn(Collections.<PetType>emptyList());
     org.mockito.Mockito.<Collection<Owner>>when(this.ownerRepository.findByLastName("value"))
         .thenReturn(Collections.<Owner>emptyList());
     Owner owner = new Owner();
@@ -155,6 +151,12 @@ public class PetControllerDiffblueTest {
     owner.setFirstName("a value for firstName");
     owner.setLastName("a value for lastName");
     org.mockito.Mockito.<Owner>when(this.ownerRepository.findById(123456789)).thenReturn(owner);
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setName("a value for name");
+    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
+    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
+        .thenReturn(Collections.<PetType>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
