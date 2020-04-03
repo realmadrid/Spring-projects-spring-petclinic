@@ -6,22 +6,17 @@ Skipping a SpringBootApplication (no logic to be tested)
 [ 16%] org.springframework.samples.petclinic.owner.Owner
 [ 20%] org.springframework.samples.petclinic.owner.OwnerController
 [ 24%] org.springframework.samples.petclinic.owner.OwnerRepository
-METHOD: findById
-METHOD: findByLastName
-METHOD: save
-No harness
+Skipping an interface
 [ 28%] org.springframework.samples.petclinic.owner.Pet
 [ 32%] org.springframework.samples.petclinic.owner.PetController
 [ 36%] org.springframework.samples.petclinic.owner.PetRepository
-METHOD: findById
-METHOD: findPetTypes
-METHOD: save
-No harness
+Skipping an interface
 [ 40%] org.springframework.samples.petclinic.owner.PetType
 No tests generated
 [ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
 [ 48%] org.springframework.samples.petclinic.owner.PetValidator
 [ 52%] org.springframework.samples.petclinic.owner.VisitController
+No tests generated
 [ 56%] org.springframework.samples.petclinic.system.CacheConfiguration
 Skipping a Spring Configuration (no logic to be tested)
 [ 60%] org.springframework.samples.petclinic.system.CrashController
@@ -32,18 +27,15 @@ No tests generated
 [ 72%] org.springframework.samples.petclinic.vet.Vet
 [ 76%] org.springframework.samples.petclinic.vet.VetController
 [ 80%] org.springframework.samples.petclinic.vet.VetRepository
-METHOD: findAll
-No harness
+Skipping an interface
 [ 84%] org.springframework.samples.petclinic.vet.Vets
 [ 88%] org.springframework.samples.petclinic.visit.Visit
 [ 92%] org.springframework.samples.petclinic.visit.VisitRepository
-METHOD: findByPetId
-METHOD: save
-No harness
+Skipping an interface
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 174/209 83.3%
+Total coverage: 160/193 82.9%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
