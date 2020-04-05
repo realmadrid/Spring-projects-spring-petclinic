@@ -6,16 +6,16 @@ Skipping a SpringBootApplication (no logic to be tested)
 [ 16%] org.springframework.samples.petclinic.owner.Owner
 [ 20%] org.springframework.samples.petclinic.owner.OwnerController
 [ 24%] org.springframework.samples.petclinic.owner.OwnerRepository
-METHOD: findById
-METHOD: findByLastName
-METHOD: save
+Repository method: findById
+Repository method: findByLastName
+Repository method: save
 No tests generated
 [ 28%] org.springframework.samples.petclinic.owner.Pet
 [ 32%] org.springframework.samples.petclinic.owner.PetController
 [ 36%] org.springframework.samples.petclinic.owner.PetRepository
-METHOD: findById
-METHOD: findPetTypes
-METHOD: save
+Repository method: findById
+Repository method: findPetTypes
+Repository method: save
 No tests generated
 [ 40%] org.springframework.samples.petclinic.owner.PetType
 No tests generated
@@ -32,13 +32,13 @@ No tests generated
 [ 72%] org.springframework.samples.petclinic.vet.Vet
 [ 76%] org.springframework.samples.petclinic.vet.VetController
 [ 80%] org.springframework.samples.petclinic.vet.VetRepository
-METHOD: findAll
+Repository method: findAll
 No tests generated
 [ 84%] org.springframework.samples.petclinic.vet.Vets
 [ 88%] org.springframework.samples.petclinic.visit.Visit
 [ 92%] org.springframework.samples.petclinic.visit.VisitRepository
-METHOD: findByPetId
-METHOD: save
+Repository method: findByPetId
+Repository method: save
 No tests generated
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
