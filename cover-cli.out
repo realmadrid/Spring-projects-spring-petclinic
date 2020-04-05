@@ -1,13 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-9a38e7b
+INFO Diffblue Cover dev-SNAPSHOT-d751f5f
 INFO Detecting classpath...
-12:08:30.377 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-12:08:31.378 [35mINFO[0m ....
+16:19:30.343 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+16:19:31.345 [35mINFO[0m .....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src168305041/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test" will be run in /codebuild/output/src168305041/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
-INFO Expanded user code or user provided classpath: /codebuild/output/src168305041/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command "mvn clean test" will be run in /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6234,8 +6234,8 @@ INFO Found 95 callable methods in 20 classes
 
 
 INFO Initializing Spring embedded WebApplicationContext
-INFO Initializing Spring TestDispatcherServlet ''
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
+INFO Initializing Spring TestDispatcherServlet ''
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
 INFO  [2/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO  [3/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
@@ -6362,9 +6362,9 @@ INFO    3 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 51 tests created for 49 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test" in /codebuild/output/src168305041/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-12:09:49.090 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-12:10:07.090 [35mINFO[0m .......
-12:10:13.593 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-12:10:31.593 [35mINFO[0m ....
+INFO Executing external command "mvn clean test" in /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
+16:20:52.275 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+16:21:10.275 [35mINFO[0m .........
+16:21:18.557 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+16:21:36.557 [35mINFO[0m .....
 INFO Test verification was able to verify 45 out of 51 tests, the remainder were discarded
