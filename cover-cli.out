@@ -1,13 +1,13 @@
-INFO Diffblue Cover dev-SNAPSHOT-d751f5f
+INFO Diffblue Cover dev-SNAPSHOT-38f7c5f
 INFO Detecting classpath...
-16:19:30.343 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
-16:19:31.345 [35mINFO[0m .....
+16:49:30.655 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+16:49:31.657 [35mINFO[0m .....
 INFO Using classpath inferred from Maven
-INFO Test output directory: /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
+INFO Test output directory: /codebuild/output/src766463603/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test" will be run in /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
-INFO Expanded user code or user provided classpath: /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
+INFO Verification command "mvn clean test" will be run in /codebuild/output/src766463603/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/src766463603/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
 INFO Indexing...
 INFO Indexing com.oracle.net
@@ -6340,7 +6340,7 @@ INFO [70/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [70/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
 INFO [72/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
-INFO [72/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [72/95]   No essential tests due to E004: Unable to find any meaningful assertion.
 INFO [73/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
 INFO [73/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
@@ -6357,14 +6357,14 @@ INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
 INFO No essential tests created for 19 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
-INFO    4 E004: Unable to find any meaningful assertion.
-INFO    3 E009: Unrecoverable runtime error.
+INFO    5 E004: Unable to find any meaningful assertion.
+INFO    2 E009: Unrecoverable runtime error.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 51 tests created for 49 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test" in /codebuild/output/src105458543/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-16:20:52.275 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-16:21:10.275 [35mINFO[0m .........
-16:21:18.557 [35mINFO[0m Running verification command, this can take a couple of minutes.................
-16:21:36.557 [35mINFO[0m .....
+INFO Executing external command "mvn clean test" in /codebuild/output/src766463603/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
+16:51:05.110 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+16:51:23.110 [35mINFO[0m ................
+16:51:38.274 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+16:51:56.274 [35mINFO[0m ............
 INFO Test verification was able to verify 45 out of 51 tests, the remainder were discarded
