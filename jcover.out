@@ -44,9 +44,5 @@ Total coverage: 174/209 83.3%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
-org.springframework.samples.petclinic.model.BaseEntityDiffblueTest fails to compile
-org.springframework.samples.petclinic.model.NamedEntityDiffblueTest fails to compile
-org.springframework.samples.petclinic.model.PersonDiffblueTest fails to compile
-Compiling the tests, iteration 2
 Running the tests, iteration 1
 All JCOVER tests compile & pass
