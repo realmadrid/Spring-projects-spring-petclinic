@@ -23,4 +23,4 @@ petclinic | org.springframework.samples.petclinic.system | CrashController | 5 |
 
 Instruction coverage: 781 / 828 (94.00 %)
 
-Command run: mvn package -Dmaven.test.failure.ignore=true -Dtest='*DiffblueTest'
+Command run: mvn package -Dtest='*DiffblueTest' -DfailIfNoTests=false -f ./pom.xml
