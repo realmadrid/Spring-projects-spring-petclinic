@@ -1,7 +1,7 @@
-INFO Diffblue Cover dev-SNAPSHOT-1383922
-INFO Detecting classpath.
-INFO Executing Maven to evaluate expression "project.modules", this may take a few moments
-INFO .
+INFO Diffblue Cover dev-SNAPSHOT-0ccd14a
+INFO Detecting classpath...
+16:56:40.223 [35mINFO[0m Executing Maven to evaluate expression 'project.modules', this may take a few moments
+16:56:41.225 [35mINFO[0m .....
 INFO Using classpath inferred from Maven
 INFO Test output directory: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
@@ -9,7 +9,7 @@ INFO Auto detected junit-4.12 test framework
 INFO Verification command "mvn clean test" will be run in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
 INFO Expanded user code or user provided classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded user dependency classpath: /root/.m2/repository/org/springframework/boot/spring-boot-starter-actuator/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-actuator-2.1.0.BUILD-SNAPSHOT.jar:/root/.m2/repository/org/springframework/boot/spring-boot-starter/2.1.0.BUILD-SNAPSHOT/spring-boot-starter-2.1.0.B... [truncated]
-INFO Indexing.
+INFO Indexing...
 INFO Indexing com.oracle.net
 INFO Indexing com.oracle.webservices.internal.api
 INFO Indexing com.oracle.webservices.internal.api.databinding
@@ -6339,7 +6339,8 @@ INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.own
 INFO [72/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
 INFO [73/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
 INFO [74/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
-INFO [75/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.validate
+INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.validate
+INFO [75/95]   No essential tests due to E004: Unable to find any meaningful assertion.
 INFO [76/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
 INFO [76/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [77/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
@@ -6366,14 +6367,14 @@ INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [94/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 17 methods due to:
+INFO No essential tests created for 18 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
-INFO    4 E004: Unable to find any meaningful assertion.
+INFO    5 E004: Unable to find any meaningful assertion.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E009: Unrecoverable runtime error.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 66 tests created for 64 out of 95 methods in 17 out of 20 classes
+INFO 65 tests created for 63 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
-INFO Running verification command, this can take a couple of minutes.
-INFO .
-INFO All 66 generated tests were successfully verified
+16:58:20.946 [35mINFO[0m Running verification command, this can take a couple of minutes.................
+16:58:38.946 [35mINFO[0m .............
+INFO All 65 generated tests were successfully verified
