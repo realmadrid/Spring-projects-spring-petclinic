@@ -6,17 +6,15 @@ Skipping a SpringBootApplication (no logic to be tested)
 [ 16%] org.springframework.samples.petclinic.owner.Owner
 [ 20%] org.springframework.samples.petclinic.owner.OwnerController
 [ 24%] org.springframework.samples.petclinic.owner.OwnerRepository
-Repository method: findById
-Repository method: findByLastName
-Repository method: save
-No tests generated
+Repository method: findById (java.lang.Integer) -> org.springframework.samples.petclinic.owner.Owner
+Repository method: findByLastName (java.lang.String) -> java.util.Collection<org.springframework.samples.petclinic.owner.Owner>
+Repository method: save (org.springframework.samples.petclinic.owner.Owner) -> void
 [ 28%] org.springframework.samples.petclinic.owner.Pet
 [ 32%] org.springframework.samples.petclinic.owner.PetController
 [ 36%] org.springframework.samples.petclinic.owner.PetRepository
-Repository method: findById
-Repository method: findPetTypes
-Repository method: save
-No tests generated
+Repository method: findById (java.lang.Integer) -> org.springframework.samples.petclinic.owner.Pet
+Repository method: findPetTypes () -> java.util.List<org.springframework.samples.petclinic.owner.PetType>
+Repository method: save (org.springframework.samples.petclinic.owner.Pet) -> void
 [ 40%] org.springframework.samples.petclinic.owner.PetType
 No tests generated
 [ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
@@ -32,18 +30,17 @@ No tests generated
 [ 72%] org.springframework.samples.petclinic.vet.Vet
 [ 76%] org.springframework.samples.petclinic.vet.VetController
 [ 80%] org.springframework.samples.petclinic.vet.VetRepository
-Repository method: findAll
+Repository method: findAll () -> java.util.Collection<org.springframework.samples.petclinic.vet.Vet>
 No tests generated
 [ 84%] org.springframework.samples.petclinic.vet.Vets
 [ 88%] org.springframework.samples.petclinic.visit.Visit
 [ 92%] org.springframework.samples.petclinic.visit.VisitRepository
-Repository method: findByPetId
-Repository method: save
-No tests generated
+Repository method: findByPetId (java.lang.Integer) -> java.util.List<org.springframework.samples.petclinic.visit.Visit>
+Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> void
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 171/209 81.8%
+Total coverage: 170/209 81.3%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
