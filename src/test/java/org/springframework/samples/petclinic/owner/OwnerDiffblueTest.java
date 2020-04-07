@@ -3,7 +3,9 @@ package org.springframework.samples.petclinic.owner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 import java.util.HashSet;
+import java.util.Set;
 import org.junit.Test;
 
 public class OwnerDiffblueTest {
@@ -106,6 +108,25 @@ public class OwnerDiffblueTest {
   public void testGetPet2() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id", true));
+  }
+
+  @Test
+  public void testConstructor() {
+    // Arrange and Act
+    Owner actualOwner = new Owner();
+
+    // Assert
+    actualOwner.toString();
+    assertNull(actualOwner.getLastName());
+    assertNull(actualOwner.getAddress());
+    Set<Pet> petsInternal = actualOwner.getPetsInternal();
+    assertTrue(petsInternal instanceof java.util.HashSet);
+    assertNull(actualOwner.getCity());
+    assertEquals(0, petsInternal.size());
+    assertNull(actualOwner.getTelephone());
+    assertNull(actualOwner.getFirstName());
+    assertNull(actualOwner.getId());
+    assertTrue(actualOwner.isNew());
   }
 }
 
