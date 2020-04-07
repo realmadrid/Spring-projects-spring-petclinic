@@ -40,26 +40,6 @@ public class PetControllerDiffblueTest {
     private PetController controller;
 
     @Test
-    public void initCreationForm() throws Exception {
-        Owner owner = new Owner();
-        owner.setAddress("280 Broadway");
-        owner.setCity("New York");
-        owner.setTelephone("12345");
-        owner.setFirstName("Anna");
-        owner.setLastName("Smith");
-        owner.setId(1);
-        when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(owner);
-        when(pets.findPetTypes())
-            .thenReturn(new ArrayList<PetType>());
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/new", Integer.toString(0)))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
-            .andExpect(view().name("pets/createOrUpdatePetForm"));
-    }
-
-    @Test
     public void processCreationForm() throws Exception {
         Owner owner = new Owner();
         owner.setAddress("280 Broadway");
