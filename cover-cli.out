@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-cac2d09
+INFO Diffblue Cover dev-SNAPSHOT-7d9667d
 INFO Detecting classpath.
 INFO Executing Maven to evaluate expression "project.modules", this may take a few moments
 INFO .
@@ -6343,7 +6343,7 @@ INFO [76/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [76/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO [77/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
 INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
-INFO [78/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+INFO [78/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
 INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
 INFO Initializing Spring TestDispatcherServlet ''
@@ -6367,8 +6367,9 @@ INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
 INFO No essential tests created for 16 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
-INFO    4 E004: Unable to find any meaningful assertion.
+INFO    3 E004: Unable to find any meaningful assertion.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+INFO    1 E009: Unrecoverable runtime error.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
