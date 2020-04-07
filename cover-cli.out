@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-f5193d8
+INFO Diffblue Cover dev-SNAPSHOT-8ae5cd2
 INFO Detecting classpath.
 INFO Executing Maven to evaluate expression "project.modules", this may take a few moments
 INFO .
@@ -6292,8 +6292,7 @@ INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.sys
 INFO [39/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
 INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
 INFO [40/95]   No essential tests due to E004: Unable to find any meaningful assertion.
-INFO [41/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.<init>
-INFO [41/95]   No essential tests due to E009: Unrecoverable runtime error.
+INFO [41/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.<init>
 INFO [42/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
 INFO [43/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
 INFO [43/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
@@ -6366,14 +6365,13 @@ INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [94/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 17 methods due to:
+INFO No essential tests created for 16 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO    4 E004: Unable to find any meaningful assertion.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
-INFO    1 E009: Unrecoverable runtime error.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 66 tests created for 64 out of 95 methods in 17 out of 20 classes
+INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO All 66 generated tests were successfully verified
+INFO All 67 generated tests were successfully verified
