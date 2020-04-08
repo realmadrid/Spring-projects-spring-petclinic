@@ -36,13 +36,15 @@ public class OwnerDiffblueTest {
   @Test
   public void testSetTelephone() {
     // Arrange
+    String telephone = String.join("", "012345", "56677");
     Owner owner = new Owner();
 
     // Act
-    owner.setTelephone("01234556677");
+    owner.setTelephone(telephone);
 
     // Assert
-    assertEquals("01234556677", owner.getTelephone());
+    String expectedTelephone = String.join("", "012345", "56677");
+    assertEquals(expectedTelephone, owner.getTelephone());
   }
 
   @Test
