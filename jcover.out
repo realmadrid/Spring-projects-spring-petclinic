@@ -20,7 +20,6 @@ No tests generated
 [ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
 [ 48%] org.springframework.samples.petclinic.owner.PetValidator
 [ 52%] org.springframework.samples.petclinic.owner.VisitController
-No tests generated
 [ 56%] org.springframework.samples.petclinic.system.CacheConfiguration
 Skipping a Spring Configuration (no logic to be tested)
 [ 60%] org.springframework.samples.petclinic.system.CrashController
@@ -41,7 +40,7 @@ Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> v
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 157/193 81.3%
+Total coverage: 174/209 83.3%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
