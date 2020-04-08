@@ -20,45 +20,24 @@ import org.springframework.web.bind.WebDataBinder;
 @WebMvcTest(value = {org.springframework.samples.petclinic.owner.VisitController.class})
 public class VisitControllerDiffblueTest {
   @MockBean
-  private VisitRepository visitRepository;
-  @MockBean
   private PetRepository petRepository;
+  @MockBean
+  private VisitRepository visitRepository;
   @Autowired
   private MockMvc mockMvc;
   @Autowired
   private VisitController visitController;
   @Test
-  public void testInitNewVisitForm() throws Exception {
-    // Arrange
-    Pet pet = new Pet();
-    pet.setBirthDate(null);
-    pet.setName("a value for name");
-    org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
-    org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
-        .thenReturn(Collections.<PetType>emptyList());
-    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
-        .thenReturn(Collections.<Visit>emptyList());
-
-    // Act
-    ResultActions actualPerformResult = this.mockMvc
-        .perform(MockMvcRequestBuilders.get("/owners/*/pets/{petId}/visits/new", 123456789));
-
-    // Assert
-    ResultActions resultActions = actualPerformResult.andExpect(MockMvcResultMatchers.status().isOk());
-    ResultActions resultActions1 = resultActions.andExpect(MockMvcResultMatchers.model().<Object>size(2));
-    resultActions1.andExpect(MockMvcResultMatchers.model().attributeExists("pet", "visit"));
-  }
-  @Test
   public void testProcessNewVisitForm() throws Exception {
     // Arrange
+    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
+        .thenReturn(Collections.<Visit>emptyList());
     Pet pet = new Pet();
     pet.setBirthDate(null);
     pet.setName("a value for name");
     org.mockito.Mockito.<Pet>when(this.petRepository.findById(123456789)).thenReturn(pet);
     org.mockito.Mockito.<List<PetType>>when(this.petRepository.findPetTypes())
         .thenReturn(Collections.<PetType>emptyList());
-    org.mockito.Mockito.<List<Visit>>when(this.visitRepository.findByPetId(123456789))
-        .thenReturn(Collections.<Visit>emptyList());
 
     // Act
     ResultActions actualPerformResult = this.mockMvc
