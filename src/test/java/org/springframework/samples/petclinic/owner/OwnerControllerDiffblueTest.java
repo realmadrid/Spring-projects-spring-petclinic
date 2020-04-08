@@ -35,15 +35,6 @@ public class OwnerControllerDiffblueTest {
     private OwnerController controller;
 
     @Test
-    public void initCreationForm() throws Exception {
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/new"))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("owners/createOrUpdateOwnerForm"))
-            .andExpect(view().name("owners/createOrUpdateOwnerForm"));
-    }
-
-    @Test
     public void processCreationForm() throws Exception {
         MockMvcBuilders.standaloneSetup(controller).build().perform(
             MockMvcRequestBuilders.post("/owners/new")
