@@ -34,18 +34,6 @@ public class OwnerDiffblueTest {
   }
 
   @Test
-  public void testSetTelephone() {
-    // Arrange
-    Owner owner = new Owner();
-
-    // Act
-    owner.setTelephone("01234556677");
-
-    // Assert
-    assertEquals("01234556677", owner.getTelephone());
-  }
-
-  @Test
   public void testGetPetsInternal() {
     // Arrange, Act and Assert
     assertEquals(0, (new Owner()).getPetsInternal().size());

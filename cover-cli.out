@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-15d3d5d
+INFO Diffblue Cover dev-SNAPSHOT-2bf3151
 INFO Detecting classpath.
 INFO Executing Maven to evaluate expression "project.modules", this may take a few moments
 INFO .
@@ -6236,7 +6236,9 @@ INFO Found 95 callable methods in 20 classes
 INFO Initializing Spring embedded WebApplicationContext
 INFO Initializing Spring TestDispatcherServlet ''
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
-INFO  [2/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
+INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
+INFO  [2/95]   No essential tests due to E015: Test replay failed
+ - Try splitting the code in question into a deterministic, stateless part which can be tested and an injectable source of nondeterminism or persistent state. For example, 'if(MyDate.now().getDay().equals("Monday")' could become isMonday(M... [truncated]
 INFO  [3/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.initNewVisitForm
 INFO  [4/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.loadPetWithVisit
 INFO  [4/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
@@ -6314,7 +6316,9 @@ INFO [50/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [50/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [51/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPetsInternal
 INFO [52/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
-INFO [53/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setTelephone
+INFO [53/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.setTelephone
+INFO [53/95]   No essential tests due to E015: Test replay failed
+ - Try splitting the code in question into a deterministic, stateless part which can be tested and an injectable source of nondeterminism or persistent state. For example, 'if(MyDate.now().getDay().equals("Monday")' could become isMonday(M... [truncated]
 INFO [54/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetType.<init>
 INFO [55/95] Created 0 tests for method org.springframework.samples.petclinic.model.Person.getLastName
 INFO [55/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
@@ -6381,17 +6385,19 @@ INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [94/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 16 methods due to:
+INFO No essential tests created for 18 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO       - Add observer methods to the class.
 INFO    4 E004: Unable to find any meaningful assertion.
 INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value... [truncated]
+INFO    2 E015: Test replay failed
+INFO       - Try splitting the code in question into a deterministic, stateless part which can be tested and an injectable source of nondeterminism or persistent state. For example, 'if(MyDate.now().getDay().equals("Monday")' could become isMonday(MyDate d) { return d.getDay().equals("Monday") }, and a s... [truncated]
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO       - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
-INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
+INFO 65 tests created for 63 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO All 67 generated tests were successfully verified
+INFO All 65 generated tests were successfully verified
