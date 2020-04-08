@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-7e0e615
+INFO Diffblue Cover dev-SNAPSHOT-e9023aa
 INFO Detecting classpath.
 INFO Executing Maven to evaluate expression "project.modules", this may take a few moments
 INFO .
@@ -6288,7 +6288,7 @@ INFO [36/95] Created 1 test for method org.springframework.samples.petclinic.mod
 INFO Initializing Spring TestDispatcherServlet ''
 INFO [37/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
 INFO [37/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
-INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.system.WelcomeController.welcome
+INFO [38/95] Created 2 tests for method org.springframework.samples.petclinic.system.WelcomeController.welcome
 INFO [39/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
 INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
 INFO [40/95]   No essential tests due to E004: Unable to find any meaningful assertion.
@@ -6370,8 +6370,8 @@ INFO   10 E002: Nothing to assert: the constructed class does not have observer 
 INFO    4 E004: Unable to find any meaningful assertion.
 INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
-INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
+INFO 68 tests created for 65 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO All 67 generated tests were successfully verified
+INFO All 68 generated tests were successfully verified
