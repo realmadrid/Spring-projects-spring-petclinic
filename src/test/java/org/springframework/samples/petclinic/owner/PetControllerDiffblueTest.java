@@ -7,7 +7,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -53,7 +52,7 @@ public class PetControllerDiffblueTest {
         when(pets.findPetTypes())
             .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/new", Integer.toString(0)))
+            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/new", Integer.toString(1)))
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
             .andExpect(view().name("pets/createOrUpdatePetForm"));
@@ -85,36 +84,6 @@ public class PetControllerDiffblueTest {
     }
 
     @Test
-    public void initUpdateForm() throws Exception {
-        Owner owner = new Owner();
-        owner.setAddress("280 Broadway");
-        owner.setCity("New York");
-        owner.setTelephone("12345");
-        owner.setFirstName("Anna");
-        owner.setLastName("Smith");
-        owner.setId(1);
-        when(owners.findById(Mockito.<Integer>any()))
-            .thenReturn(owner);
-        Pet pet = new Pet();
-        pet.setBirthDate(LocalDate.of(2_000, 1, 1));
-        PetType type = new PetType();
-        type.setName("dog");
-        type.setId(1);
-        pet.setType(type);
-        pet.setName("Bella");
-        pet.setId(1);
-        when(pets.findById(Mockito.<Integer>any()))
-            .thenReturn(pet);
-        when(pets.findPetTypes())
-            .thenReturn(new ArrayList<PetType>());
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(1), Integer.toString(1)))
-            .andExpect(status().isOk())
-            .andExpect(forwardedUrl("pets/createOrUpdatePetForm"))
-            .andExpect(view().name("pets/createOrUpdatePetForm"));
-    }
-
-    @Test
     public void processUpdateForm1() throws Exception {
         Owner owner = new Owner();
         owner.setAddress("280 Broadway");
@@ -129,7 +98,7 @@ public class PetControllerDiffblueTest {
             .thenReturn(new ArrayList<PetType>());
         MockMvcBuilders.standaloneSetup(controller).build().perform(
             MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(1), "Bella")
-                .param("birthDate", LocalDate.of(2_000, 1, 1).toString())
+                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
                 .param("type.name", "dog")
                 .param("type.id", Integer.valueOf(1).toString())
                 .param("name", "/bin/bash")
@@ -143,7 +112,7 @@ public class PetControllerDiffblueTest {
     public void processUpdateForm2() throws Exception {
         MockMvcBuilders.standaloneSetup(controller).build().perform(
             MockMvcRequestBuilders.post("/owners/{ownerId}/pets/{petId}/edit", Integer.toString(0), "")
-                .param("birthDate", LocalDate.of(2_000, 1, 1).toString())
+                .param("birthDate", java.time.LocalDate.of(2_000, 1, 1).toString())
                 .param("type.name", "dog")
                 .param("type.id", Integer.valueOf(1).toString())
                 .param("name", "/bin/bash")
