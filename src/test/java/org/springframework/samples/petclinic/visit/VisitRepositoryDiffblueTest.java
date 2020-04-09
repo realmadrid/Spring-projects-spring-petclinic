@@ -1,11 +1,11 @@
 package org.springframework.samples.petclinic.visit;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsSame.sameInstance;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,11 +35,12 @@ public class VisitRepositoryDiffblueTest {
         visit.setPetId(1);
         visit.setId(1);
         repository.save(visit);
-        assertThat(repository.findByPetId(1), hasSize(1));
-        assertThat(repository.findByPetId(1).get(0).getDate(), sameInstance(date));
-        assertThat(repository.findByPetId(1).get(0).getDescription(), is("some text"));
-        assertThat(repository.findByPetId(1).get(0).getPetId(), is(1));
-        assertThat(repository.findByPetId(1).get(0).getId(), is(1));
-        assertThat(repository.findByPetId(1).get(0).isNew(), is(false));
+        List<Visit> instances = repository.findByPetId(1);
+        assertThat(instances.size(), is(1));
+        assertThat(instances.get(0).getDate(), sameInstance(date));
+        assertThat(instances.get(0).getDescription(), is("some text"));
+        assertThat(instances.get(0).getPetId(), is(1));
+        assertThat(instances.get(0).getId(), is(1));
+        assertThat(instances.get(0).isNew(), is(false));
     }
 }

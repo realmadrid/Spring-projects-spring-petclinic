@@ -1,8 +1,9 @@
 package org.springframework.samples.petclinic.owner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Is.is;
+
+import java.util.Collection;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -53,6 +54,6 @@ public class OwnerRepositoryDiffblueTest {
         owner.setLastName("Smith");
         owner.setId(1);
         repository.save(owner);
-        assertThat(repository.findByLastName("Smith"), hasSize(1));
+        Collection<Owner> instances = repository.findByLastName("Smith");
     }
 }
