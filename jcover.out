@@ -5,6 +5,7 @@ Skipping a SpringBootApplication (no logic to be tested)
 [ 12%] org.springframework.samples.petclinic.model.Person
 [ 16%] org.springframework.samples.petclinic.owner.Owner
 [ 20%] org.springframework.samples.petclinic.owner.OwnerController
+No tests generated
 [ 24%] org.springframework.samples.petclinic.owner.OwnerRepository
 Repository method: findById (java.lang.Integer) -> org.springframework.samples.petclinic.owner.Owner
 Repository method: findByLastName (java.lang.String) -> java.util.Collection<org.springframework.samples.petclinic.owner.Owner>
@@ -40,7 +41,7 @@ Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> v
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 173/209 82.8%
+Total coverage: 142/173 82.1%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
