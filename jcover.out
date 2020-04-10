@@ -11,6 +11,7 @@ Repository method: findByLastName (java.lang.String) -> java.util.Collection<org
 Repository method: save (org.springframework.samples.petclinic.owner.Owner) -> void
 [ 28%] org.springframework.samples.petclinic.owner.Pet
 [ 32%] org.springframework.samples.petclinic.owner.PetController
+No tests generated
 [ 36%] org.springframework.samples.petclinic.owner.PetRepository
 Repository method: findById (java.lang.Integer) -> org.springframework.samples.petclinic.owner.Pet
 Repository method: findPetTypes () -> java.util.List<org.springframework.samples.petclinic.owner.PetType>
@@ -40,7 +41,7 @@ Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> v
 Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 174/209 83.3%
+Total coverage: 148/177 83.6%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
