@@ -1,7 +1,6 @@
 package org.springframework.samples.petclinic.vet;
 
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -43,16 +42,5 @@ public class VetControllerDiffblueTest {
             .andExpect(status().isOk())
             .andExpect(forwardedUrl("vets/vetList"))
             .andExpect(view().name("vets/vetList"));
-    }
-
-    @Test
-    public void showResourcesVetList() throws org.springframework.dao.DataAccessException, Exception {
-        when(clinicService.findAll())
-            .thenReturn(new LinkedList<Vet>());
-        MockMvcBuilders.standaloneSetup(controller).build().perform(
-            MockMvcRequestBuilders.get("/vets"))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType("application/xml"))
-            .andExpect(content().string("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><vets/>"));
     }
 }
