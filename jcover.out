@@ -1,3 +1,4 @@
+Found 25 classes in src/main/java
 [  0%] org.springframework.samples.petclinic.PetClinicApplication
 Skipping a SpringBootApplication (no logic to be tested)
 [  4%] org.springframework.samples.petclinic.model.BaseEntity
@@ -37,10 +38,9 @@ No tests generated
 [ 92%] org.springframework.samples.petclinic.visit.VisitRepository
 Repository method: findByPetId (java.lang.Integer) -> java.util.List<org.springframework.samples.petclinic.visit.Visit>
 Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> void
-Found 25 classes in src/main/java
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 171/209 81.8%
+Total coverage: 174/209 83.3%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
