@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-d7b4262
+INFO Diffblue Cover 2020.04.a-RC3-5d1c38a
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6233,6 +6233,7 @@ INFO Found 95 callable methods in 20 classes
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
+INFO Initializing Spring embedded WebApplicationContext
 WARN Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.cla... [truncated]
 ERROR Attempt to load the Spring Boot application has failed.
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: Unable to resolve persistence unit root URL
@@ -6246,12 +6247,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083)
 	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853)
 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContextFromBootApplicationClass(ComponentLoader.java:208)
-	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:168)
-	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:245)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContextFromBootApplicationClass(ComponentLoader.java:206)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:167)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:243)
 	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:180)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:171)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.lambda$createWithBootConfigurationClass$2(SpringConstructionProxy.java:119)
@@ -6260,9 +6262,9 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:164)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:155)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:715)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:713)
 	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:329)
-	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:136)
+	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:132)
 	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:330)
 	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:262)
 	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
@@ -6333,11 +6335,11 @@ Caused by: javax.persistence.PersistenceException: Unable to resolve persistence
 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:328)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
-	... 89 common frames omitted
+	... 90 common frames omitted
 Caused by: java.io.FileNotFoundException: class path resource [] cannot be resolved to URL because it does not exist
 	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:195)
 	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.determineDefaultPersistenceUnitRootUrl(DefaultPersistenceUnitManager.java:636)
-	... 94 common frames omitted
+	... 95 common frames omitted
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
 INFO  [2/95]   No essential tests due to E009: Unrecoverable runtime error.
