@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-d7b4262
+INFO Diffblue Cover dev-SNAPSHOT-014ac19
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6260,13 +6260,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:164)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:155)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:715)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:713)
 	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:329)
-	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:136)
+	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:132)
 	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:330)
 	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:262)
-	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
-	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:197)
+	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:508)
+	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:201)
 	at com.diffblue.phaser.Phase.run(Phase.java:78)
 	at com.diffblue.phaser.Phaser.run(Phaser.java:300)
 	at com.diffblue.cover.api2.Api.lambda$generateTests$0(Api.java:151)
@@ -6455,9 +6455,7 @@ INFO [67/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [68/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
 INFO [68/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
-INFO [69/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
-INFO [69/95]   No essential tests due to E004: Unable to find any meaningful assertion.
- - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not ... [truncated]
+INFO [69/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
 INFO [70/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
 INFO [70/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
@@ -6518,7 +6516,7 @@ INFO [94/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [95/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 35 methods due to:
+INFO No essential tests created for 34 methods due to:
 INFO   17 E009: Unrecoverable runtime error.
 INFO       - Please contact Diffblue support.
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
@@ -6527,10 +6525,10 @@ INFO    4 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
 INFO    2 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
 INFO       - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
-INFO    2 E004: Unable to find any meaningful assertion.
+INFO    1 E004: Unable to find any meaningful assertion.
 INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value... [truncated]
-INFO 49 tests created for 47 out of 95 methods in 15 out of 20 classes
+INFO 50 tests created for 48 out of 95 methods in 15 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO All 49 generated tests were successfully verified
+INFO All 50 generated tests were successfully verified
