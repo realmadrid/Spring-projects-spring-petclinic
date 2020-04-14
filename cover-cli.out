@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-6e754cb
+INFO Diffblue Cover dev-SNAPSHOT-7fe3446
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6260,10 +6260,11 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:153)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:144)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:714)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:328)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:750)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.access$800(CreateEssentialTests.java:435)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:364)
 	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:136)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:329)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:365)
 	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:247)
 	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
 	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:197)
@@ -6333,11 +6334,11 @@ Caused by: javax.persistence.PersistenceException: Unable to resolve persistence
 	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:328)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
-	... 89 common frames omitted
+	... 90 common frames omitted
 Caused by: java.io.FileNotFoundException: class path resource [] cannot be resolved to URL because it does not exist
 	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:195)
 	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.determineDefaultPersistenceUnitRootUrl(DefaultPersistenceUnitManager.java:636)
-	... 94 common frames omitted
+	... 95 common frames omitted
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
 INFO  [2/95]   No essential tests due to E009: Unrecoverable runtime error.
