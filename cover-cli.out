@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-d7b4262
+INFO Diffblue Cover dev-SNAPSHOT-5767378
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6258,13 +6258,13 @@ org.springframework.beans.factory.BeanCreationException: Error creating bean wit
 	at java.util.HashMap.computeIfAbsent(HashMap.java:1127)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootConfigurationClass(SpringConstructionProxy.java:115)
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
-	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:164)
-	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:155)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:715)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:329)
-	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:136)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:330)
-	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:262)
+	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:153)
+	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:144)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:712)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:328)
+	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:132)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:329)
+	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:247)
 	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
 	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:197)
 	at com.diffblue.phaser.Phase.run(Phase.java:78)
