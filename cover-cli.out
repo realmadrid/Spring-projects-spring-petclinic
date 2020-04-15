@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-25df99b
+INFO Diffblue Cover dev-SNAPSHOT-dfe86a4
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6,9 +6,9 @@ INFO Using classpath from Maven.
 INFO Test output directory: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test" will be run in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
-INFO Expanded user code or user provided classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
-INFO Expanded classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes:/root/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/root/.m2/repository/javax/cache/cache-api/1.1.0/cache-api-1.1.0.jar:/root/.m2/repository/org/skys... [truncated]
+INFO Verification command "mvn clean test" will be run in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/.
+INFO Expanded user code or user provided classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/./target/classes
+INFO Expanded classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/./target/classes:/root/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/root/.m2/repository/javax/cache/cache-api/1.1.0/cache-api-1.1.0.jar:/root/.m2/repository/org/sk... [truncated]
 INFO Indexing.
 INFO Indexing com.oracle.net
 INFO Indexing com.oracle.webservices.internal.api
@@ -6233,9 +6233,112 @@ INFO Found 95 callable methods in 20 classes
 :: Built with Spring Boot :: 2.1.0.BUILD-SNAPSHOT
 
 
-INFO Initializing Spring TestDispatcherServlet ''
+WARN Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.cla... [truncated]
+ERROR Attempt to load the Spring Boot application has failed.
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: Unable to resolve persistence unit root URL
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1745)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:576)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1083)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:853)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContextFromBootApplicationClass(ComponentLoader.java:208)
+	at com.diffblue.spring.isolation.ComponentLoader.buildSpringContext(ComponentLoader.java:168)
+	at com.diffblue.spring.isolation.ComponentLoader.getAppropriateSpringContext(ComponentLoader.java:245)
+	at com.diffblue.spring.isolation.ObjectConstructor.primeSpringContext(ObjectConstructor.java:180)
+	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.setupProxies(SpringConstructionProxy.java:171)
+	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.lambda$createWithBootConfigurationClass$2(SpringConstructionProxy.java:119)
+	at java.util.HashMap.computeIfAbsent(HashMap.java:1127)
+	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createWithBootConfigurationClass(SpringConstructionProxy.java:115)
+	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
+	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:153)
+	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:144)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:714)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:328)
+	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:136)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:329)
+	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:247)
+	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
+	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:197)
+	at com.diffblue.phaser.Phase.run(Phase.java:78)
+	at com.diffblue.phaser.Phaser.run(Phaser.java:300)
+	at com.diffblue.cover.api2.Api.lambda$generateTests$0(Api.java:151)
+	at io.reactivex.internal.operators.observable.ObservableCreate.subscribeActual(ObservableCreate.java:40)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableMap.subscribeActual(ObservableMap.java:32)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableFlatMap$MergeObserver.subscribeInner(ObservableFlatMap.java:165)
+	at io.reactivex.internal.operators.observable.ObservableFlatMap$MergeObserver.onNext(ObservableFlatMap.java:139)
+	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:66)
+	at com.diffblue.cover.ui.Seq.lambda$null$0(Seq.java:17)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:647)
+	at com.diffblue.cover.ui.Seq.lambda$toObservable$1(Seq.java:17)
+	at io.reactivex.internal.operators.observable.ObservableCreate.subscribeActual(ObservableCreate.java:40)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableFlatMap.subscribeActual(ObservableFlatMap.java:55)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservablePublishSelector.subscribeActual(ObservablePublishSelector.java:59)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableFlatMap$MergeObserver.subscribeInner(ObservableFlatMap.java:165)
+	at io.reactivex.internal.operators.observable.ObservableFlatMap$MergeObserver.onNext(ObservableFlatMap.java:139)
+	at io.reactivex.internal.operators.observable.ObservableCreate$CreateEmitter.onNext(ObservableCreate.java:66)
+	at com.diffblue.cover.ui.Seq.lambda$null$0(Seq.java:17)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
+	at java.util.HashMap$EntrySpliterator.forEachRemaining(HashMap.java:1699)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
+	at com.diffblue.cover.ui.Seq.lambda$toObservable$1(Seq.java:17)
+	at io.reactivex.internal.operators.observable.ObservableCreate.subscribeActual(ObservableCreate.java:40)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableFlatMap.subscribeActual(ObservableFlatMap.java:55)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservablePublishSelector.subscribeActual(ObservablePublishSelector.java:59)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableDoOnEach.subscribeActual(ObservableDoOnEach.java:42)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableDoOnEach.subscribeActual(ObservableDoOnEach.java:42)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableMap.subscribeActual(ObservableMap.java:32)
+	at io.reactivex.Observable.subscribe(Observable.java:12267)
+	at io.reactivex.internal.operators.observable.ObservableToListSingle.subscribeActual(ObservableToListSingle.java:58)
+	at io.reactivex.Single.subscribe(Single.java:3666)
+	at io.reactivex.Single.blockingGet(Single.java:2869)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:703)
+	at com.diffblue.cover.ui.controller.CreateCommand.call(CreateCommand.java:70)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:1743)
+	at picocli.CommandLine.access$900(CommandLine.java:145)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2101)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2068)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:1935)
+	at picocli.CommandLine.execute(CommandLine.java:1864)
+	at com.diffblue.cover.ui.controller.Root.runCommandLine(Root.java:125)
+	at com.diffblue.cover.ui.controller.Root.main(Root.java:105)
+Caused by: javax.persistence.PersistenceException: Unable to resolve persistence unit root URL
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.determineDefaultPersistenceUnitRootUrl(DefaultPersistenceUnitManager.java:640)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.preparePersistenceUnitInfos(DefaultPersistenceUnitManager.java:462)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.afterPropertiesSet(DefaultPersistenceUnitManager.java:443)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:328)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1804)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1741)
+	... 89 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [] cannot be resolved to URL because it does not exist
+	at org.springframework.core.io.ClassPathResource.getURL(ClassPathResource.java:195)
+	at org.springframework.orm.jpa.persistenceunit.DefaultPersistenceUnitManager.determineDefaultPersistenceUnitRootUrl(DefaultPersistenceUnitManager.java:636)
+	... 94 common frames omitted
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
-INFO Initializing Spring TestDispatcherServlet ''
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
 INFO  [2/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
@@ -6283,7 +6386,6 @@ INFO [28/95]   No essential tests due to E002: Nothing to assert: the constructe
 INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
 INFO [29/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
  - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [30/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
 INFO [30/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
@@ -6297,7 +6399,6 @@ INFO [34/95]   Method considered not worth testing due to T001: Trivial getters 
 INFO [35/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.toString
 INFO [36/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.<init>
 INFO [37/95] Created 1 test for method org.springframework.samples.petclinic.model.NamedEntity.setName
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [38/95] Created 0 tests for method org.springframework.samples.petclinic.system.WelcomeController.<init>
 INFO [38/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
@@ -6332,11 +6433,9 @@ INFO [58/95] Created 0 tests for method org.springframework.samples.petclinic.mo
 INFO [58/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [59/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.<init>
 INFO [60/95] Created 1 test for method org.springframework.samples.petclinic.model.Person.setFirstName
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [61/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.<init>
 INFO [61/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [62/95] Created 0 tests for method org.springframework.samples.petclinic.vet.VetController.showVetList
 INFO [62/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
@@ -6344,12 +6443,11 @@ INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.ve
 INFO [63/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
 INFO [64/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
-INFO [64/95]   No essential tests due to E004: Unable to find any meaningful assertion.
- - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not ... [truncated]
+INFO [64/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
+ - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
 INFO [65/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
 INFO [65/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [66/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetTypeFormatter.print
 INFO [67/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.processUpdateForm
 INFO [67/95]   No essential tests due to E009: Unrecoverable runtime error.
@@ -6357,7 +6455,6 @@ INFO [67/95]   No essential tests due to E009: Unrecoverable runtime error.
 INFO [68/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.<init>
 INFO [68/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [69/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
 INFO [69/95]   No essential tests due to E004: Unable to find any meaningful assertion.
  - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not ... [truncated]
@@ -6365,53 +6462,48 @@ INFO [70/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [70/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
 INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
-INFO Initializing Spring TestDispatcherServlet ''
-INFO [72/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
-INFO Initializing Spring TestDispatcherServlet ''
+INFO [72/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
+INFO [72/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
+ - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
 INFO [73/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initCreationForm
 INFO [73/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
 INFO [74/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.processCreationForm
 INFO [74/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
-INFO [75/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.findOwner
+INFO [75/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.findOwner
+INFO [75/95]   No essential tests due to E013: Unable to generate test inputs not throwing a trivial exception.
+ - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
 INFO [76/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.validate
 INFO [77/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetValidator.<init>
 INFO [77/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
 INFO [78/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
 INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
-INFO [79/95]   No essential tests due to E009: Unrecoverable runtime error.
- - Please contact Diffblue support.
+INFO [79/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+ - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
 INFO [80/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
 INFO [80/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [81/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.<init>
 INFO [81/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [82/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.processFindForm
 INFO [82/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
 INFO [83/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.processUpdateOwnerForm
 INFO [83/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [84/95] Created 1 test for method org.springframework.samples.petclinic.owner.OwnerController.setAllowedFields
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [85/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.initUpdateOwnerForm
 INFO [85/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [86/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.processCreationForm
 INFO [86/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [87/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.showOwner
 INFO [87/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
-INFO Initializing Spring TestDispatcherServlet ''
 INFO [88/95] Created 0 tests for method org.springframework.samples.petclinic.owner.OwnerController.initCreationForm
 INFO [88/95]   No essential tests due to E009: Unrecoverable runtime error.
  - Please contact Diffblue support.
@@ -6426,21 +6518,19 @@ INFO [94/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [95/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 33 methods due to:
-INFO   18 E009: Unrecoverable runtime error.
+INFO No essential tests created for 35 methods due to:
+INFO   17 E009: Unrecoverable runtime error.
 INFO       - Please contact Diffblue support.
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO       - Add observer methods to the class.
-INFO    3 E004: Unable to find any meaningful assertion.
-INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value... [truncated]
-INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
-INFO       - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
-INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
+INFO    4 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
-INFO 51 tests created for 49 out of 95 methods in 15 out of 20 classes
-INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
+INFO    2 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+INFO       - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
+INFO    2 E004: Unable to find any meaningful assertion.
+INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value... [truncated]
+INFO 49 tests created for 47 out of 95 methods in 15 out of 20 classes
+INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/. to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO Running verification command, this can take a couple of minutes.
-INFO .
-INFO Test verification was able to verify 46 out of 51 tests, the remainder were discarded
+INFO All 49 generated tests were successfully verified
