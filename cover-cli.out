@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-b94d407
+INFO Diffblue Cover dev-SNAPSHOT-8bcb7ab
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6372,11 +6372,11 @@ Caused by: javax.cache.CacheException: javax.cache.CacheException: java.security
 	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.customize(JCacheCacheConfiguration.java:151)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.jCacheCacheManager(JCacheCacheConfiguration.java:111)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$f8fd998d.CGLIB$jCacheCacheManager$2(<generated>)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$f8fd998d$$FastClassBySpringCGLIB$$b5014d51.invoke(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$ad664109.CGLIB$jCacheCacheManager$2(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$ad664109$$FastClassBySpringCGLIB$$70ba601e.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$f8fd998d.jCacheCacheManager(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$ad664109.jCacheCacheManager(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -6392,6 +6392,7 @@ Caused by: javax.cache.CacheException: java.security.AccessControlException: acc
 Caused by: java.security.AccessControlException: access denied ("javax.management.MBeanTrustPermission" "register")
 	at java.security.AccessControlContext.checkPermission(AccessControlContext.java:472)
 	at java.lang.SecurityManager.checkPermission(SecurityManager.java:585)
+	at com.diffblue.cover.sandboxing.UserCodeSecurityManager.checkPermission(UserCodeSecurityManager.java:503)
 	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.checkMBeanTrustPermission(DefaultMBeanServerInterceptor.java:1848)
 	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:322)
 	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
