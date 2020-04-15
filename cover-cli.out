@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-6c9dd48
+INFO Diffblue Cover dev-SNAPSHOT-f3aeb86
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6265,11 +6265,13 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:153)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:144)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:731)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.access$500(CreateEssentialTests.java:416)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:345)
-	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:136)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:346)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:647)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.access$500(CreateEssentialTests.java:408)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:337)
+	at com.diffblue.fuzztest.errors.ErrorReport.lambda$runAndCatch$0(ErrorReport.java:234)
+	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatchReturning(ErrorReport.java:136)
+	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:234)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:338)
 	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:247)
 	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
 	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:197)
@@ -6348,13 +6350,13 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:855)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:758)
-	... 95 common frames omitted
+	... 97 common frames omitted
 Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [javax.cache.CacheManager]: Factory method 'jCacheCacheManager' threw exception; nested exception is javax.cache.CacheException: javax.cache.CacheException: java.security.AccessControlException: access denied ("javax.management.MBeanTrustPermission" "register")
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
 	at org.springframework.beans.factory.support.ConstructorResolver.lambda$instantiate$2(ConstructorResolver.java:615)
 	at java.security.AccessController.doPrivileged(Native Method)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:614)
-	... 109 common frames omitted
+	... 111 common frames omitted
 Caused by: javax.cache.CacheException: javax.cache.CacheException: java.security.AccessControlException: access denied ("javax.management.MBeanTrustPermission" "register")
 	at org.ehcache.jsr107.Eh107CacheManager.createCache(Eh107CacheManager.java:230)
 	at org.springframework.samples.petclinic.system.CacheConfiguration.lambda$petclinicCacheConfigurationCustomizer$0(CacheConfiguration.java:21)
@@ -6372,23 +6374,23 @@ Caused by: javax.cache.CacheException: javax.cache.CacheException: java.security
 	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.customize(JCacheCacheConfiguration.java:151)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.jCacheCacheManager(JCacheCacheConfiguration.java:111)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4d07800.CGLIB$jCacheCacheManager$2(<generated>)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4d07800$$FastClassBySpringCGLIB$$96b1b4c.invoke(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4e693418.CGLIB$jCacheCacheManager$2(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4e693418$$FastClassBySpringCGLIB$$633595b1.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4d07800.jCacheCacheManager(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4e693418.jCacheCacheManager(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	... 112 common frames omitted
+	... 114 common frames omitted
 Caused by: javax.cache.CacheException: java.security.AccessControlException: access denied ("javax.management.MBeanTrustPermission" "register")
 	at org.ehcache.jsr107.Eh107CacheManager.registerObject(Eh107CacheManager.java:383)
 	at org.ehcache.jsr107.Eh107CacheManager.enableStatistics(Eh107CacheManager.java:408)
 	at org.ehcache.jsr107.Eh107CacheManager.enableStatistics(Eh107CacheManager.java:400)
 	at org.ehcache.jsr107.Eh107CacheManager.createCache(Eh107CacheManager.java:224)
-	... 137 common frames omitted
+	... 139 common frames omitted
 Caused by: java.security.AccessControlException: access denied ("javax.management.MBeanTrustPermission" "register")
 	at java.security.AccessControlContext.checkPermission(AccessControlContext.java:472)
 	at java.lang.SecurityManager.checkPermission(SecurityManager.java:585)
@@ -6396,7 +6398,7 @@ Caused by: java.security.AccessControlException: access denied ("javax.managemen
 	at com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.registerMBean(DefaultMBeanServerInterceptor.java:322)
 	at com.sun.jmx.mbeanserver.JmxMBeanServer.registerMBean(JmxMBeanServer.java:522)
 	at org.ehcache.jsr107.Eh107CacheManager.registerObject(Eh107CacheManager.java:379)
-	... 140 common frames omitted
+	... 142 common frames omitted
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 0 tests for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
 INFO  [2/95]   No essential tests due to E009: Unrecoverable runtime error.
