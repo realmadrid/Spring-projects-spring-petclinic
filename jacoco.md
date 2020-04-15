@@ -10,7 +10,7 @@ petclinic | org.springframework.samples.petclinic.vet | Specialty | 0 | 3 | 0 | 
 petclinic | org.springframework.samples.petclinic.vet | Vets | 0 | 14 | 1 | 1 | 0 | 4 | 1 | 2 | 0 | 2
 petclinic | org.springframework.samples.petclinic.visit | Visit | 0 | 27 | 0 | 0 | 0 | 12 | 0 | 7 | 0 | 7
 petclinic | org.springframework.samples.petclinic.owner | VisitController | 42 | 9 | 2 | 0 | 12 | 4 | 5 | 1 | 4 | 1
-petclinic | org.springframework.samples.petclinic.owner | Owner | 22 | 119 | 7 | 5 | 6 | 31 | 4 | 16 | 0 | 14
+petclinic | org.springframework.samples.petclinic.owner | Owner | 56 | 85 | 7 | 5 | 11 | 26 | 5 | 15 | 1 | 13
 petclinic | org.springframework.samples.petclinic.owner | OwnerController | 138 | 6 | 10 | 0 | 33 | 3 | 13 | 1 | 8 | 1
 petclinic | org.springframework.samples.petclinic.owner | PetType | 0 | 3 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
 petclinic | org.springframework.samples.petclinic.owner | PetTypeFormatter | 35 | 9 | 4 | 0 | 6 | 4 | 3 | 2 | 1 | 2
@@ -21,6 +21,6 @@ petclinic | org.springframework.samples.petclinic.system | WelcomeController | 2
 petclinic | org.springframework.samples.petclinic.system | CacheConfiguration | 0 | 19 | 0 | 0 | 0 | 5 | 0 | 4 | 0 | 4
 petclinic | org.springframework.samples.petclinic.system | CrashController | 5 | 3 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1
 
-Instruction coverage: 432 / 828 (52.17 %)
+Instruction coverage: 398 / 828 (48.06 %)
 
 Command run: mvn package -Dtest='*DiffblueTest' -DfailIfNoTests=false -f ./pom.xml
