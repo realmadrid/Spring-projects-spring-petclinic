@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-f3aeb86
+INFO Diffblue Cover dev-SNAPSHOT-e79d196
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6374,11 +6374,11 @@ Caused by: javax.cache.CacheException: javax.cache.CacheException: java.security
 	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.customize(JCacheCacheConfiguration.java:151)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.jCacheCacheManager(JCacheCacheConfiguration.java:111)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4e693418.CGLIB$jCacheCacheManager$2(<generated>)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4e693418$$FastClassBySpringCGLIB$$633595b1.invoke(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$ef694575.CGLIB$jCacheCacheManager$2(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$ef694575$$FastClassBySpringCGLIB$$7a35e078.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$4e693418.jCacheCacheManager(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$ef694575.jCacheCacheManager(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
