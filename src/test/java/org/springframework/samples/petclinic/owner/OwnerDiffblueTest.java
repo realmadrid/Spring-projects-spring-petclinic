@@ -116,7 +116,6 @@ public class OwnerDiffblueTest {
     Owner actualOwner = new Owner();
 
     // Assert
-    actualOwner.toString();
     assertNull(actualOwner.getLastName());
     assertNull(actualOwner.getAddress());
     Set<Pet> petsInternal = actualOwner.getPetsInternal();
