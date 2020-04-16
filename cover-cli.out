@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-8bf7742
+INFO Diffblue Cover dev-SNAPSHOT-06bc781
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6265,13 +6265,13 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at com.diffblue.fuzztest.harness.spring.SpringConstructionProxy.createForPackage(SpringConstructionProxy.java:107)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:153)
 	at com.diffblue.fuzztest.configs.BaseConfig.loadSpringFromPackage(BaseConfig.java:144)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:647)
-	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.access$500(CreateEssentialTests.java:408)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$2(CreateEssentialTests.java:337)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.dumpTestsForMethodThrows(CreateEssentialTests.java:651)
+	at com.diffblue.fuzztest.main.CreateEssentialTests$SingleMethodTestCaseGenerator.access$500(CreateEssentialTests.java:412)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.lambda$execute$4(CreateEssentialTests.java:341)
 	at com.diffblue.fuzztest.errors.ErrorReport.lambda$runAndCatch$0(ErrorReport.java:234)
 	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatchReturning(ErrorReport.java:136)
 	at com.diffblue.fuzztest.errors.ErrorReport.runAndCatch(ErrorReport.java:234)
-	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:338)
+	at com.diffblue.fuzztest.main.CreateEssentialTests.execute(CreateEssentialTests.java:342)
 	at com.diffblue.fuzztest.configs.BaseConfig.executeCommand(BaseConfig.java:247)
 	at com.diffblue.fuzztest.PhaserWrapper.dumpTIRNoForkJvm(PhaserWrapper.java:513)
 	at com.diffblue.fuzztest.PhaserWrapper.run(PhaserWrapper.java:197)
@@ -6374,11 +6374,11 @@ Caused by: javax.cache.CacheException: javax.cache.CacheException: java.security
 	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:485)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.customize(JCacheCacheConfiguration.java:151)
 	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration.jCacheCacheManager(JCacheCacheConfiguration.java:111)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$fcb45808.CGLIB$jCacheCacheManager$2(<generated>)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$fcb45808$$FastClassBySpringCGLIB$$8e33a02f.invoke(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$a31ae80f.CGLIB$jCacheCacheManager$2(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$a31ae80f$$FastClassBySpringCGLIB$$4a9520e0.invoke(<generated>)
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
-	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$fcb45808.jCacheCacheManager(<generated>)
+	at org.springframework.boot.autoconfigure.cache.JCacheCacheConfiguration$$EnhancerBySpringCGLIB$$a31ae80f.jCacheCacheManager(<generated>)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
