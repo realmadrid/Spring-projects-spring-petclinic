@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-8a04781
+INFO Diffblue Cover dev-SNAPSHOT-05f4348
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -8,7 +8,7 @@ INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
 INFO Verification command "mvn clean test" will be run in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
 INFO Expanded user code or user provided classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
-INFO Expanded classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes:/root/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/root/.m2/repository/javax/cache/cache-api/1.1.0/cache-api-1.1.0.jar:/root/.m2/repository/org/skys... [truncated]
+INFO Expanded classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes:/root/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/root/.m2/repository/javax/cache/cache-api/1.1.0/cache-api-1.1.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/root/.m2/repository/org/springframework/boot/spring-boot-test/2.1.0.BUILD-SNAPSHOT/... [truncated]
 INFO Indexing.
 INFO Indexing com.oracle.net
 INFO Indexing com.oracle.webservices.internal.api
@@ -6215,7 +6215,7 @@ INFO Indexing org.dom4j.xpath
 INFO Indexing org.dom4j
 INFO Indexing org.dom4j.xpp
 INFO Index ready.
-INFO Prefixes for filtering classes/methods detected [org.springframework.samples.petclinic, org.springframework.samples.petclinic.model, org.springframework.samples.petclinic.owner, org.springframework.samples.petclinic.system, org.springframework.samples.petclinic.vet, org.springframework.samples.petcl... [truncated]
+INFO Prefixes for filtering classes/methods detected [org.springframework.samples.petclinic, org.springframework.samples.petclinic.model, org.springframework.samples.petclinic.owner, org.springframework.samples.petclinic.system, org.springframework.samples.petclinic.vet, org.springframework.samples.petclinic.visit]
 INFO Found 95 callable methods in 20 classes
 INFO Executing the Spring Boot application to determine configuration, this may take a few moments.
 INFO Initializing Spring TestDispatcherServlet ''
@@ -6278,7 +6278,7 @@ INFO [38/95] Created 1 test for method org.springframework.samples.petclinic.sys
 INFO [39/95] Created 1 test for method org.springframework.samples.petclinic.vet.Specialty.<init>
 INFO [40/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.toString
 INFO [40/95]   No essential tests due to E004: Unable to find any meaningful assertion.
- - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not ... [truncated]
+ - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
 INFO [41/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.<init>
 INFO [42/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPet
 INFO [43/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getTelephone
@@ -6311,7 +6311,7 @@ INFO [61/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [62/95] Created 1 test for method org.springframework.samples.petclinic.vet.VetController.showResourcesVetList
 INFO [63/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.parse
 INFO [63/95]   No essential tests due to E004: Unable to find any meaningful assertion.
- - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not ... [truncated]
+ - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
 INFO [64/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetTypeFormatter.<init>
 INFO [64/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
@@ -6323,7 +6323,7 @@ INFO [67/95]   No essential tests due to E002: Nothing to assert: the constructe
  - Add observer methods to the class.
 INFO [68/95] Created 0 tests for method org.springframework.samples.petclinic.owner.PetController.initPetBinder
 INFO [68/95]   No essential tests due to E004: Unable to find any meaningful assertion.
- - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not ... [truncated]
+ - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
 INFO [69/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initUpdateForm
 INFO [70/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.initOwnerBinder
 INFO [71/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetController.populatePetTypes
@@ -6365,7 +6365,7 @@ INFO No essential tests created for 16 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO       - Add observer methods to the class.
 INFO    3 E004: Unable to find any meaningful assertion.
-INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value... [truncated]
+INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
 INFO    1 E009: Unrecoverable runtime error.
 INFO       - Please contact Diffblue support.
 INFO    1 E010: Timeout while generating the arrange/act section of your test.
