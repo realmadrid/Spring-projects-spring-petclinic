@@ -1,41 +1,46 @@
 Found 25 classes in src/main/java
 [  0%] org.springframework.samples.petclinic.PetClinicApplication
-[  0%] org.springframework.samples.petclinic.model.BaseEntity
-[  0%] org.springframework.samples.petclinic.model.NamedEntity
-[  0%] org.springframework.samples.petclinic.model.Person
-[  0%] org.springframework.samples.petclinic.owner.Owner
-[  0%] org.springframework.samples.petclinic.owner.OwnerController
-[  0%] org.springframework.samples.petclinic.owner.OwnerRepository
+Skipping a SpringBootApplication (no logic to be tested)
+[  4%] org.springframework.samples.petclinic.model.BaseEntity
+[  8%] org.springframework.samples.petclinic.model.NamedEntity
+[ 12%] org.springframework.samples.petclinic.model.Person
+[ 16%] org.springframework.samples.petclinic.owner.Owner
+[ 20%] org.springframework.samples.petclinic.owner.OwnerController
+[ 24%] org.springframework.samples.petclinic.owner.OwnerRepository
 Repository method: findById (java.lang.Integer) -> org.springframework.samples.petclinic.owner.Owner
 Repository method: findByLastName (java.lang.String) -> java.util.Collection<org.springframework.samples.petclinic.owner.Owner>
 Repository method: save (org.springframework.samples.petclinic.owner.Owner) -> void
-[  4%] org.springframework.samples.petclinic.owner.Pet
-[  4%] org.springframework.samples.petclinic.owner.PetController
-[  4%] org.springframework.samples.petclinic.owner.PetRepository
+[ 28%] org.springframework.samples.petclinic.owner.Pet
+[ 32%] org.springframework.samples.petclinic.owner.PetController
+[ 36%] org.springframework.samples.petclinic.owner.PetRepository
 Repository method: findById (java.lang.Integer) -> org.springframework.samples.petclinic.owner.Pet
 Repository method: findPetTypes () -> java.util.List<org.springframework.samples.petclinic.owner.PetType>
 Repository method: save (org.springframework.samples.petclinic.owner.Pet) -> void
-[  8%] org.springframework.samples.petclinic.owner.PetType
-[  8%] org.springframework.samples.petclinic.owner.PetTypeFormatter
-[  8%] org.springframework.samples.petclinic.owner.PetValidator
-[  8%] org.springframework.samples.petclinic.owner.VisitController
-[  8%] org.springframework.samples.petclinic.system.CacheConfiguration
-[  8%] org.springframework.samples.petclinic.system.CrashController
-[  8%] org.springframework.samples.petclinic.system.WelcomeController
-[  8%] org.springframework.samples.petclinic.vet.Specialty
-[  8%] org.springframework.samples.petclinic.vet.Vet
-[  8%] org.springframework.samples.petclinic.vet.VetController
-[  8%] org.springframework.samples.petclinic.vet.VetRepository
+[ 40%] org.springframework.samples.petclinic.owner.PetType
+No tests generated
+[ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
+[ 48%] org.springframework.samples.petclinic.owner.PetValidator
+[ 52%] org.springframework.samples.petclinic.owner.VisitController
+[ 56%] org.springframework.samples.petclinic.system.CacheConfiguration
+Skipping a Spring Configuration (no logic to be tested)
+[ 60%] org.springframework.samples.petclinic.system.CrashController
+No tests generated
+[ 64%] org.springframework.samples.petclinic.system.WelcomeController
+[ 68%] org.springframework.samples.petclinic.vet.Specialty
+No tests generated
+[ 72%] org.springframework.samples.petclinic.vet.Vet
+[ 76%] org.springframework.samples.petclinic.vet.VetController
+[ 80%] org.springframework.samples.petclinic.vet.VetRepository
 Repository method: findAll () -> java.util.Collection<org.springframework.samples.petclinic.vet.Vet>
 No tests generated
-[ 12%] org.springframework.samples.petclinic.vet.Vets
-[ 12%] org.springframework.samples.petclinic.visit.Visit
-[ 12%] org.springframework.samples.petclinic.visit.VisitRepository
+[ 84%] org.springframework.samples.petclinic.vet.Vets
+[ 88%] org.springframework.samples.petclinic.visit.Visit
+[ 92%] org.springframework.samples.petclinic.visit.VisitRepository
 Repository method: findByPetId (java.lang.Integer) -> java.util.List<org.springframework.samples.petclinic.visit.Visit>
 Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> void
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 0/0
+Total coverage: 171/214 79.9%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
