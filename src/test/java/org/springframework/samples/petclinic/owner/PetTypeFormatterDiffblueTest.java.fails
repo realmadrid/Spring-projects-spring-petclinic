@@ -1,0 +1,1526 @@
+package org.springframework.samples.petclinic.owner;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringRunner;
+
+/**
+ * Unit tests for org.springframework.samples.petclinic.owner.PetTypeFormatter
+ *
+ * @author Diffblue Cover
+ */
+
+@RunWith(SpringRunner.class)
+@ContextConfiguration(classes = PetTypeFormatter.class)
+public class PetTypeFormatterDiffblueTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
+
+    @MockBean(name = "pets")
+    private PetRepository pets;
+
+    @Autowired
+    private PetTypeFormatter service;
+
+    @Test
+    public void parse6() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        PetType result = service.parse("type not found: ", new Locale("en"));
+        assertThat(result.getName(), is("type not found: "));
+        assertThat(result.getId(), is(1));
+        assertThat(result.isNew(), is(false));
+    }
+
+    @Test
+    public void parseTextIsBar7() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        PetType result = service.parse("bar", new Locale("en"));
+        assertThat(result.getName(), is("bar"));
+        assertThat(result.getId(), is(1));
+        assertThat(result.isNew(), is(false));
+    }
+
+    @Test
+    public void parseTextIsEmpty6() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        PetType result = service.parse("", new Locale("en"));
+        assertThat(result.getName(), is(""));
+        assertThat(result.getId(), is(1));
+        assertThat(result.isNew(), is(false));
+    }
+
+    @Test
+    public void parseTextIsFoo8() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        PetType result = service.parse("foo", new Locale("en"));
+        assertThat(result.getName(), is("foo"));
+        assertThat(result.getId(), is(1));
+        assertThat(result.isNew(), is(false));
+    }
+
+    @Test
+    public void printReturnsDog() {
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        assertThat(service.print(petType, new Locale("en")), is("dog"));
+    }
+
+    @Test
+    public void parse1() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parse10() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("foo"));
+    }
+
+    @Test
+    public void parse11() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parse2() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parse3() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parse4() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parse5() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parse7() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parse8() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale(""));
+    }
+
+    @Test
+    public void parse9() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsBar1() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBar10() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBar11() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBar12() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsBar13() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsBar14() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsBar15() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsBar2() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBar3() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsBar4() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsBar5() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsBar6() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBar8() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBar9() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: bar
+        thrown.expect(java.text.ParseException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBarThrowsMissingMockException1() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("bar", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsBarThrowsMissingMockException2() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("bar", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsBarThrowsMissingMockException3() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("bar", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsBarThrowsMissingMockException4() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("bar", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsEmpty1() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmpty10() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmpty11() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmpty12() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsEmpty13() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsEmpty14() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsEmpty15() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsEmpty2() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmpty3() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsEmpty4() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsEmpty5() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsEmpty7() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmpty8() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmpty9() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: 
+        thrown.expect(java.text.ParseException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmptyThrowsMissingMockException1() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsEmptyThrowsMissingMockException2() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsEmptyThrowsMissingMockException3() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsEmptyThrowsMissingMockException4() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsFoo1() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFoo10() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFoo11() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFoo12() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsFoo13() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsFoo14() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsFoo15() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsFoo2() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFoo3() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsFoo4() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsFoo5() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsFoo6() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFoo7() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFoo9() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: foo
+        thrown.expect(java.text.ParseException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFooThrowsMissingMockException1() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("foo", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsFooThrowsMissingMockException2() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("foo", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsFooThrowsMissingMockException3() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("foo", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsFooThrowsMissingMockException4() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("foo", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml1() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml10() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml11() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml12() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml13() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml14() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml15() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml16() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml17() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml18() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml19() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml2() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml20() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml21() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml22() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml23() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml24() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml25() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml26() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml27() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml28() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml29() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml3() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml30() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml31() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml32() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml33() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml34() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml35() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml36() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml37() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml38() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml39() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml4() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml40() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("type not found: ");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml41() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml42() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml43() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml44() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(-1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml45() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("type not found: ", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml46() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtml47() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtml48() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml49() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("dog");
+        petType.setId(0);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml5() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("foo"));
+    }
+
+    @Test
+    public void parseTextIsHtml6() throws java.text.ParseException {
+        when(pets.findPetTypes())
+            .thenReturn(new ArrayList<PetType>());
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("type not found: "));
+    }
+
+    @Test
+    public void parseTextIsHtml7() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml8() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("bar");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtml9() throws java.text.ParseException {
+        List<PetType> list = new ArrayList<PetType>();
+        PetType petType = new PetType();
+        petType.setName("foo");
+        petType.setId(1);
+        list.add(petType);
+        when(pets.findPetTypes())
+            .thenReturn(list);
+        // type not found: html
+        thrown.expect(java.text.ParseException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtmlThrowsMissingMockException1() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("html", new Locale("en"));
+    }
+
+    @Test
+    public void parseTextIsHtmlThrowsMissingMockException2() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("html", new Locale(""));
+    }
+
+    @Test
+    public void parseTextIsHtmlThrowsMissingMockException3() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("html", new Locale("bar"));
+    }
+
+    @Test
+    public void parseTextIsHtmlThrowsMissingMockException4() throws java.text.ParseException {
+        thrown.expect(com.diffblue.jcover.MissingMockException.class);
+        service.parse("html", new Locale("foo"));
+    }
+}

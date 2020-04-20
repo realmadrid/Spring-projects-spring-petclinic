@@ -9,12 +9,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.LinkedList;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
@@ -27,6 +30,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = VetController.class)
 public class VetControllerDiffblueTest {
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @MockBean(name = "clinicService")
     private VetRepository clinicService;
@@ -46,6 +52,14 @@ public class VetControllerDiffblueTest {
     }
 
     @Test
+    public void showVetListThrowsNestedServletException() throws org.springframework.dao.DataAccessException, Exception {
+        // Handler dispatch failed; nested exception is com.diffblue.jcover.MissingMockException
+        thrown.expect(org.springframework.web.util.NestedServletException.class);
+        MockMvcBuilders.standaloneSetup(controller).build().perform(
+            MockMvcRequestBuilders.get("/vets.html"));
+    }
+
+    @Test
     public void showResourcesVetList() throws org.springframework.dao.DataAccessException, Exception {
         when(clinicService.findAll())
             .thenReturn(new LinkedList<Vet>());
@@ -54,5 +68,13 @@ public class VetControllerDiffblueTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType("application/xml"))
             .andExpect(content().string("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><vets/>"));
+    }
+
+    @Test
+    public void showResourcesVetListThrowsNestedServletException() throws org.springframework.dao.DataAccessException, Exception {
+        // Handler dispatch failed; nested exception is com.diffblue.jcover.MissingMockException
+        thrown.expect(org.springframework.web.util.NestedServletException.class);
+        MockMvcBuilders.standaloneSetup(controller).build().perform(
+            MockMvcRequestBuilders.get("/vets"));
     }
 }

@@ -17,17 +17,14 @@ Repository method: findById (java.lang.Integer) -> org.springframework.samples.p
 Repository method: findPetTypes () -> java.util.List<org.springframework.samples.petclinic.owner.PetType>
 Repository method: save (org.springframework.samples.petclinic.owner.Pet) -> void
 [ 40%] org.springframework.samples.petclinic.owner.PetType
-No tests generated
 [ 44%] org.springframework.samples.petclinic.owner.PetTypeFormatter
 [ 48%] org.springframework.samples.petclinic.owner.PetValidator
 [ 52%] org.springframework.samples.petclinic.owner.VisitController
 [ 56%] org.springframework.samples.petclinic.system.CacheConfiguration
 Skipping a Spring Configuration (no logic to be tested)
 [ 60%] org.springframework.samples.petclinic.system.CrashController
-No tests generated
 [ 64%] org.springframework.samples.petclinic.system.WelcomeController
 [ 68%] org.springframework.samples.petclinic.vet.Specialty
-No tests generated
 [ 72%] org.springframework.samples.petclinic.vet.Vet
 [ 76%] org.springframework.samples.petclinic.vet.VetController
 [ 80%] org.springframework.samples.petclinic.vet.VetRepository
@@ -40,9 +37,11 @@ Repository method: findByPetId (java.lang.Integer) -> java.util.List<org.springf
 Repository method: save (org.springframework.samples.petclinic.visit.Visit) -> void
 SKIPPING org.springframework.samples.petclinic.model.package-info
 [100%] Done
-Total coverage: 178/214 83.2%
+Total coverage: 181/215 84.2%
 
 Tests written to src/test/java
 Compiling the tests, iteration 1
+org.springframework.samples.petclinic.owner.PetTypeFormatterDiffblueTest fails to compile
+Compiling the tests, iteration 2
 Running the tests, iteration 1
 All JCOVER tests compile & pass

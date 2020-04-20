@@ -14,6 +14,11 @@ import org.junit.Test;
 public class VetsDiffblueTest {
 
     @Test
+    public void constructor() {
+        // pojo Vets
+    }
+
+    @Test
     public void getVetListReturnsEmpty() {
         assertThat(new Vets().getVetList(), empty());
     }

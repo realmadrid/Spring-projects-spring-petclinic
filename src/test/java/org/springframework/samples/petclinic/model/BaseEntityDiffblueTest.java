@@ -30,9 +30,30 @@ public class BaseEntityDiffblueTest {
     }
 
     @Test
-    public void isNewReturnsFalse() {
+    public void setIdToOne() {
         BaseEntity baseEntity = new Pet();
         baseEntity.setId(1);
+        baseEntity.setId(1);
+    }
+
+    @Test
+    public void isNew1() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setId(1);
+        assertThat(baseEntity.isNew(), is(false));
+    }
+
+    @Test
+    public void isNew2() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setId(-1);
+        assertThat(baseEntity.isNew(), is(false));
+    }
+
+    @Test
+    public void isNew3() {
+        BaseEntity baseEntity = new Pet();
+        baseEntity.setId(0);
         assertThat(baseEntity.isNew(), is(false));
     }
 

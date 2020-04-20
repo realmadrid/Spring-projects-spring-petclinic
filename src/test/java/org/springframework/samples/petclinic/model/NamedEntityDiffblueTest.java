@@ -31,4 +31,37 @@ public class NamedEntityDiffblueTest {
         namedEntity.setId(1);
         assertThat(namedEntity.getName(), is("Bella"));
     }
+
+    @Test
+    public void getIdReturnsOne() {
+        NamedEntity namedEntity = new Pet();
+        namedEntity.setName("Bella");
+        namedEntity.setId(1);
+        assertThat(namedEntity.getId(), is(1));
+    }
+
+    @Test
+    public void setNameToEntity() {
+        NamedEntity namedEntity = new Pet();
+        namedEntity.setName("Bella");
+        namedEntity.setId(1);
+        namedEntity.setName("entity");
+        assertThat(namedEntity.getName(), is("entity"));
+    }
+
+    @Test
+    public void setIdToOne() {
+        NamedEntity namedEntity = new Pet();
+        namedEntity.setName("Bella");
+        namedEntity.setId(1);
+        namedEntity.setId(1);
+    }
+
+    @Test
+    public void isNewReturnsFalse() {
+        NamedEntity namedEntity = new Pet();
+        namedEntity.setName("Bella");
+        namedEntity.setId(1);
+        assertThat(namedEntity.isNew(), is(false));
+    }
 }
