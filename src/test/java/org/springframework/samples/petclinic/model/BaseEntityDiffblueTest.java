@@ -1,5 +1,6 @@
 package org.springframework.samples.petclinic.model;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -15,7 +16,7 @@ public class BaseEntityDiffblueTest {
     baseEntity.setId(1);
 
     // Assert
-    assertFalse(baseEntity.isNew());
+    assertEquals(1, baseEntity.getId().intValue());
   }
 
   @Test
