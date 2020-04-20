@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-0af7cee
+INFO Diffblue Cover dev-SNAPSHOT-0b3bd83
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6257,8 +6257,12 @@ INFO [25/95] Created 0 tests for method org.springframework.samples.petclinic.mo
 INFO [25/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [26/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
 INFO [27/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.setId
+INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
+INFO [28/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+ - Add observer methods to the class.
 INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
-INFO [29/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+INFO [29/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+ - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
 INFO Initializing Spring TestDispatcherServlet ''
 INFO [30/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
 INFO [30/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
@@ -6366,9 +6370,10 @@ INFO   10 E002: Nothing to assert: the constructed class does not have observer 
 INFO       - Add observer methods to the class.
 INFO    3 E004: Unable to find any meaningful assertion.
 INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
+INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+INFO       - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
 INFO    1 E009: Unrecoverable runtime error.
 INFO       - Please contact Diffblue support.
-INFO    1 E010: Timeout while generating the arrange/act section of your test.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
 INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
