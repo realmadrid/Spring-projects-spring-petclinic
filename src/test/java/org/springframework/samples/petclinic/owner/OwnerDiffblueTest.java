@@ -102,11 +102,6 @@ public class OwnerDiffblueTest {
   public void testGetPet() {
     // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id"));
-  }
-
-  @Test
-  public void testGetPet2() {
-    // Arrange, Act and Assert
     assertNull((new Owner()).getPet("id", true));
   }
 
