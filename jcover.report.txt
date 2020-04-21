@@ -23,4 +23,4 @@ org.springframework.samples.petclinic.system.CacheConfiguration      0/0
               org.springframework.samples.petclinic.visit.Visit    12/12  100%
     org.springframework.samples.petclinic.visit.VisitRepository      0/0      
 
-                                                          Total  153/178   86%
+                                                          Total  178/214 83.2%

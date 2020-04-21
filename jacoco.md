@@ -21,6 +21,6 @@ petclinic | org.springframework.samples.petclinic.system | WelcomeController | 0
 petclinic | org.springframework.samples.petclinic.system | CacheConfiguration | 19 | 0 | 0 | 0 | 5 | 0 | 4 | 0 | 4 | 0
 petclinic | org.springframework.samples.petclinic.system | CrashController | 8 | 0 | 0 | 0 | 2 | 0 | 2 | 0 | 2 | 0
 
-Instruction coverage: 540 / 828 (65.00 %)
+Instruction coverage: 631 / 828 (76.00 %)
 
 Command run: mvn package -Dmaven.test.failure.ignore=true -Dtest='*DiffblueTest'
