@@ -91,18 +91,5 @@ public class PetDiffblueTest {
     // Arrange, Act and Assert
     assertEquals(0, (new Pet()).getVisits().size());
   }
-
-  @Test
-  public void testAddVisit() {
-    // Arrange
-    Pet pet = new Pet();
-    Visit visit = new Visit();
-
-    // Act
-    pet.addVisit(visit);
-
-    // Assert
-    assertNull(visit.getPetId());
-  }
 }
 

@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-baa965e
+INFO Diffblue Cover dev-SNAPSHOT-c8c76d5
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6241,24 +6241,36 @@ INFO [12/95]   Method considered not worth testing due to T001: Trivial getters 
 INFO [13/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setType
 INFO [14/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.getVisitsInternal
 INFO [15/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.setVisitsInternal
-INFO [16/95] Created 1 test for method org.springframework.samples.petclinic.owner.Pet.addVisit
+INFO [16/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Pet.addVisit
+INFO [16/95]   No essential tests due to E009: Unrecoverable runtime error.
+ - Please contact Diffblue support.
 INFO [17/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDate
 INFO [18/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getPetId
 INFO [18/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [19/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setPetId
-INFO [20/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.<init>
+INFO [19/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.setPetId
+INFO [19/95]   No essential tests due to E009: Unrecoverable runtime error.
+ - Please contact Diffblue support.
+INFO [20/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.<init>
+INFO [20/95]   No essential tests due to E009: Unrecoverable runtime error.
+ - Please contact Diffblue support.
 INFO [21/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDate
 INFO [21/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [22/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.getDescription
 INFO [22/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
-INFO [23/95] Created 1 test for method org.springframework.samples.petclinic.visit.Visit.setDescription
+INFO [23/95] Created 0 tests for method org.springframework.samples.petclinic.visit.Visit.setDescription
+INFO [23/95]   No essential tests due to E009: Unrecoverable runtime error.
+ - Please contact Diffblue support.
 INFO [24/95] Created 2 tests for method org.springframework.samples.petclinic.model.BaseEntity.isNew
 INFO [25/95] Created 0 tests for method org.springframework.samples.petclinic.model.BaseEntity.getId
 INFO [25/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [26/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.<init>
 INFO [27/95] Created 1 test for method org.springframework.samples.petclinic.model.BaseEntity.setId
+INFO [28/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.<init>
+INFO [28/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
+ - Add observer methods to the class.
 INFO [29/95] Created 0 tests for method org.springframework.samples.petclinic.PetClinicApplication.main
-INFO [29/95]   No essential tests due to E010: Timeout while generating the arrange/act section of your test.
+INFO [29/95]   No essential tests due to E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+ - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
 INFO Initializing Spring TestDispatcherServlet ''
 INFO [30/95] Created 0 tests for method org.springframework.samples.petclinic.system.CrashController.<init>
 INFO [30/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
@@ -6361,18 +6373,19 @@ INFO [93/95] Created 1 test for method org.springframework.samples.petclinic.vet
 INFO [94/95] Created 1 test for method org.springframework.samples.petclinic.vet.Vet.getNrOfSpecialties
 INFO 13 methods considered not worth testing due to:
 INFO   13 T001: Trivial getters are not worth testing.
-INFO No essential tests created for 16 methods due to:
+INFO No essential tests created for 20 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO       - Add observer methods to the class.
+INFO    5 E009: Unrecoverable runtime error.
+INFO       - Please contact Diffblue support.
 INFO    3 E004: Unable to find any meaningful assertion.
 INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
-INFO    1 E009: Unrecoverable runtime error.
-INFO       - Please contact Diffblue support.
-INFO    1 E010: Timeout while generating the arrange/act section of your test.
+INFO    1 E003: Nothing to assert: neither the return value type of the method under test nor the types of its parameters have observers.
+INFO       - Add observer methods to the declaring class of the method under test, its return type or any of its parameter types.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
-INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
+INFO 63 tests created for 61 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO All 67 generated tests were successfully verified
+INFO All 63 generated tests were successfully verified
