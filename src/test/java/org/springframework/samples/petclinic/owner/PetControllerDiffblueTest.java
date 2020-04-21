@@ -2,6 +2,7 @@ package org.springframework.samples.petclinic.owner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -77,6 +78,17 @@ public class PetControllerDiffblueTest {
 
     // Assert
     assertEquals(1, webDataBinder.getDisallowedFields().length);
+  }
+  @Test
+  public void testInitPetBinder() {
+    // Arrange
+    WebDataBinder webDataBinder = new WebDataBinder(null);
+
+    // Act
+    this.petController.initPetBinder(webDataBinder);
+
+    // Assert
+    assertTrue(webDataBinder.getValidator() instanceof PetValidator);
   }
   @Test
   public void testInitUpdateForm() throws Exception {
