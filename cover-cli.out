@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-03f319f
+INFO Diffblue Cover dev-SNAPSHOT-f6fa2be
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6217,7 +6217,6 @@ INFO Indexing org.dom4j.xpp
 INFO Index ready.
 INFO Prefixes for filtering classes/methods detected [org.springframework.samples.petclinic, org.springframework.samples.petclinic.model, org.springframework.samples.petclinic.owner, org.springframework.samples.petclinic.system, org.springframework.samples.petclinic.vet, org.springframework.samples.petclinic.visit]
 INFO Found 95 callable methods in 20 classes
-INFO Executing the Spring Boot application to determine configuration, this may take a few moments.
 INFO Initializing Spring TestDispatcherServlet ''
 INFO  [1/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.setAllowedFields
 INFO  [2/95] Created 1 test for method org.springframework.samples.petclinic.owner.VisitController.processNewVisitForm
