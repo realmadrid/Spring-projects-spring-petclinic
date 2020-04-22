@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-68c8849
+INFO Diffblue Cover dev-SNAPSHOT-3f607b3
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6,7 +6,7 @@ INFO Using classpath from Maven.
 INFO Test output directory: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/src/test/java
 INFO Auto detected java 1.8 compliance level
 INFO Auto detected junit-4.12 test framework
-INFO Verification command "mvn clean test" will be run in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
+INFO Verification command "mvn test" will be run in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic
 INFO Expanded user code or user provided classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes
 INFO Expanded classpath: /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic/target/classes:/root/.m2/repository/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar:/root/.m2/repository/javax/cache/cache-api/1.1.0/cache-api-1.1.0.jar:/root/.m2/repository/org/skyscreamer/jsonassert/1.5.0/jsonassert-1.5.0.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/root/.m2/repository/org/springframework/boot/spring-boot-test/2.1.0.BUILD-SNAPSHOT/... [truncated]
 INFO Indexing.
@@ -6372,7 +6372,7 @@ INFO    1 E010: Timeout while generating the arrange/act section of your test.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
 INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
-INFO Executing external command "mvn clean test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
+INFO Executing external command "mvn test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
 INFO All 67 generated tests were successfully verified
