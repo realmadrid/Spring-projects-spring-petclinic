@@ -16,8 +16,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.web.bind.WebDataBinder;
 
-@RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 @WebMvcTest(value = {org.springframework.samples.petclinic.owner.VisitController.class})
+@RunWith(org.springframework.test.context.junit4.SpringRunner.class)
 public class VisitControllerDiffblueTest {
   @MockBean
   private PetRepository petRepository;
