@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.Test;
@@ -31,13 +32,14 @@ public class PetDiffblueTest {
   @Test
   public void testSetBirthDate() {
     // Arrange
+    LocalDate ofEpochDayResult = LocalDate.ofEpochDay(1L);
     Pet pet = new Pet();
 
     // Act
-    pet.setBirthDate(null);
+    pet.setBirthDate(ofEpochDayResult);
 
     // Assert
-    assertNull(pet.getBirthDate());
+    assertSame(ofEpochDayResult, pet.getBirthDate());
   }
 
   @Test
