@@ -106,6 +106,8 @@ public class OwnerDiffblueTest {
         owner.setFirstName("Anna");
         owner.setLastName("Smith");
         owner.setId(0);
+
+        // arrange
         Pet pet = new Pet();
         pet.setBirthDate(LocalDate.of(2_000, 1, 1));
         PetType type = new PetType();
@@ -114,7 +116,11 @@ public class OwnerDiffblueTest {
         pet.setType(type);
         pet.setName("Bella");
         pet.setId(1);
+
+        // act
         owner.addPet(pet);
+
+        // assert
         assertThat(pet.getOwner(), sameInstance(owner));
     }
 

@@ -89,6 +89,8 @@ public class PetDiffblueTest {
         pet.setType(type);
         pet.setName("Bella");
         pet.setId(1);
+
+        // arrange
         Owner owner = new Owner();
         owner.setAddress("280 Broadway");
         owner.setCity("New York");
@@ -96,7 +98,11 @@ public class PetDiffblueTest {
         owner.setFirstName("Anna");
         owner.setLastName("Smith");
         owner.setId(1);
+
+        // act
         pet.setOwner(owner);
+
+        // assert
         assertThat(pet.getOwner(), sameInstance(owner));
     }
 
@@ -136,12 +142,18 @@ public class PetDiffblueTest {
         pet.setType(type);
         pet.setName("Bella");
         pet.setId(0);
+
+        // arrange
         Visit visit = new Visit();
         visit.setDate(LocalDate.of(2_000, 1, 1));
         visit.setDescription("some text");
         visit.setPetId(1);
         visit.setId(1);
+
+        // act
         pet.addVisit(visit);
+
+        // assert
         assertThat(visit.getPetId(), is(0));
     }
 }
