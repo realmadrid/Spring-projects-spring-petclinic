@@ -15,10 +15,10 @@ public class PetTypeFormatterDiffblueTest {
   @Test
   public void testPrint() {
     // Arrange
-    PetType petType = new PetType();
+    Locale locale = new Locale("foo");
 
     // Act and Assert
-    assertNull(this.petTypeFormatter.print(petType, Locale.getDefault()));
+    assertNull(this.petTypeFormatter.print(new PetType(), locale));
   }
 }
 
