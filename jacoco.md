@@ -15,12 +15,12 @@ petclinic | org.springframework.samples.petclinic.owner | OwnerController | 53 |
 petclinic | org.springframework.samples.petclinic.owner | PetType | 0 | 3 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 1
 petclinic | org.springframework.samples.petclinic.owner | PetTypeFormatter | 14 | 30 | 2 | 2 | 2 | 8 | 2 | 3 | 0 | 3
 petclinic | org.springframework.samples.petclinic.owner | Pet | 5 | 66 | 1 | 1 | 1 | 21 | 1 | 11 | 0 | 11
-petclinic | org.springframework.samples.petclinic.owner | PetController | 28 | 92 | 6 | 4 | 6 | 26 | 5 | 9 | 0 | 9
+petclinic | org.springframework.samples.petclinic.owner | PetController | 41 | 79 | 6 | 4 | 9 | 23 | 6 | 8 | 1 | 8
 petclinic | org.springframework.samples.petclinic.owner | PetValidator | 0 | 41 | 0 | 8 | 0 | 11 | 0 | 7 | 0 | 3
 petclinic | org.springframework.samples.petclinic.system | WelcomeController | 0 | 5 | 0 | 0 | 0 | 2 | 0 | 2 | 0 | 2
 petclinic | org.springframework.samples.petclinic.system | CacheConfiguration | 19 | 0 | 0 | 0 | 5 | 0 | 4 | 0 | 4 | 0
 petclinic | org.springframework.samples.petclinic.system | CrashController | 8 | 0 | 0 | 0 | 2 | 0 | 2 | 0 | 2 | 0
 
-Instruction coverage: 631 / 828 (76.00 %)
+Instruction coverage: 618 / 828 (74.00 %)
 
 Command run: mvn package -Dmaven.test.failure.ignore=true -Dtest='*DiffblueTest'
