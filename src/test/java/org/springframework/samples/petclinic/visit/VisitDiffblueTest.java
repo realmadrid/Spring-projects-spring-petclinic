@@ -2,7 +2,9 @@ package org.springframework.samples.petclinic.visit;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import java.time.LocalDate;
 import org.junit.Test;
 
 public class VisitDiffblueTest {
@@ -21,13 +23,14 @@ public class VisitDiffblueTest {
   @Test
   public void testSetDate() {
     // Arrange
+    LocalDate ofEpochDayResult = LocalDate.ofEpochDay(1L);
     Visit visit = new Visit();
 
     // Act
-    visit.setDate(null);
+    visit.setDate(ofEpochDayResult);
 
     // Assert
-    assertNull(visit.getDate());
+    assertSame(ofEpochDayResult, visit.getDate());
   }
 
   @Test
