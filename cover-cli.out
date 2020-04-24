@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-0685ec8
+INFO Diffblue Cover dev-SNAPSHOT-b819232
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6336,8 +6336,8 @@ INFO [76/95]   No essential tests due to E002: Nothing to assert: the constructe
  - Add observer methods to the class.
 INFO [77/95] Created 1 test for method org.springframework.samples.petclinic.owner.PetValidator.supports
 INFO [78/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.petclinicCacheConfigurationCustomizer
-INFO [78/95]   No essential tests due to E009: Unrecoverable runtime error.
- - Please contact Diffblue support.
+INFO [78/95]   No essential tests due to E004: Unable to find any meaningful assertion.
+ - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
 INFO [79/95] Created 0 tests for method org.springframework.samples.petclinic.system.CacheConfiguration.<init>
 INFO [79/95]   No essential tests due to E002: Nothing to assert: the constructed class does not have observer methods.
  - Add observer methods to the class.
@@ -6364,10 +6364,8 @@ INFO   13 T001: Trivial getters are not worth testing.
 INFO No essential tests created for 16 methods due to:
 INFO   10 E002: Nothing to assert: the constructed class does not have observer methods.
 INFO       - Add observer methods to the class.
-INFO    3 E004: Unable to find any meaningful assertion.
+INFO    4 E004: Unable to find any meaningful assertion.
 INFO       - Please add observer methods in the parameter/return class types of the method under test that access or return fields written by the method under test. This problem could also happen because Diffblue Cover did not manage to find good inputs for the method under test. Try increasing the value of --fuzzing-iterations.
-INFO    1 E009: Unrecoverable runtime error.
-INFO       - Please contact Diffblue support.
 INFO    1 E010: Timeout while generating the arrange/act section of your test.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
