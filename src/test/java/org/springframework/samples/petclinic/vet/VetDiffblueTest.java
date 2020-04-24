@@ -28,6 +28,9 @@ public class VetDiffblueTest {
   public void testGetSpecialtiesInternal() {
     // Arrange
     Vet vet = new Vet();
+    vet.setFirstName("Jane");
+    vet.setId(1);
+    vet.setLastName("Doe");
 
     // Act and Assert
     assertEquals(0, vet.getSpecialtiesInternal().size());
@@ -38,8 +41,14 @@ public class VetDiffblueTest {
   public void testSetSpecialtiesInternal() {
     // Arrange
     Vet vet = new Vet();
+    vet.setFirstName("Jane");
+    vet.setId(1);
+    vet.setLastName("Doe");
     HashSet<Specialty> specialtySet = new HashSet<Specialty>();
-    specialtySet.add(new Specialty());
+    Specialty specialty = new Specialty();
+    specialty.setId(1);
+    specialty.setName("name");
+    specialtySet.add(specialty);
 
     // Act
     vet.setSpecialtiesInternal(specialtySet);
@@ -52,6 +61,9 @@ public class VetDiffblueTest {
   public void testGetSpecialties() {
     // Arrange
     Vet vet = new Vet();
+    vet.setFirstName("Jane");
+    vet.setId(1);
+    vet.setLastName("Doe");
 
     // Act and Assert
     assertEquals(0, vet.getSpecialties().size());
@@ -62,6 +74,9 @@ public class VetDiffblueTest {
   public void testGetNrOfSpecialties() {
     // Arrange
     Vet vet = new Vet();
+    vet.setFirstName("Jane");
+    vet.setId(1);
+    vet.setLastName("Doe");
 
     // Act and Assert
     assertEquals(0, vet.getNrOfSpecialties());
@@ -72,9 +87,15 @@ public class VetDiffblueTest {
   public void testAddSpecialty() {
     // Arrange
     Vet vet = new Vet();
+    vet.setFirstName("Jane");
+    vet.setId(1);
+    vet.setLastName("Doe");
+    Specialty specialty = new Specialty();
+    specialty.setId(1);
+    specialty.setName("name");
 
     // Act
-    vet.addSpecialty(new Specialty());
+    vet.addSpecialty(specialty);
 
     // Assert
     assertEquals(1, vet.getNrOfSpecialties());

@@ -10,6 +10,7 @@ public class BaseEntityDiffblueTest {
   public void testSetId() {
     // Arrange
     BaseEntity baseEntity = new BaseEntity();
+    baseEntity.setId(1);
 
     // Act
     baseEntity.setId(1);
@@ -32,16 +33,20 @@ public class BaseEntityDiffblueTest {
   public void testIsNew() {
     // Arrange
     BaseEntity baseEntity = new BaseEntity();
-    baseEntity.setId(1);
+    baseEntity.setId(null);
 
     // Act and Assert
-    assertFalse(baseEntity.isNew());
+    assertTrue(baseEntity.isNew());
   }
 
   @Test
   public void testIsNew2() {
-    // Arrange, Act and Assert
-    assertTrue((new BaseEntity()).isNew());
+    // Arrange
+    BaseEntity baseEntity = new BaseEntity();
+    baseEntity.setId(1);
+
+    // Act and Assert
+    assertFalse(baseEntity.isNew());
   }
 }
 

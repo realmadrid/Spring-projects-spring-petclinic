@@ -10,6 +10,8 @@ public class NamedEntityDiffblueTest {
   public void testSetName() {
     // Arrange
     NamedEntity namedEntity = new NamedEntity();
+    namedEntity.setId(1);
+    namedEntity.setName("name");
 
     // Act
     namedEntity.setName("name");
@@ -32,8 +34,13 @@ public class NamedEntityDiffblueTest {
 
   @Test
   public void testToString() {
-    // Arrange, Act and Assert
-    assertNull((new NamedEntity()).toString());
+    // Arrange
+    NamedEntity namedEntity = new NamedEntity();
+    namedEntity.setId(1);
+    namedEntity.setName("name");
+
+    // Act and Assert
+    assertEquals("name", namedEntity.toString());
   }
 }
 

@@ -1,4 +1,4 @@
-INFO Diffblue Cover dev-SNAPSHOT-e622a08
+INFO Diffblue Cover dev-SNAPSHOT-3ab6a4c
 INFO Detecting classpath.
 INFO Executing Maven to determine project properties, this may take a few moments.
 INFO .
@@ -6288,7 +6288,7 @@ INFO [45/95] Created 0 tests for method org.springframework.samples.petclinic.ow
 INFO [45/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
 INFO [46/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setAddress
 INFO [47/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.getPets
-INFO [48/95] Created 2 tests for method org.springframework.samples.petclinic.owner.Owner.addPet
+INFO [48/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.addPet
 INFO [49/95] Created 1 test for method org.springframework.samples.petclinic.owner.Owner.setCity
 INFO [50/95] Created 0 tests for method org.springframework.samples.petclinic.owner.Owner.getCity
 INFO [50/95]   Method considered not worth testing due to T001: Trivial getters are not worth testing.
@@ -6371,8 +6371,8 @@ INFO       - Please contact Diffblue support.
 INFO    1 E010: Timeout while generating the arrange/act section of your test.
 INFO    1 E013: Unable to generate test inputs not throwing a trivial exception.
 INFO       - This happened most likely because Diffblue Cover could not find good inputs for your method under test. Try increasing the value of --fuzzing-iterations.
-INFO 67 tests created for 65 out of 95 methods in 17 out of 20 classes
+INFO 66 tests created for 65 out of 95 methods in 17 out of 20 classes
 INFO Executing external command "mvn test" in /codebuild/output/srcXXXXXXXXX/src/github.com/diffblue/cover/Spring-projects-spring-petclinic to verify created tests.
 INFO Running verification command, this can take a couple of minutes.
 INFO .
-INFO All 67 generated tests were successfully verified
+INFO All 66 generated tests were successfully verified

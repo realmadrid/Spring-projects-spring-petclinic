@@ -10,6 +10,9 @@ public class PersonDiffblueTest {
   public void testSetFirstName() {
     // Arrange
     Person person = new Person();
+    person.setFirstName("Jane");
+    person.setId(1);
+    person.setLastName("Doe");
 
     // Act
     person.setFirstName("Jane");
@@ -34,6 +37,9 @@ public class PersonDiffblueTest {
   public void testSetLastName() {
     // Arrange
     Person person = new Person();
+    person.setFirstName("Jane");
+    person.setId(1);
+    person.setLastName("Doe");
 
     // Act
     person.setLastName("Doe");

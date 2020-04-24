@@ -12,6 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.validation.DefaultBindingErrorProcessor;
 import org.springframework.web.bind.WebDataBinder;
 
 @WebMvcTest(value = {org.springframework.samples.petclinic.owner.OwnerController.class})
@@ -139,6 +140,9 @@ public class OwnerControllerDiffblueTest {
   public void testSetAllowedFields() {
     // Arrange
     WebDataBinder webDataBinder = new WebDataBinder("!");
+    webDataBinder.setAllowedFields("foo", "foo", "foo", "foo", "foo", "foo", "foo", "foo", "foo", "foo");
+    webDataBinder.setBindEmptyMultipartFiles(true);
+    webDataBinder.setBindingErrorProcessor(new DefaultBindingErrorProcessor());
 
     // Act
     this.ownerController.setAllowedFields(webDataBinder);

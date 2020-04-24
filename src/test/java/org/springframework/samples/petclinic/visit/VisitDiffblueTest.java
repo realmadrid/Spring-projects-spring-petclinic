@@ -22,6 +22,9 @@ public class VisitDiffblueTest {
   public void testSetDate() {
     // Arrange
     Visit visit = new Visit();
+    visit.setDate(null);
+    visit.setDescription("description");
+    visit.setId(1);
 
     // Act
     visit.setDate(null);
@@ -34,6 +37,9 @@ public class VisitDiffblueTest {
   public void testSetDescription() {
     // Arrange
     Visit visit = new Visit();
+    visit.setDate(null);
+    visit.setDescription("description");
+    visit.setId(1);
 
     // Act
     visit.setDescription("description");
@@ -46,6 +52,9 @@ public class VisitDiffblueTest {
   public void testSetPetId() {
     // Arrange
     Visit visit = new Visit();
+    visit.setDate(null);
+    visit.setDescription("description");
+    visit.setId(1);
 
     // Act
     visit.setPetId(123);

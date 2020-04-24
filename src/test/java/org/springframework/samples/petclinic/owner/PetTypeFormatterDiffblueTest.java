@@ -1,6 +1,6 @@
 package org.springframework.samples.petclinic.owner;
 
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertEquals;
 import java.util.Locale;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,9 +16,11 @@ public class PetTypeFormatterDiffblueTest {
   public void testPrint() {
     // Arrange
     PetType petType = new PetType();
+    petType.setId(1);
+    petType.setName("name");
 
     // Act and Assert
-    assertNull(this.petTypeFormatter.print(petType, Locale.getDefault()));
+    assertEquals("name", this.petTypeFormatter.print(petType, Locale.getDefault()));
   }
 }
 

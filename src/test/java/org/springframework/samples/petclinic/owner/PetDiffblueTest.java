@@ -32,6 +32,9 @@ public class PetDiffblueTest {
   public void testSetBirthDate() {
     // Arrange
     Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
 
     // Act
     pet.setBirthDate(null);
@@ -44,7 +47,12 @@ public class PetDiffblueTest {
   public void testSetType() {
     // Arrange
     Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
     PetType petType = new PetType();
+    petType.setId(1);
+    petType.setName("name");
 
     // Act
     pet.setType(petType);
@@ -57,7 +65,13 @@ public class PetDiffblueTest {
   public void testSetOwner() {
     // Arrange
     Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
     Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
 
     // Act
     pet.setOwner(owner);
@@ -68,16 +82,29 @@ public class PetDiffblueTest {
 
   @Test
   public void testGetVisitsInternal() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisitsInternal().size());
+    // Arrange
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
+
+    // Act and Assert
+    assertEquals(0, pet.getVisitsInternal().size());
   }
 
   @Test
   public void testSetVisitsInternal() {
     // Arrange
     Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
     HashSet<Visit> visitSet = new HashSet<Visit>();
-    visitSet.add(new Visit());
+    Visit visit = new Visit();
+    visit.setDate(null);
+    visit.setDescription("name");
+    visit.setId(1);
+    visitSet.add(visit);
 
     // Act
     pet.setVisitsInternal(visitSet);
@@ -88,21 +115,33 @@ public class PetDiffblueTest {
 
   @Test
   public void testGetVisits() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Pet()).getVisits().size());
+    // Arrange
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
+
+    // Act and Assert
+    assertEquals(0, pet.getVisits().size());
   }
 
   @Test
   public void testAddVisit() {
     // Arrange
     Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("name");
     Visit visit = new Visit();
+    visit.setDate(null);
+    visit.setDescription("description");
+    visit.setId(1);
 
     // Act
     pet.addVisit(visit);
 
     // Assert
-    assertNull(visit.getPetId());
+    assertEquals(1, visit.getPetId().intValue());
   }
 }
 

@@ -13,6 +13,9 @@ public class OwnerDiffblueTest {
   public void testSetAddress() {
     // Arrange
     Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
 
     // Act
     owner.setAddress("42 Station Road");
@@ -25,6 +28,9 @@ public class OwnerDiffblueTest {
   public void testSetCity() {
     // Arrange
     Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
 
     // Act
     owner.setCity("London");
@@ -37,6 +43,9 @@ public class OwnerDiffblueTest {
   public void testSetTelephone() {
     // Arrange
     Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
 
     // Act
     owner.setTelephone("01234556677");
@@ -47,16 +56,29 @@ public class OwnerDiffblueTest {
 
   @Test
   public void testGetPetsInternal() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPetsInternal().size());
+    // Arrange
+    Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
+
+    // Act and Assert
+    assertEquals(0, owner.getPetsInternal().size());
   }
 
   @Test
   public void testSetPetsInternal() {
     // Arrange
     Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
     HashSet<Pet> petSet = new HashSet<Pet>();
-    petSet.add(new Pet());
+    Pet pet = new Pet();
+    pet.setBirthDate(null);
+    pet.setId(1);
+    pet.setName("Jane");
+    petSet.add(pet);
 
     // Act
     owner.setPetsInternal(petSet);
@@ -67,29 +89,27 @@ public class OwnerDiffblueTest {
 
   @Test
   public void testGetPets() {
-    // Arrange, Act and Assert
-    assertEquals(0, (new Owner()).getPets().size());
+    // Arrange
+    Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
+
+    // Act and Assert
+    assertEquals(0, owner.getPets().size());
   }
 
   @Test
   public void testAddPet() {
     // Arrange
     Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
     Pet pet = new Pet();
+    pet.setBirthDate(null);
     pet.setId(1);
-
-    // Act
-    owner.addPet(pet);
-
-    // Assert
-    assertSame(owner, pet.getOwner());
-  }
-
-  @Test
-  public void testAddPet2() {
-    // Arrange
-    Owner owner = new Owner();
-    Pet pet = new Pet();
+    pet.setName("London");
 
     // Act
     owner.addPet(pet);
@@ -100,9 +120,26 @@ public class OwnerDiffblueTest {
 
   @Test
   public void testGetPet() {
-    // Arrange, Act and Assert
-    assertNull((new Owner()).getPet("id"));
-    assertNull((new Owner()).getPet("id", true));
+    // Arrange
+    Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
+
+    // Act and Assert
+    assertNull(owner.getPet("id"));
+  }
+
+  @Test
+  public void testGetPet2() {
+    // Arrange
+    Owner owner = new Owner();
+    owner.setAddress("42 Station Road");
+    owner.setCity("London");
+    owner.setFirstName("Jane");
+
+    // Act and Assert
+    assertNull(owner.getPet("id", true));
   }
 
   @Test
