@@ -18,7 +18,6 @@ public class BaseEntityDiffblueTest {
     public void setId() {
         BaseEntity baseEntity = new Pet();
         baseEntity.setId(1);
-        assertThat(baseEntity.getId(), is(1));
         assertThat(baseEntity.isNew(), is(false));
     }
 

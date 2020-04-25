@@ -22,7 +22,6 @@ public class PersonDiffblueTest {
         person.setId(1);
         assertThat(person.getFirstName(), is("Anna"));
         assertThat(person.getLastName(), is("Smith"));
-        assertThat(person.getId(), is(1));
         assertThat(person.isNew(), is(false));
     }
 

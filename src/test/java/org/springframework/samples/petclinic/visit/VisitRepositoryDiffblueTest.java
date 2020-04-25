@@ -40,7 +40,6 @@ public class VisitRepositoryDiffblueTest {
         assertThat(instances.get(0).getDate(), sameInstance(date));
         assertThat(instances.get(0).getDescription(), is("some text"));
         assertThat(instances.get(0).getPetId(), is(1));
-        assertThat(instances.get(0).getId(), is(1));
         assertThat(instances.get(0).isNew(), is(false));
     }
 }

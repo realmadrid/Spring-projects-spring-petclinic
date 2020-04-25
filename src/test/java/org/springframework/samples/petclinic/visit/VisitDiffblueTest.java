@@ -27,7 +27,6 @@ public class VisitDiffblueTest {
         assertThat(visit.getDate(), sameInstance(date));
         assertThat(visit.getDescription(), is("some text"));
         assertThat(visit.getPetId(), is(1));
-        assertThat(visit.getId(), is(1));
         assertThat(visit.isNew(), is(false));
     }
 

@@ -40,7 +40,6 @@ public class OwnerRepositoryDiffblueTest {
         assertThat(instances.getTelephone(), is("12345"));
         assertThat(instances.getFirstName(), is("Anna"));
         assertThat(instances.getLastName(), is("Smith"));
-        assertThat(instances.getId(), is(1));
         assertThat(instances.isNew(), is(false));
     }
 

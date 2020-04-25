@@ -20,7 +20,6 @@ public class NamedEntityDiffblueTest {
         namedEntity.setName("Bella");
         namedEntity.setId(1);
         assertThat(namedEntity.getName(), is("Bella"));
-        assertThat(namedEntity.getId(), is(1));
         assertThat(namedEntity.isNew(), is(false));
     }
 

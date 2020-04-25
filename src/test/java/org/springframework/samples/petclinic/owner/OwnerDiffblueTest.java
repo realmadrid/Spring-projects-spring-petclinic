@@ -33,7 +33,6 @@ public class OwnerDiffblueTest {
         assertThat(owner.getTelephone(), is("12345"));
         assertThat(owner.getFirstName(), is("Anna"));
         assertThat(owner.getLastName(), is("Smith"));
-        assertThat(owner.getId(), is(1));
         assertThat(owner.isNew(), is(false));
     }
 

@@ -42,7 +42,6 @@ public class PetTypeFormatterDiffblueTest {
             .thenReturn(list);
         PetType result = service.parse("bar", new Locale("en"));
         assertThat(result.getName(), is("bar"));
-        assertThat(result.getId(), is(1));
         assertThat(result.isNew(), is(false));
     }
 

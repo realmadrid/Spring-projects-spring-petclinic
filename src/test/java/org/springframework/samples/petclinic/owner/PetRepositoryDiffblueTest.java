@@ -43,10 +43,8 @@ public class PetRepositoryDiffblueTest {
         assertThat(instances.getBirthDate(), sameInstance(birthDate));
         assertThat(instances.getOwner(), is(nullValue()));
         assertThat(instances.getType().getName(), is("cat"));
-        assertThat(instances.getType().getId(), is(1));
         assertThat(instances.getType().isNew(), is(false));
         assertThat(instances.getName(), is("Bella"));
-        assertThat(instances.getId(), is(1));
         assertThat(instances.isNew(), is(false));
     }
 
@@ -64,22 +62,16 @@ public class PetRepositoryDiffblueTest {
         List<PetType> instances = repository.findPetTypes();
         assertThat(instances.size(), is(6));
         assertThat(instances.get(0).getName(), is("bird"));
-        assertThat(instances.get(0).getId(), is(5));
         assertThat(instances.get(0).isNew(), is(false));
         assertThat(instances.get(1).getName(), is("cat"));
-        assertThat(instances.get(1).getId(), is(1));
         assertThat(instances.get(1).isNew(), is(false));
         assertThat(instances.get(2).getName(), is("dog"));
-        assertThat(instances.get(2).getId(), is(2));
         assertThat(instances.get(2).isNew(), is(false));
         assertThat(instances.get(3).getName(), is("hamster"));
-        assertThat(instances.get(3).getId(), is(6));
         assertThat(instances.get(3).isNew(), is(false));
         assertThat(instances.get(4).getName(), is("lizard"));
-        assertThat(instances.get(4).getId(), is(3));
         assertThat(instances.get(4).isNew(), is(false));
         assertThat(instances.get(5).getName(), is("snake"));
-        assertThat(instances.get(5).getId(), is(4));
         assertThat(instances.get(5).isNew(), is(false));
     }
 }

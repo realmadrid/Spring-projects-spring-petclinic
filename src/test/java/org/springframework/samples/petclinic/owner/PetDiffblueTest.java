@@ -35,7 +35,6 @@ public class PetDiffblueTest {
         assertThat(pet.getOwner(), is(nullValue()));
         assertThat(pet.getType(), sameInstance(type));
         assertThat(pet.getName(), is("Bella"));
-        assertThat(pet.getId(), is(1));
         assertThat(pet.isNew(), is(false));
     }
 
